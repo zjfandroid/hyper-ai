@@ -1,0 +1,21 @@
+.mini-chart-base-line {
+  position: relative;
+
+  .mini-chart-base-line-tooltip {
+    display: none;
+    z-index: 99;
+    top: 0px;
+    // left: 0px;
+    // right: 0;
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+
+    >div {
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+  }
+}
+
+#tv-attr-logo {
+  display: none;
+}

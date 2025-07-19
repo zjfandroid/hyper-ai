@@ -1,0 +1,38 @@
+.column-list {
+  dt::-webkit-scrollbar {
+    height: 0;
+  }
+
+  dd {
+    ul {
+      li {
+        transition: all 0.3s;
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0);
+
+        &::-webkit-scrollbar {
+          height: 0;
+        }
+
+        .highlight {
+          background-color: rgba(85, 85, 85, 0.1);
+        }
+
+        >span {
+          // transition: all 0.3s;
+        }
+
+        &:hover {
+          >span {
+            opacity: 1;
+          }
+
+          // border: 1px solid rgba(255, 255, 255, 0.1);
+          // background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+          background: rgba(255, 255, 255, 0.075);
+
+        }
+      }
+    }
+  }
+}

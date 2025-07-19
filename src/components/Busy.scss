@@ -1,0 +1,18 @@
+/* HACK */
+.ant-spin-nested-loading>div>.ant-spin {
+  max-height: 100% !important;
+}
+
+.ant-spin-nested-loading>div>.ant-spin.ant-spin-spinning svg {
+  animation: loadAnimate 1s linear infinite;
+}
+
+@keyframes loadAnimate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

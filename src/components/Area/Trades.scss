@@ -1,0 +1,26 @@
+.area-trades {
+  dd {
+    ul {
+      li {
+        .content {
+          padding-top: 2px;
+          padding-bottom: 2px;
+        }
+
+        .link-hash {
+          right: -24px;
+          top: 0;
+          bottom: 0;
+          transition: right 0.3s;
+        }
+
+        &:hover {
+          .link-hash {
+            right: 8px;
+          }
+        }
+      }
+    }
+  }
+
+}

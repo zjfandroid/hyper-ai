@@ -1,0 +1,48 @@
+.news-timeline {
+  .ant-timeline {
+    padding-top: 16px;
+
+    .ant-timeline-item {
+      padding-bottom: 36px;
+
+      .ant-timeline-item-content {
+        margin-left: 24px;
+      }
+    }
+
+    .ant-timeline-item-last {
+      padding-bottom: 24px;
+    }
+  }
+
+
+
+  .timeline-content {
+    padding-right: 8px;
+    // &::-webkit-scrollbar {
+    //   width: 6px;
+    // }
+
+    // &::-webkit-scrollbar-track {
+    //   background: rgba(255, 255, 255, 0.05);
+    //   border-radius: 3px;
+    // }
+
+    // &::-webkit-scrollbar-thumb {
+    //   background: rgba(255, 255, 255, 0.2);
+    //   border-radius: 3px;
+    // }
+
+    // &::-webkit-scrollbar-thumb:hover {
+    //   background: rgba(255, 255, 255, 0.3);
+    // }
+  }
+
+  .content-ellipsis {
+    display: -webkit-box;
+    -webkit-line-clamp: 3; // 显示3行，可以根据需要调整
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

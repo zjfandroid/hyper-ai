@@ -1,0 +1,160 @@
+.main-cover {
+  background: url('@/assets/image/view/Home/main/bg.png') no-repeat center top;
+  background-size: contain;
+  position: relative;
+
+  #particlesBg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 35%;
+    opacity: 0.7;
+    /* 增加透明度，使粒子更明显 */
+  }
+
+  .coverBg {
+    background: url('@/assets/image/view/Home/main/cover.png') no-repeat right top;
+    position: relative;
+    overflow: hidden;
+
+  }
+
+  ul {
+    li {
+      background: linear-gradient(90deg, rgba(222, 250, 246, 0.1) -0.03%, rgba(255, 171, 255, 0.1) 34.99%, rgba(0, 184, 217, 0.1) 100.03%);
+      border: 1px solid #FFFFFF1A;
+    }
+  }
+}
+
+.main-line {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.brain {
+  background: url('@/assets/image/view/Home/brain/bg.png') no-repeat right top;
+
+  ul {
+    li {
+      transition: all 0.3s;
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0);
+
+      >span {
+        transition: all 0.3s;
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background-color: #ffffff;
+        opacity: 0;
+
+        &:nth-of-type(1) {
+          top: 0;
+          left: 0;
+        }
+
+        &:nth-of-type(2) {
+          top: 0;
+          right: 0;
+        }
+
+        &:nth-of-type(3) {
+          left: 0;
+          bottom: 0;
+        }
+
+        &:nth-of-type(4) {
+          right: 0;
+          bottom: 0;
+        }
+      }
+
+      &:hover {
+        >span {
+          opacity: 1;
+        }
+
+        border: 1px solid rgba(255, 255, 255, 0.149);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+      }
+    }
+  }
+}
+
+.features {
+  .tag {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: inset 0px 0px 16px 1px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+  }
+}
+
+@media (min-width: 768px) {
+  .brain {
+    ul {
+      li.col-md-6 {
+        &:nth-child(odd) {
+          border-right: 1px solid rgb(47, 47, 47, 1);
+        }
+
+        &:nth-child(1) {
+          border-bottom: 1px solid rgb(47, 47, 47, 1);
+        }
+
+        &:nth-child(2) {
+          border-bottom: 1px solid rgb(47, 47, 47, 1);
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .brain {
+    ul {
+      li {
+
+        &.col-xl-3 {
+          border-right: 1px solid #2F2F2F;
+          border-bottom: 1px solid rgb(47, 47, 47, 0) !important;
+
+          &:last-child {
+            border-right: 1px solid rgb(47, 47, 47, 0);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .brain {
+    ul {
+      li.col-12 {
+        border-bottom: 1px solid #2F2F2F;
+
+        &:last-child {
+          border-bottom: 1px solid rgb(47, 47, 47, 0);
+        }
+
+      }
+    }
+  }
+}
+
+.backed {
+  ul {
+    li {
+
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      /* 输入框背景 */
+      box-shadow: inset 0px 0px 16px 1px rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      /* Note: backdrop-filter has minimal browser support */
+
+    }
+  }
+}

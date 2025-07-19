@@ -1,0 +1,75 @@
+:root {
+  --bs-body-font-family:
+    'Roboto',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    'PingFang SC',
+    /* 苹方 */
+    'Hiragino Sans GB',
+    /* 冬青黑体简 */
+    'Microsoft Yahei',
+    /* 微软雅黑 */
+    'Helvetica Neue',
+    Helvetica,
+    'NotoSans',
+    /* 思源 */
+    Arial,
+    'SimSun',
+    /* 宋体 */
+    sans-serif,
+    /* 无衬线 */
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol';
+  --bs-body-line-height: 1.5;
+  --bs-body-font-weight: 400;
+  --bs-body-font-size: 14px;
+  --bs-body-color: #fff;
+  --bs-body-bg: #0a0a0a;
+
+  --bs-primary-rgb: 0, 184, 217;
+  --bs-bg-opacity: 1;
+  --bs-link-color-rgb: 255, 255, 255;
+  --bs-link-hover-color-rgb: 0, 184, 217;
+  --bs-link-opacity: 1;
+  --bs-black-rgb: 0, 0, 0;
+  --bs-secondary-color: rgba(255, 255, 255, 0.6);
+
+  --bs-breakpoint-xs: 0;
+  --bs-breakpoint-sm: 576px;
+  --bs-breakpoint-md: 768px;
+  --bs-breakpoint-lg: 992px;
+  --bs-breakpoint-xl: 1200px;
+  --bs-breakpoint-xxl: 1400px;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+
+  --mui-palette-primary-main: #9ff305;
+
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  // -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: rgba(0, 0, 0, .3);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 0 6px #00B8D9;
+  background-color: #D9D9D9;
+}
+
+asdf {
+  color: #a65e5e
+}

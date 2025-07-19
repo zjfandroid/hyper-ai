@@ -1,0 +1,13 @@
+.footer {
+  >div {
+    &:nth-child(1) {
+      border-top: 1px solid #1e1e1e;
+      border-bottom: 1px solid #1e1e1e;
+
+      .gap-line {
+        border-left: 1px solid #1e1e1e;
+        margin-left: -1px;
+      }
+    }
+  }
+}

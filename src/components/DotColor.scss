@@ -1,0 +1,54 @@
+.dot-color {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.perpetual-c {
+  color: rgba(96, 122, 250, 0.8)
+}
+
+.perpetual-bg {
+  background: rgba(96, 122, 250, 0.8);
+}
+
+.spot-c {
+  color: rgba(96, 165, 250, .8);
+}
+
+.spot-bg {
+  background: rgba(96, 165, 250, .8);
+}
+
+.withdrawable-c {
+  color: rgba(250, 211, 96, .8);
+}
+
+.withdrawable-bg {
+  background: rgba(250, 211, 96, .8);
+}
+
+.leverage-c {
+  color: rgba(250, 211, 96, .8);
+}
+
+.leverage-bg {
+  background: rgba(250, 211, 96, .8);
+}
+
+.profit-bg {
+  background: rgba(96, 147, 250, 0.8);
+}
+
+.loss-bg {
+  background: rgba(96, 147, 250, 0.1);
+}
+
+
+// .fees-paid-bg {
+//   background: #78090960;
+// }
+
+// .fees-credit-bg {
+//   background: #03741b60;
+// }

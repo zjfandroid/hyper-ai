@@ -1,0 +1,35 @@
+.header {
+  .nav {
+    .linker {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+
+      &::after {
+        transition: all 0.3s;
+        content: '';
+        background: #fff;
+        width: 50%;
+        height: 2px;
+        margin: 0 auto;
+        position: relative;
+        top: 6px;
+        display: inline-block;
+        border-radius: 4px;
+        opacity: 0;
+      }
+
+      &.hover {
+        &::after {
+          opacity: 1;
+        }
+      }
+
+      &:hover {
+        &::after {
+          opacity: 0.6;
+        }
+      }
+    }
+  }
+}

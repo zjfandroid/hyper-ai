@@ -1,0 +1,27 @@
+dl.area-depth {
+  dt {}
+
+  dd {
+    ul {
+      li {
+        >div {
+          &.existing-order::before {
+            content: '';
+            display: block;
+            width: 4px;
+            height: 4px;
+            background-color: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            left: 6px;
+            position: absolute;
+          }
+
+          >span {
+            padding-top: 2px;
+            padding-bottom: 2px;
+          }
+        }
+      }
+    }
+  }
+}

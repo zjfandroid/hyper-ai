@@ -1,0 +1,25 @@
+.single-candlestick {
+
+  .shadow {
+    position: absolute;
+    left: 50%;
+    width: 1px;
+    background-color: #888;
+    transform: translateX(-50%);
+  }
+
+  .body {
+    position: absolute;
+    left: 0;
+    width: 100%;
+
+    &.up {
+      background-color: #26a69a; // 上涨颜色（绿色）
+    }
+
+    &.down {
+      background-color: #ef5350; // 下跌颜色（红色）
+    }
+  }
+
+}
