@@ -6,7 +6,7 @@ import { constants, useTraderDetailsTWAPStore, useReqStore } from '@/stores'
 import ColumnList from '@/components/Column/List'
 import TimeAgo from '@/components/TimeAgo'
 import PositionItemSide from '@/components/PositionItem/Side'
-import PositionItemCommonPnl from '@/components/PositionItem/CommonPnL'
+import PositionItemCommonPnl from '@/components/PositionItem/CommonPnl'
 
 const TraderDetailsTWAP = ({ address, filterCoin = '', displayedRecordsMessage = 2000, className = '' }) => {
   const traderDetailsTWAPStore = useTraderDetailsTWAPStore()
