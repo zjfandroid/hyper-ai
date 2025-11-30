@@ -7,7 +7,7 @@ import ColumnList from '@/components/Column/List'
 import TimeAgo from '@/components/TimeAgo'
 import PositionItemTx from '@/components/PositionItem/Tx'
 import PositionItemSide from '@/components/PositionItem/Side'
-import PositionItemCommonPnl from '@/components/PositionItem/CommonPnL'
+import PositionItemCommonPnl from '@/components/PositionItem/CommonPnl'
 
 const TraderDetailsRecentFills = ({ address, filterCoin = '', displayedRecordsMessage = 2000, className = '' }) => {
   const traderDetailsRecentFillsStore = useTraderDetailsRecentFillsStore()

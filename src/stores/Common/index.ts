@@ -17,7 +17,7 @@ const DEFAULT = {
     { i18n: 'header.copyTrading', name: '', to: '/copy-trading' },
     { i18n: 'header.points', name: '', to: '/rewards', disabled: false },
     { i18n: 'header.leaderboard', name: '', to: '/leaderboard' },
-    { i18n: 'header.docs', name: '', href: constants.app.DOC, target: '_blank' },
+    // { i18n: 'header.docs', name: '', href: constants.app.DOC, target: '_blank' },
   ]
 }
 
