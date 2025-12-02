@@ -247,6 +247,8 @@
   "header": {
     "home": "Home",
     "discover": "Discover",
+    "vaults": "Vaults",
+    "news": "News",
     "trackNMonitor": "Track & Monitor",
     "leaderboard": "Leaderboard",
     "copyTrading": "Copy Trading",

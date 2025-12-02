@@ -14,6 +14,24 @@ export type TObject<T> = {
 
 export const isNumber = (val: any) => typeof val === 'number'
 
+export function formatDecimalNumber(num: number, limt: number): number {
+    if (!num) {
+        return 0
+    }
+    let number = num
+    if (typeof (num) === 'string') {
+        number = Number(num)
+    } else {
+        number = num
+    }
+    const result = number.toFixed(limt)
+    return Number(result)
+}
+
+export function formatTimeToTz(time: string, format: string): string {
+    return dayjs.utc(time).tz('Asia/Shanghai').format(format)
+}
+
 export const ObjectProto = Object.prototype
 export const ObjectToString = ObjectProto.toString
 const hasOwnProperty = ObjectProto.hasOwnProperty

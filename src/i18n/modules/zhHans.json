@@ -247,6 +247,8 @@
   "header": {
     "home": "主页",
     "discover": "发现",
+    "vaults": "金库",
+    "news": "动态",
     "trackNMonitor": "跟踪与监控",
     "leaderboard": "排行榜",
     "copyTrading": "跟单交易",
@@ -273,7 +275,7 @@
     "cover3Li2Content": "等级越高 奖励加成越大",
     "cover3Li3Title": "推荐奖励",
     "cover3Li3Content": "邀请好友共赚积分",
-    "cover3Li4Title": " Hyperbot积分体系",
+    "cover3Li4Title": " HyperAi积分体系",
     "cover3Li4Content": "通过交易/邀请/任务赚取积分",
     "cover4Title": "告别功能割裂——全自动闭环盈利引擎",
     "cover4SubTitle": " 智能资金裂变协议 | 3秒构建交易矩阵 | 零延迟鲸鱼策略克隆 | 抗脆弱收益生态系统",
@@ -412,7 +414,7 @@
     "level": "等级",
     "receiveBonus": "领取 {{num}}倍积分奖励",
     "transactionVolumeRequired": "升级所需交易量：{{num}}（仅限保证金）",
-    "headline": "✨ Hyperbot 积分 = 真实奖励！",
+    "headline": "✨ HyperAi 积分 = 真实奖励！",
     "subheadline": "通过邀请朋友（使用我们的推荐链接获取额外积分！）、完成任务和使用基于等级的交易加成（最高可达 3000%！）来赚取奖励。升级你的等级以获取空投、VIP 特权和独家福利！",
     "invite3friends": "邀请≥3位朋友",
     "trade1000": "今天交易> $1,000（仅按保证金计算）",
@@ -425,7 +427,7 @@
     "referralFriendsStep2": "2. 在社交媒体上分享（例如 Telegram、X）"
   },
   "login": {
-    "logInToHyperBot": "登录 HyperBot",
+    "logInToHyperAi": "登录 HyperAi",
     "loginInBrowser": "在浏览器中登录",
     "loginWithDesktopApp": "使用桌面应用登录",
     "telegramWeb": "Telegram 网页版",
@@ -433,7 +435,7 @@
   },
   "leaderboard": {
     "headline": "✨ 排行榜",
-    "subheadline": "发现 HyperBot 上的最佳内容",
+    "subheadline": "发现 HyperAi 上的最佳内容",
     "pointsLeaderboard": "积分排行榜",
     "marketLeaderboard": "市场排行榜",
     "overall": "总体",
@@ -454,8 +456,8 @@
     "removedSuccessfully": "移除成功",
     "deletedSuccessfully": "删除成功",
     "submittedSuccessfully": "提交成功",
-    "bindOfficialReferralCodeTitle": "更聪明的交易，选Hyperbot！",
-    "bindOfficialReferralCodeContent": "绑定Hyperbot邀请码，在Hyperliquid平台立享4%交易手续费折扣！交易越多，省得越多！",
+    "bindOfficialReferralCodeTitle": "更聪明的交易，选HyperAi！",
+    "bindOfficialReferralCodeContent": "绑定HyperAi邀请码，在Hyperliquid平台立享4%交易手续费折扣！交易越多，省得越多！",
     "bindOfficialReferralCodeSubmit": "立即绑定",
     "trackingAddressSuccess": "跟踪地址 {{address}} 成功。",
     "copyTradingAddressSuccess": "跟单交易地址 {{address}} 成功。"

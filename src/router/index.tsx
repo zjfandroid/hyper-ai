@@ -14,6 +14,8 @@ import TrackMonitor from '@/views/TrackMonitor'
 import Discover from '@/views/Discover/index'
 import TraderDetails from '@/views/TraderDetails'
 import Trade from '@/views/Trade'
+import HypeVaults from '@/views/HypeVaults';
+import NewsPage from '@/views/News';
 
 const router = createBrowserRouter([
   {
@@ -37,6 +39,16 @@ const router = createBrowserRouter([
         path: 'copy-trading',
         index: true,
         element: <CopyTrading />
+      },
+      {
+        path: 'news',
+        index: true,
+        element: <NewsPage />
+      },
+      {
+        path: 'vaults',
+        index: true,
+        element: <HypeVaults />
       },
       {
         path: 'rewards',
