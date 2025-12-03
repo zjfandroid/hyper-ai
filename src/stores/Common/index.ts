@@ -12,7 +12,7 @@ export type TCommonStore = {
 
 const DEFAULT = {
   nav: [
-    // { i18n: 'header.discover', name: '', to: '/discover' },
+    { i18n: 'header.discover', name: '', to: '/discover' },
     { i18n: 'header.news', name: '', to: '/news' },
     // { i18n: 'header.vaults', name: '', to: '/vaults' },
     { i18n: 'header.trackNMonitor', name: '', to: '/track-monitor' },
