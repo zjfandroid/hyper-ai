@@ -16,6 +16,7 @@ import TraderDetails from '@/views/TraderDetails'
 import Trade from '@/views/Trade'
 import HypeVaults from '@/views/HypeVaults';
 import NewsPage from '@/views/News';
+import FundingFee from '@/views/FundingFee';
 
 const router = createBrowserRouter([
   {
@@ -49,6 +50,11 @@ const router = createBrowserRouter([
         path: 'vaults',
         index: true,
         element: <HypeVaults />
+      },
+      {
+        path: 'funding-fee',
+        index: true,
+        element: <FundingFee />
       },
       {
         path: 'rewards',

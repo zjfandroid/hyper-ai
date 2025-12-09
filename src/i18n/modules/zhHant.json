@@ -247,6 +247,9 @@
   "header": {
     "home": "首頁",
     "discover": "發現",
+    "vaults": "倉庫",
+    "news": "動態",
+    "fundingFee": "資金費",
     "trackNMonitor": "追蹤與監控",
     "leaderboard": "排行榜",
     "copyTrading": "跟單交易",

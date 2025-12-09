@@ -17,7 +17,7 @@ const LayoutRootDefault = () => {
     <div className="d-flex flex-column min-100vh">
       <LayoutHeader />
       <Outlet />
-      <LayoutFooter />
+      {/* <LayoutFooter /> */}
     </div>
   )
 }

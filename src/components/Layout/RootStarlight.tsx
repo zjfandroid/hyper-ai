@@ -24,7 +24,7 @@ const LayoutRootStarlight: React.FC<LayoutRootStarlightProps> = ({ full = false,
     <div className={`d-flex flex-column position-relative root-starlight ${full ? 'h-100vh' : 'min-100vh'}`}>
       <LayoutHeader />
       <Outlet />
-      {footer}
+      {/* {footer} */}
     </div>
   )
 }

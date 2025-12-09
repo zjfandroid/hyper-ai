@@ -1,4 +1,4 @@
-![Vistors](https://visitor-badge.laobi.icu/badge?page_id=zjfandroid.free) ![LICENSE](https://img.shields.io/badge/license-CC%20BY--SA%204.0-green.svg)
+![Vistors](https://visitor-badge.laobi.icu/badge?page_id=zjfandroid.hyper-ai) ![LICENSE](https://img.shields.io/badge/license-CC%20BY--SA%204.0-green.svg)
 
 ### 目录
 - [Clash/V2Ray 免费节点订阅](#免费节点订阅)
@@ -15,15 +15,15 @@
 **备用配置：**
 - Clash配置
 ```markdown
-- https://clashgithub.com/wp-content/uploads/rss/20251203.yml
-- https://free.datiya.com/uploads/20251203-clash.yaml
+- https://clashgithub.com/wp-content/uploads/rss/20251209.yml
+- https://free.datiya.com/uploads/20251209-clash.yaml
 ```
 - V2ray配置
 ```markdown
-https://free.datiya.com/uploads/20251203-v2ray.txt
+https://free.datiya.com/uploads/20251209-v2ray.txt
 ```
 
-**最后更新：** `2025-1203`
+**最后更新：** `2025-1209`
 
 ## 🔍 使用指南
 
