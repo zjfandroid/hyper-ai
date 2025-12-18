@@ -147,10 +147,9 @@ const Home = () => {
         <div className="container-xl d-flex flex-column px-3 px-md-4 gap-4 gap-md-5 my-0 my-md-5 py-0">
 
           <div className="d-flex flex-column gap-4 my-5 coverBg">
-            <div className='d-flex justify-content-center justify-content-md-start col-12 col-md-8 my-5 py-5'>
-              <div className='d-flex flex-column gap-5'>
+            {/* <div className='d-flex justify-content-center justify-content-md-start col-12 col-md-8 my-5 py-5'>
+              <div className='d-flex flex-column gap-1'>
                 <h2 className="d-flex flex-column text-center text-md-start">
-                  <span className='h1 fw-bold'>HyperBot</span>
                   <span className='h3 fw-bold'>{t('home.mainTitle')}</span>
                 </h2>
                 <InputSearch
@@ -160,24 +159,20 @@ const Home = () => {
                   onChange={(value) => discoverStore.searchAddressInput = value}
                   onSearch={() => handleSearchByAddress()} />
               </div>
-            </div>
-
-            {/* <span className="color-unimportant col-11 col-sm-9 col-md-8 text-center">
-              TELE Ecosystem: 40% Buyback | 20% Inviter Rewards | 20% Invitee Rewards · Powered by Al Framework Protocol | Building the Future Together
-            </span> */}
+            </div> */}
 
             {/* <div className="d-flex col-lg-6 gap-4 mt-5 position-relative z-index-9">
               <Button href={homeStore.startUrl} target='_blank' type='primary' size='large' className='br-4 border-w-2 fw-500 col'>Start Strategy</Button>
             </div> */}
             <Busy spinning={reqStore.discoverRecommendBusy}>
-              <div className='d-flex flex-column mt-5 gap-3 gap-md-4 position-relative z-index-9'>
+              <div className='d-flex flex-column gap-3 gap-md-4 position-relative z-index-9'>
                 <div className='d-flex align-items-center justify-content-between'>
                   <h5 className="fw-bold">{ t('common.hotAddress') }</h5>
                   <Link to='/discover'><IOutlineArrowRight1 className='zoom-80' /></Link>
                 </div>
                 <div className='d-flex flex-wrap'>
                   {
-                    discoverRecommendStore.list.map((item, idx) => (
+                    (discoverRecommendStore.list || []).map((item, idx) => (
                       <div key={idx} className='d-flex col-12 col-lg-4'>
                         <div className='d-flex p-4 br-3 bg-gray-alpha-4 gap-4 mx-1 mb-2 col'>
                           <div className='d-flex flex-column col-12 gap-1'>
@@ -206,9 +201,9 @@ const Home = () => {
                                   { label: t('common.aiTags'), className: 'col-12',
                                     content: <div className='d-flex flex-wrap gap-1'>
                                       {
-                                        item.tags.map((_tag, _idx) => (
+                                        (item.tags || []).map((_tag, _idx) => (
                                           <span key={_idx} className='d-flex px-2 br-2 bg-gray-alpha-3 color-primary'>{ _tag }</span>
-                                        ) )
+                                        ))
                                       }
                                     </div>
                                   }

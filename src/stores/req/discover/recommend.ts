@@ -25,7 +25,7 @@ export const discoverRecommend: TDiscoverRecommend = {
 
     this.discoverRecommendBusy = true
 
-    const res = await baseApi.get('/leaderboard/smart/recommend', {
+    const res = await baseApi.get('/leaderboard/smart/hot', {
       params: {
         lang: discoverRecommendStore.selectedLanguage
       }
@@ -54,7 +54,7 @@ export const discoverRecommend: TDiscoverRecommend = {
 
           note: item.remark,
           pnl: new BN(item.realizedPnL).toFixed(constants.decimalPlaces.__uPnl__),
-          tags: item.labels,
+          tags: Array.isArray(item.labels) ? item.labels : [],
           tradesCount: item.tradesCount,
           lastActionTs: item.lastOperationAt,
           // "lastAssetSnapshotPosCount": 0,
