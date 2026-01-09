@@ -15,12 +15,12 @@
 **备用配置：**
 - Clash配置
 ```markdown
-- https://clashgithub.com/wp-content/uploads/rss/20251227.yml
-- https://free.datiya.com/uploads/20251227-clash.yaml
+- https://clashgithub.com/wp-content/uploads/rss/20250109.yml
+- https://free.datiya.com/uploads/20250109-clash.yaml
 ```
 - V2ray配置
 ```markdown
-https://free.datiya.com/uploads/20251227-v2ray.txt
+https://free.datiya.com/uploads/20250109-v2ray.txt
 ```
 
 ## 🔍 使用指南
@@ -41,7 +41,8 @@ https://free.datiya.com/uploads/20251227-v2ray.txt
 - [爱一凡](https://www.iyf.tv/)
 
 # 财务自由传送门
-- [宇宙第一虚拟资产交易平台-binance](https://www.maxweb.red/referral/earn-together/refer2earn-usdc/claim?hl=zh-CN&ref=GRO_28502_AUWD7&utm_source=default)
+- [宇宙第一虚拟资产交易平台-binance](https://accounts.bmwweb.academy/register?ref=23070310)
+- [最好用的一站式套利交易所-Bybit](https://partner.bybit.com/b/CCXT8)
 - [链上第一衍生品交易平台-hyperliquid](https://app.hyperliquid.xyz/join/JFENG)
 - [零门槛买美股-MSX](https://msx.com/?code=SSL261)
 - [新人小白最友好的平台-okx](https://www.okx.com/join/2050388)
