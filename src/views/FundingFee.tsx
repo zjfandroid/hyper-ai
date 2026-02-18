@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-export default function HypeVaults() {
+export default function FundingFee() {
 
   // 初始化资产数据
   useEffect(() => {

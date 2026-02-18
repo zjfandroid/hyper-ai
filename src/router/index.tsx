@@ -17,6 +17,7 @@ import Trade from '@/views/Trade'
 import HypeVaults from '@/views/HypeVaults';
 import NewsPage from '@/views/News';
 import FundingFee from '@/views/FundingFee';
+import UserPrivacy from '@/views/UserPrivacy';
 
 const router = createBrowserRouter([
   {
@@ -80,6 +81,11 @@ const router = createBrowserRouter([
         path: 'trader/:address',
         index: true,
         element: <TraderDetails />
+      },
+      {
+        path: 'user-privacy',
+        index: true,
+        element: <UserPrivacy />
       }
     ]
   },
