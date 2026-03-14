@@ -53,9 +53,9 @@ export const discoverRecommend: TDiscoverRecommend = {
           marginUsedRatio: formatPer(item.marginUsageRate, true),
 
           note: item.remark,
-          pnl: new BN(item.realizedPnL).toFixed(constants.decimalPlaces.__uPnl__),
+          pnl: new BN(item.realizedPnl).toFixed(constants.decimalPlaces.__uPnl__),
           tags: Array.isArray(item.labels) ? item.labels : [],
-          tradesCount: item.tradesCount,
+          tradesCount: item.currentPosition,
           lastActionTs: item.lastOperationAt,
           // "lastAssetSnapshotPosCount": 0,
         }

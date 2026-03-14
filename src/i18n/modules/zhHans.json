@@ -138,7 +138,7 @@
     "historicalPerformanceByAsset": "按资产的历史表现",
     "gross": "总计",
     "fees": "费用",
-    "tradesCount": "交易次数",
+    "tradesCount": "持仓数量",
     "profitableTradesCount": "交易盈利次数",
     "tradeDuration": "交易持续时间",
     "min": "最小值",

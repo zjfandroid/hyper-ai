@@ -15,12 +15,12 @@
 **备用配置：**
 - Clash配置
 ```markdown
-- https://clashgithub.com/wp-content/uploads/rss/20260310.yml
-- https://free.datiya.com/uploads/20260310-clash.yaml
+- https://clashgithub.com/wp-content/uploads/rss/20260314.yml
+- https://free.datiya.com/uploads/20260314-clash.yaml
 ```
 - V2ray配置
 ```markdown
-https://free.datiya.com/uploads/20260310-v2ray.txt
+https://free.datiya.com/uploads/20260314-v2ray.txt
 ```
 
 ## 🔍 使用指南
