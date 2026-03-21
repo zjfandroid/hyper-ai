@@ -143,7 +143,7 @@ const Home = () => {
 
           <div className="d-flex flex-column gap-4 my-5 coverBg">
 
-            <TopVaults />
+            {/* <TopVaults /> */}
           
             <Busy spinning={reqStore.discoverRecommendBusy}>
               <div className='d-flex flex-column gap-3 gap-md-4 position-relative z-index-9'>

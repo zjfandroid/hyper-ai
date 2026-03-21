@@ -1,13 +1,11 @@
-import { useMemo } from 'react'
+import { useMemo, useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { Spin } from 'antd'
 
 import { formatNumber } from '@/utils'
 import { IOutlineArrowRight1, IOutlinePeople } from '@/components/icon'
 import LineCharts from '@/views/components/charts/LineChart'
-
-// Using the mock data directly as requested
-import vaultsData from '@/assets/mock/vaults.json'
 
 const VaultCard = ({ item }: { item: any }) => {
   const { t } = useTranslation()
@@ -116,9 +114,26 @@ const VaultCard = ({ item }: { item: any }) => {
 
 const TopVaults = () => {
   const { t } = useTranslation()
+  const [list, setList] = useState<any[]>([])
+  const [loading, setLoading] = useState(true)
 
-  // Take top 10 vaults for the grid
-  const list = vaultsData.slice(0, 10)
+  useEffect(() => {
+    const fetchVaults = async () => {
+      try {
+        const response = await fetch('http://54.179.252.180:8008/py/ait/leaderboard')
+        const data = await response.json()
+        if (data?.data?.data) {
+          setList(data.data.data)
+        }
+      } catch (error) {
+        console.error('Failed to fetch vaults data:', error)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchVaults()
+  }, [])
 
   return (
     <div className='d-flex flex-column gap-3 gap-md-4 position-relative z-index-9 mt-5'>
@@ -126,11 +141,13 @@ const TopVaults = () => {
         <h5 className="fw-bold">Top Vaults</h5>
         <Link to='/discover'><IOutlineArrowRight1 className='zoom-80' /></Link>
       </div>
-      <div className='d-flex flex-wrap mx-n1'>
-        {list.map((item, idx) => (
-          <VaultCard key={idx} item={item} />
-        ))}
-      </div>
+      <Spin spinning={loading}>
+        <div className='d-flex flex-wrap mx-n1'>
+          {list.map((item, idx) => (
+            <VaultCard key={idx} item={item} />
+          ))}
+        </div>
+      </Spin>
     </div>
   )
 }
