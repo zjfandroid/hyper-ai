@@ -1,25 +1,20 @@
-import { Button, Statistic, message, Popconfirm } from 'antd'
+import { message } from 'antd'
 import { useEffect } from 'react'
-import { Link, useLocation } from "react-router-dom"
-import CountUp from 'react-countup';
-import { useTranslation, withTranslation, Trans } from 'react-i18next'
+import { Link } from "react-router-dom"
+import { useTranslation, Trans } from 'react-i18next'
 import { isAddress } from 'viem'
 import { useNavigate } from 'react-router-dom';
 
 import SideButtonIcon from '@/components/Side/ButtonIcon'
-import { useHomeStore, useReqStore, useTrackingCreateStore, useCopyTradingStore, useDiscoverTradingStatisticsStore, useDiscoverStore, useAccountStore, useDiscoverRecommendStore, useTeamStore, useOwnTeamMembersStore } from '@/stores'
+import { useHomeStore, useReqStore, useTrackingCreateStore, useCopyTradingStore, useDiscoverTradingStatisticsStore, useDiscoverStore, useAccountStore, useDiscoverRecommendStore } from '@/stores'
 import { IOutlineArrowRight1, IOutlineMonitor, IOutlineChart2, IOutlineShare } from '@/components/icon'
 import { formatNumber } from '@/utils'
 import ModalCreateCopyTrading from '@/components/Modal/CreateCopyTrading'
-import InputSearch from '@/components/Input/Search'
 import PositionItemAddress from '@/components/PositionItem/Address'
 import Busy from '@/components/Busy'
 import ModalTradingStatistics from '@/components/Modal/TradingStatistics'
 import TrackingCreateTrack from '@/components/Modal/TrackingCreateTrack'
 
-import IMainDIcon1 from '@/assets/image/view/Home/main/d-icon-1.svg?react'
-import IMainDIcon2 from '@/assets/image/view/Home/main/d-icon-2.svg?react'
-import IMainDIcon3 from '@/assets/image/view/Home/main/d-icon-3.svg?react'
 
 import IBrainIcon1 from '@/assets/image/view/Home/brain/icon-1.svg?react'
 import IBrainIcon2 from '@/assets/image/view/Home/brain/icon-2.svg?react'
@@ -53,9 +48,9 @@ import IHFenbushi from '@/assets/image/view/Home/backed/fenbushi.png'
 
 import HomeParticlesJSON from './HomeParticlesJSON.json'
 
-import IMainCover from '@/assets/image/view/Home/main/cover.png'
+import TopVaults from './TopVaults'
+
 import PositionItemCommonPnl from '@/components/PositionItem/CommonPnl';
-import PositionItemPnl from '@/components/PositionItem/Pnl';
 
 import './style.scss'
 
@@ -147,23 +142,9 @@ const Home = () => {
         <div className="container-xl d-flex flex-column px-3 px-md-4 gap-4 gap-md-5 my-0 my-md-5 py-0">
 
           <div className="d-flex flex-column gap-4 my-5 coverBg">
-            {/* <div className='d-flex justify-content-center justify-content-md-start col-12 col-md-8 my-5 py-5'>
-              <div className='d-flex flex-column gap-1'>
-                <h2 className="d-flex flex-column text-center text-md-start">
-                  <span className='h3 fw-bold'>{t('home.mainTitle')}</span>
-                </h2>
-                <InputSearch
-                  className='col-12 col-md-8 position-relative z-index-9'
-                  value={discoverStore.searchAddressInput}
-                  placeholder={t('common.searchAddress')}
-                  onChange={(value) => discoverStore.searchAddressInput = value}
-                  onSearch={() => handleSearchByAddress()} />
-              </div>
-            </div> */}
 
-            {/* <div className="d-flex col-lg-6 gap-4 mt-5 position-relative z-index-9">
-              <Button href={homeStore.startUrl} target='_blank' type='primary' size='large' className='br-4 border-w-2 fw-500 col'>Start Strategy</Button>
-            </div> */}
+            <TopVaults />
+          
             <Busy spinning={reqStore.discoverRecommendBusy}>
               <div className='d-flex flex-column gap-3 gap-md-4 position-relative z-index-9'>
                 <div className='d-flex align-items-center justify-content-between'>

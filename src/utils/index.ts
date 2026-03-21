@@ -1,6 +1,11 @@
 import { base64url, base64, base58 } from '@scure/base';
 import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+import timezone from 'dayjs/plugin/timezone';
 import BN from 'bignumber.js'
+
+dayjs.extend(utc)
+dayjs.extend(timezone)
 
 /**
  * COPY Utils
