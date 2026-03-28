@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>融捷健康：靠桑拿房出口赚钱，九成收入来自海外</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f7f8fa;
+    color: #2c2c2c;
+    line-height: 1.8;
+    font-size: 16px;
+  }
+  .container {
+    max-width: 680px;
+    margin: 0 auto;
+    background: #fff;
+    padding-bottom: 40px;
+  }
+  .cover-img { width: 100%; display: block; }
+  .content { padding: 0 24px; }
+  h1 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #111;
+    line-height: 1.5;
+    margin: 28px 0 8px;
+  }
+  .subtitle {
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  h2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #3a1a00;
+    margin: 32px 0 14px;
+    padding-left: 12px;
+    border-left: 4px solid #d4601a;
+    line-height: 1.5;
+  }
+  p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 16px;
+    text-align: justify;
+    line-height: 1.9;
+  }
+  .highlight-box {
+    background: linear-gradient(135deg, #fff5ee 0%, #fff8f2 100%);
+    border: 1px solid #f0c090;
+    border-radius: 10px;
+    padding: 20px 22px;
+    margin: 20px 0;
+  }
+  .highlight-box p { margin: 0; font-size: 15px; color: #6a2800; line-height: 1.9; }
+  .data-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 20px 0;
+  }
+  .data-card {
+    flex: 1;
+    min-width: 120px;
+    background: #fff5ee;
+    border-radius: 10px;
+    padding: 14px 14px;
+    text-align: center;
+    border-top: 3px solid #d4601a;
+  }
+  .data-card .value {
+    font-size: 20px;
+    font-weight: 800;
+    color: #d4601a;
+    margin-bottom: 4px;
+  }
+  .data-card .label { font-size: 12px; color: #999; }
+  .product-row {
+    display: flex;
+    gap: 12px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+  }
+  .product-card {
+    flex: 1;
+    min-width: 140px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+  }
+  .product-card .icon { font-size: 32px; margin-bottom: 8px; }
+  .product-card .name { font-size: 14px; font-weight: 600; color: #333; margin-bottom: 4px; }
+  .product-card .desc { font-size: 12px; color: #888; line-height: 1.6; }
+  .product-card .margin {
+    display: inline-block;
+    margin-top: 8px;
+    background: #fff5ee;
+    color: #d4601a;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+  .quote-box {
+    background: #3a1a00;
+    color: #ffe8cc;
+    border-radius: 10px;
+    padding: 22px 24px;
+    margin: 24px 0;
+    font-size: 15px;
+    line-height: 2;
+    position: relative;
+  }
+  .quote-box::before {
+    content: "\201C";
+    font-size: 60px;
+    color: #d4601a;
+    position: absolute;
+    top: -8px;
+    left: 16px;
+    line-height: 1;
+    font-family: Georgia, serif;
+  }
+  .timeline {
+    margin: 20px 0;
+    padding: 0;
+    list-style: none;
+  }
+  .timeline li {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 18px;
+    align-items: flex-start;
+  }
+  .timeline .dot {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    flex-shrink: 0;
+    color: #fff;
+  }
+  .timeline .dot.orange { background: #d4601a; }
+  .timeline .dot.brown { background: #8b4513; }
+  .timeline .dot.red { background: #c0392b; }
+  .timeline .dot.green { background: #1aae6e; }
+  .timeline .text strong { display: block; font-size: 15px; color: #111; margin-bottom: 3px; }
+  .timeline .text span { font-size: 14px; color: #666; }
+  .risk-box {
+    background: #fff8f0;
+    border: 1px solid #f0c080;
+    border-left: 4px solid #e87c1a;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 16px 0;
+  }
+  .risk-box p { color: #7a4a10; margin: 0; font-size: 15px; }
+  .divider {
+    text-align: center;
+    color: #ddd;
+    margin: 28px 0;
+    font-size: 20px;
+    letter-spacing: 8px;
+  }
+  .map-box {
+    background: #f9f4ef;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+  }
+  .map-box h3 { font-size: 15px; color: #6a2800; margin-bottom: 14px; font-weight: 700; }
+  .map-row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+  .map-bar-bg { flex: 1; height: 10px; background: #edd; border-radius: 5px; overflow: hidden; }
+  .map-bar { height: 100%; border-radius: 5px; background: #d4601a; }
+  .map-label { width: 90px; font-size: 13px; color: #555; text-align: right; }
+  .map-pct { width: 50px; font-size: 13px; color: #d4601a; font-weight: 700; }
+  .ending-box {
+    background: linear-gradient(135deg, #3a1a00 0%, #6a3010 100%);
+    color: #ffe8cc;
+    border-radius: 12px;
+    padding: 24px;
+    margin: 28px 0;
+    text-align: center;
+  }
+  .ending-box p { color: #f0c090; font-size: 15px; margin-bottom: 8px; text-align: center; }
+  .ending-box .big-word { font-size: 20px; font-weight: 700; color: #fff; margin: 10px 0; }
+  .tag {
+    display: inline-block;
+    background: #fff5ee;
+    color: #d4601a;
+    font-size: 13px;
+    padding: 3px 10px;
+    border-radius: 4px;
+    margin-right: 6px;
+  }
+  .disclaimer {
+    font-size: 13px;
+    color: #bbb;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 16px;
+    margin-top: 32px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <img class="cover-img" src="rjjk_cover.jpg" alt="融捷健康：靠桑拿房出口征服全球">
+
+  <div class="content">
+    <h1>融捷健康：靠桑拿房出口赚钱，九成收入来自海外</h1>
+    <div class="subtitle">发布于 2026年3月24日 &nbsp;|&nbsp; 融捷健康（300247）&nbsp;|&nbsp; 大健康 &amp; 出口制造</div>
+
+    <p>如果你问一个普通消费者"桑拿房"是什么，他大概会告诉你：那是高档健身房或酒店里才有的东西。</p>
+    <p>但如果你问融捷健康，他们会告诉你：<strong>桑拿房是可以卖给全球家庭的消费品</strong>，而且九成以上的钱是从海外挣来的。</p>
+    <p>这家低调的合肥公司，1995年创立，2011年上市，主角产品是你可能从未在国内见过的"远红外家用桑拿房"，却在欧美和日韩的中产家庭市场悄悄做到了行业前列。</p>
+
+    <div class="divider">· · ·</div>
+
+    <h2>🌡️ 先说这个产品是什么</h2>
+    <p>远红外桑拿房，不是传统蒸汽桑拿的缩小版。</p>
+    <p>它的核心逻辑是：<strong>用远红外辐射加热人体，而非加热空气</strong>。温度更低（40-60°C vs 传统90°C），时间更短（20-30分钟即可），但深层加热效果更显著。</p>
+    <p>对欧美中产而言，它是家用"健康消费品"的一类——放在地下室或浴室，每天早晨用20分钟，比健身房会员卡便宜，比按摩椅有科技感，比跑步机更容易坚上瘾。</p>
+    <p>近年更延伸出了<strong>远红外理疗桶</strong>——一个人可以坐进去泡的木桶形态，老年人用户尤为喜欢，在欧洲和北美市场增速极快。</p>
+
+    <div class="highlight-box">
+      <p>💡 远红外产品的核心卖点：深层加热、低温舒适、助眠排毒、适合长期家用</p>
+      <p style="margin-top:8px;">🏠 消费场景：欧美家庭地下室、健身房私人角落、日韩公寓浴室空间</p>
+      <p style="margin-top:8px;">👴 新兴用户：老年健康管理需求，理疗桶品类在全球老龄化市场加速渗透</p>
+    </div>
+
+    <div class="divider">· · ·</div>
+
+    <h2>📦 融捷健康做了什么</h2>
+    <p>融捷健康的前身叫"安徽桑乐金"，是国内最早一批进入远红外桑拿房赛道的公司之一，30年专注这一细分领域。</p>
+    <p>它不追热点，不跟风元宇宙，也不碰AI概念。就做一件事：</p>
+    <p><strong>把中国制造的远红外健康产品卖给全世界。</strong></p>
+
+    <div class="product-row">
+      <div class="product-card">
+        <div class="icon">🏠</div>
+        <div class="name">远红外桑拿房</div>
+        <div class="desc">家用木质结构，全系列尺寸，适配欧美日韩家庭</div>
+        <div class="margin">毛利率46.80%</div>
+      </div>
+      <div class="product-card">
+        <div class="icon">🛁</div>
+        <div class="name">远红外理疗桶</div>
+        <div class="desc">坐浴式理疗，老年人友好，欧美新兴爆款品类</div>
+        <div class="margin">高增速品类</div>
+      </div>
+      <div class="product-card">
+        <div class="icon">💨</div>
+        <div class="name">空气净化器</div>
+        <div class="desc">健康产品矩阵补充，拓展健康家居场景</div>
+        <div class="margin">辅助品类</div>
+      </div>
+      <div class="product-card">
+        <div class="icon">🏋️</div>
+        <div class="name">健身器材</div>
+        <div class="desc">一体化家庭健康方案的配套延伸</div>
+        <div class="margin">辅助品类</div>
+      </div>
+    </div>
+
+    <div class="divider">· · ·</div>
+
+    <h2>🌍 九成收入来自海外，这是什么概念？</h2>
+    <p>2025年半年报数据：融捷健康境外收入占比高达 <strong>92.82%</strong>。</p>
+    <p>这意味着什么？</p>
+    <p>每卖出100块钱的产品，约93块是卖给海外客户的。</p>
+    <p>这在A股上市公司里不算常见——大多数"出口导向"企业，海外占比在50%-70%就已经算高的了。超过90%，说明这家公司的核心市场根本不在国内。</p>
+
+    <div class="map-box">
+      <h3>📊 收入结构（2025年半年报）</h3>
+      <div class="map-row">
+        <div class="map-label">境外市场</div>
+        <div class="map-bar-bg"><div class="map-bar" style="width:92.82%"></div></div>
+        <div class="map-pct">92.82%</div>
+      </div>
+      <div class="map-row">
+        <div class="map-label">境内市场</div>
+        <div class="map-bar-bg"><div class="map-bar" style="width:7.18%; background:#ccc;"></div></div>
+        <div class="map-pct" style="color:#999">7.18%</div>
+      </div>
+      <div class="map-row">
+        <div class="map-label">桑拿房占比</div>
+        <div class="map-bar-bg"><div class="map-bar" style="width:77.3%"></div></div>
+        <div class="map-pct">77.30%</div>
+      </div>
+    </div>
+
+    <p>背后的逻辑其实很清晰：</p>
+    <p>欧美消费者有<strong>家用健康设备的消费习惯</strong>，愿意为桑拿房花几千美元。中国消费者目前还没有普遍形成这个习惯——桑拿更多与公共澡堂、洗浴中心绑定。</p>
+    <p>所以融捷健康选择了"把中国制造的成本优势，与欧美消费者的健康消费意愿结合"，走的是典型的出口制造逻辑。</p>
+
+    <div class="divider">· · ·</div>
+
+    <h2>📈 2025年，业绩为什么预增60%以上？</h2>
+    <p>这是近期最值得关注的信号。</p>
+    <p>融捷健康在2026年1月发布公告：<strong>2025年净利润同比预增60.07%至80%以上</strong>。</p>
+    <p>驱动因素可以拆成三层：</p>
+
+    <div class="timeline">
+      <li>
+        <div class="dot orange">①</div>
+        <div class="text">
+          <strong>海外需求回暖 + 新品类拉动</strong>
+          <span>远红外理疗桶作为新兴品类在欧美快速渗透，叠加老龄化消费升级，带动整体营收增量</span>
+        </div>
+      </li>
+      <li>
+        <div class="dot brown">②</div>
+        <div class="text">
+          <strong>内部整改完成，治理成本降低</strong>
+          <span>公司通过安徽证监局整改，调整组织架构，设立管理本部+运营总部+制造中心，精简运营、降本增效</span>
+        </div>
+      </li>
+      <li>
+        <div class="dot green">③</div>
+        <div class="text">
+          <strong>高毛利产品结构优化</strong>
+          <span>桑拿房毛利率46.80%，远高于公司整体，产品结构向高毛利方向倾斜，利润弹性放大</span>
+        </div>
+      </li>
+    </div>
+
+    <div class="data-row">
+      <div class="data-card">
+        <div class="value">6.52亿</div>
+        <div class="label">2025三季度营收</div>
+      </div>
+      <div class="data-card">
+        <div class="value">9149万</div>
+        <div class="label">2025三季度净利润</div>
+      </div>
+      <div class="data-card">
+        <div class="value">36.76%</div>
+        <div class="label">毛利率（高于行业均值）</div>
+      </div>
+      <div class="data-card">
+        <div class="value">17.13%</div>
+        <div class="label">资产负债率（健康）</div>
+      </div>
+    </div>
+
+    <p>还有一个数字值得单独提：<strong>资产负债率仅17.13%</strong>，远低于行业平均的25.55%。</p>
+    <p>这是一家<strong>不依赖杠杆的轻资产公司</strong>——在当前市场环境下，这份稳健本身就是竞争力。</p>
+
+    <div class="divider">· · ·</div>
+
+    <h2>🏗️ 下一步往哪走？</h2>
+    <p>融捷健康的战略方向，用一句话概括：</p>
+    <p><strong>从"卖产品"走向"提供家庭健康系统解决方案"。</strong></p>
+    <p>具体来说，有几个方向在同步推进：</p>
+
+    <div class="highlight-box">
+      <p>🔬 <strong>技术深化：</strong>围绕远红外核心技术，持续迭代产品，提升理疗效果与智能化程度</p>
+      <p style="margin-top:10px;">🌏 <strong>市场拓展：</strong>在北美、欧洲等成熟市场深耕的同时，评估日韩、东南亚等新兴市场机会</p>
+      <p style="margin-top:10px;">👴 <strong>老龄化红利：</strong>理疗桶等老年友好型产品，是未来全球老龄化市场的重要切入口</p>
+      <p style="margin-top:10px;">🏠 <strong>国内破局：</strong>建立"乐金健康"连锁体验门店，在国内培育健康消费习惯，打开第二战场</p>
+    </div>
+
+    <div class="divider">· · ·</div>
+
+    <h2>⚠️ 需要关注的风险</h2>
+    <div class="risk-box">
+      <p>🔸 <strong>高度依赖境外市场（92.82%）</strong>：汇率波动、贸易摩擦、目标国政策变化，都可能直接影响营收。公司已明确"通过金融工具加强外汇管理"，但风险仍在。</p>
+    </div>
+    <div class="risk-box">
+      <p>🔸 <strong>品类集中度高：</strong>远红外桑拿房占主营收入77.30%，单品类依赖显著。若市场趋势变化，产品多元化仍需加速。</p>
+    </div>
+    <div class="risk-box">
+      <p>🔸 <strong>国内市场尚未打开：</strong>国内收入不足8%，本土化消费培育难度大、周期长，短期内难以构成显著支撑。</p>
+    </div>
+
+    <div class="divider">· · ·</div>
+
+    <h2>📅 融捷健康成长时间线</h2>
+    <div class="timeline">
+      <li>
+        <div class="dot brown">95</div>
+        <div class="text">
+          <strong>1995年 创立</strong>
+          <span>安徽合肥，早期以远红外桑拿设备为主业起步</span>
+        </div>
+      </li>
+      <li>
+        <div class="dot orange">11</div>
+        <div class="text">
+          <strong>2011年 深交所上市</strong>
+          <span>股票代码300247，成为国内较早上市的桑拿房专业企业</span>
+        </div>
+      </li>
+      <li>
+        <div class="dot orange">15</div>
+        <div class="text">
+          <strong>2015年 确立大健康战略</strong>
+          <span>更名融捷健康，从单一产品向大健康生态延伸</span>
+        </div>
+      </li>
+      <li>
+        <div class="dot orange">24</div>
+        <div class="text">
+          <strong>2024年 整改调整</strong>
+          <span>通过安徽证监局整改，重组三大业务板块，优化运营架构</span>
+        </div>
+      </li>
+      <li>
+        <div class="dot green">25</div>
+        <div class="text">
+          <strong>2025年 业绩爆发</strong>
+          <span>净利润预增60%-80%以上，三季度净利润行业排名第二</span>
+        </div>
+      </li>
+    </div>
+
+    <div class="divider">· · ·</div>
+
+    <div class="quote-box">
+      很少有人想到，一家合肥的制造业公司，<br>
+      靠着一间放在欧美家庭地下室的木头小屋，<br>
+      做到了九成以上的钱从海外来。<br><br>
+      不是风口，不是概念，就是一件事坚持做30年。
+    </div>
+
+    <div class="ending-box">
+      <p>把中国制造的成本优势</p>
+      <div class="big-word">嵌入全球家庭的健康场景</div>
+      <p>这就是融捷健康30年的底层逻辑</p>
+      <p style="margin-top:14px; font-size:13px; color:#c09060;">🌡️ 一间桑拿房，一个全球化的健康生意</p>
+    </div>
+
+    <p><span class="tag">大健康</span><span class="tag">远红外</span><span class="tag">出口制造</span><span class="tag">桑拿房</span><span class="tag">创业板</span></p>
+
+    <p class="disclaimer">本文仅作信息记录与行业观察，不构成任何投资建议。市场有风险，决策需谨慎。</p>
+  </div>
+</div>
+</body>
+</html>

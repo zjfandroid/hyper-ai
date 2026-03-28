@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>紫金矿业：当"黄金帝国"遇上超级周期</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: #f5f5f0;
+  color: #2c2c2c;
+  line-height: 1.8;
+}
+.wrap { max-width: 680px; margin: 0 auto; background: #fff; padding-bottom: 40px; }
+
+/* 封面 */
+.hero {
+  background: linear-gradient(160deg, #1a0a00 0%, #5a2d00 45%, #8b4513 100%);
+  padding: 56px 30px 48px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  top: -80px; right: -60px;
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(255,200,60,0.18) 0%, transparent 65%);
+  border-radius: 50%;
+}
+.hero-badge {
+  display: inline-block;
+  padding: 3px 14px;
+  border: 1px solid rgba(255,180,40,0.6);
+  color: #ffd060;
+  font-size: 11px;
+  letter-spacing: 3px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+}
+.hero h1 {
+  font-size: 25px; font-weight: 800;
+  color: #fff; line-height: 1.45;
+  margin-bottom: 12px;
+  position: relative; z-index: 1;
+}
+.hero-sub { font-size: 13px; color: rgba(255,255,255,0.6); position: relative; z-index: 1; }
+
+/* 引言 */
+.lead { margin: 30px 26px 0; padding: 18px 20px; background: #fdf6ec; border-left: 4px solid #c8860a; border-radius: 0 8px 8px 0; font-size: 15px; color: #444; line-height: 1.9; }
+
+/* 正文 */
+.body { padding: 0 26px; }
+.sec { margin-top: 34px; }
+.sec-title {
+  font-size: 18px; font-weight: 700; color: #1a0a00;
+  padding-bottom: 10px; margin-bottom: 14px;
+  border-bottom: 2px solid #f5e6d0;
+  display: flex; align-items: center; gap: 8px;
+}
+.dot { width: 10px; height: 10px; border-radius: 50%; background: #c8860a; flex-shrink: 0; }
+p { font-size: 15px; color: #444; line-height: 1.9; margin-bottom: 14px; }
+
+/* 数据格 */
+.stat-row { display: flex; gap: 10px; margin: 20px 0; flex-wrap: wrap; }
+.stat { flex: 1; min-width: 120px; background: linear-gradient(135deg, #fdf6ec, #faecd4); border: 1px solid #e8c88a; border-radius: 10px; padding: 14px 12px; text-align: center; }
+.stat .v { font-size: 20px; font-weight: 700; color: #c8860a; display: block; }
+.stat .l { font-size: 11px; color: #888; margin-top: 4px; }
+
+/* 资源表 */
+.res-table { margin: 20px 0; }
+.res-item { display: flex; align-items: center; padding: 12px 16px; border-radius: 8px; margin-bottom: 8px; background: #fdf8f2; border: 1px solid #f0e0c0; }
+.res-icon { font-size: 20px; margin-right: 12px; }
+.res-name { font-size: 14px; font-weight: 600; color: #333; }
+.res-detail { font-size: 12px; color: #888; margin-top: 2px; }
+.res-bar { margin-left: auto; }
+.res-bar span { display: inline-block; background: #c8860a; border-radius: 4px; height: 8px; }
+
+/* 地图标 */
+.globe-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 20px 0; }
+.globe-item { background: #fdf8f2; border: 1px solid #e8c88a; border-radius: 8px; padding: 12px 14px; }
+.globe-item .region { font-size: 12px; color: #c8860a; font-weight: 600; margin-bottom: 4px; }
+.globe-item .mines { font-size: 13px; color: #444; line-height: 1.6; }
+
+/* 高亮框 */
+.box { margin: 20px 0; padding: 16px 18px; background: linear-gradient(135deg, #fff8e6, #fffaee); border: 1px solid #ffd060; border-radius: 10px; }
+.box-title { font-size: 13px; font-weight: 700; color: #b36a00; margin-bottom: 8px; }
+.box p { font-size: 14px; color: #555; margin: 0; }
+
+/* 图片 */
+.imgwrap { margin: 24px 0; }
+.imgwrap img { width: 100%; border-radius: 10px; display: block; }
+.imgcap { font-size: 12px; color: #aaa; text-align: center; margin-top: 8px; }
+
+/* 分割 */
+.hr { height: 1px; background: linear-gradient(to right, transparent, #ddd, transparent); margin: 26px 0; }
+
+/* 结语 */
+.end { margin: 32px 26px 0; padding: 22px 20px; background: linear-gradient(135deg, #1a0a00, #5a2d00); border-radius: 12px; }
+.end h3 { font-size: 16px; font-weight: 700; color: #ffd060; margin-bottom: 10px; }
+.end p { color: rgba(255,255,255,0.82); font-size: 14px; margin: 0; line-height: 1.9; }
+
+.footer { margin-top: 28px; text-align: center; font-size: 12px; color: #ccc; padding: 0 26px; line-height: 1.8; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="hero">
+  <div class="hero-badge">资源龙头</div>
+  <h1>紫金矿业：当"黄金帝国"<br>遇上超级资源周期</h1>
+  <div class="hero-sub">🏔️ 金 · 铜 · 锂，三矿并进的全球化征途</div>
+</div>
+
+<div class="lead">
+  全球黄金价格屡创历史新高，铜需求因能源转型持续升温。就在这个资源超级周期里，
+  有一家从福建山沟里走出来的矿企，用40年时间织就了横跨20多个国家的资源版图。
+  这就是紫金矿业。
+</div>
+
+<div class="body">
+
+  <div class="sec">
+    <div class="sec-title"><span class="dot"></span>从福建山沟到全球矿业巨头</div>
+    <p>
+      1984年，福建上杭县紫金山脚下，一家小矿山悄然起步。
+      没有人想到，几十年后，它会成为全球前五大黄金生产商之一，
+      铜资源储量跻身全球前三，市值超过4000亿元人民币。
+    </p>
+    <p>
+      2025年，紫金矿业交出了一份令人侧目的成绩单：营业总收入3490.79亿元，
+      同比增长14.96%；净利润517.77亿元，同比<strong>大增61.55%</strong>。
+      这背后，是矿产品量价齐升的双重驱动。
+    </p>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat"><span class="v">3491亿</span><div class="l">2025年营收</div></div>
+    <div class="stat"><span class="v">518亿</span><div class="l">2025年净利润</div></div>
+    <div class="stat"><span class="v">+61.6%</span><div class="l">净利同比增速</div></div>
+  </div>
+
+  <div class="imgwrap">
+    <img src="https://images.unsplash.com/photo-1610375461246-83df859d849d?w=800&q=80&auto=format&fit=crop" alt="金矿开采" />
+    <div class="imgcap">矿产资源的价值，藏在地球最深处 ⛏️</div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title"><span class="dot"></span>黄金+铜，两大主引擎全速运转</div>
+    <p>
+      驱动紫金矿业持续增长的，是两大核心金属：黄金和铜。
+    </p>
+    <p>
+      2025年，公司矿产金产量约<strong>90吨</strong>，较2024年的73吨增长23%；
+      矿产铜（含权益）约<strong>109万吨</strong>，稳居全球前列。
+      与此同时，受益于全球避险需求上升和能源转型加速，金、铜价格均保持强势。
+    </p>
+
+    <div class="res-table">
+      <div class="res-item">
+        <div class="res-icon">🥇</div>
+        <div>
+          <div class="res-name">矿产黄金</div>
+          <div class="res-detail">2025年产量约90吨，同比+23%</div>
+        </div>
+      </div>
+      <div class="res-item">
+        <div class="res-icon">🔶</div>
+        <div>
+          <div class="res-name">矿产铜</div>
+          <div class="res-detail">2025年产量约109万吨（含权益），全球前列</div>
+        </div>
+      </div>
+      <div class="res-item">
+        <div class="res-icon">🔋</div>
+        <div>
+          <div class="res-name">当量碳酸锂</div>
+          <div class="res-detail">约2.5万吨（含收购藏格矿业并表），新增长极</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hr"></div>
+
+  <div class="sec">
+    <div class="sec-title"><span class="dot"></span>全球布局，20+国家资源版图</div>
+    <p>
+      紫金矿业的核心壁垒，在于其无可复制的全球资源版图。
+      在国内，福建、西藏、新疆、黑龙江均有重大项目；
+      在海外，非洲、欧洲、中亚、南美四大板块全面布局。
+    </p>
+
+    <div class="globe-grid">
+      <div class="globe-item">
+        <div class="region">🌍 非洲·刚果（金）</div>
+        <div class="mines">卡莫阿-卡库拉铜矿<br>全球品位最高铜矿之一</div>
+      </div>
+      <div class="globe-item">
+        <div class="region">🌍 欧洲·塞尔维亚</div>
+        <div class="mines">丘卡鲁-佩吉铜金矿<br>欧洲最大铜矿</div>
+      </div>
+      <div class="globe-item">
+        <div class="region">🌏 中亚·塔吉克斯坦</div>
+        <div class="mines">泽拉夫尚金矿<br>"一带一路"重要资源节点</div>
+      </div>
+      <div class="globe-item">
+        <div class="region">🌎 南美·哥伦比亚</div>
+        <div class="mines">武里蒂卡金矿<br>哥伦比亚最大在产金矿</div>
+      </div>
+    </div>
+
+    <p>
+      2026年3月，紫金矿业又出手了。公司宣布拟收购<strong>赤峰吉隆黄金矿业</strong>，
+      交易对价约182.58亿元，进一步夯实黄金板块。
+      与此同时，公司首次启动A股回购计划，彰显管理层对长期价值的信心。
+    </p>
+  </div>
+
+  <div class="box">
+    <div class="box-title">💡 为什么"资源超级周期"正在到来？</div>
+    <p>
+      能源转型离不开铜（电缆、电池）；地缘动荡抬升黄金避险需求；
+      新能源汽车普及推动锂需求激增。
+      这三条逻辑，紫金矿业同时踩中，恰好处于时代交汇点。
+    </p>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title"><span class="dot"></span>写在最后</div>
+    <p>
+      紫金矿业的故事，不是一家矿企的单纯成功，而是一个国家抢占全球资源话语权的缩影。
+      在能源转型和地缘博弈双重叙事之下，掌握稀缺资源的公司，
+      将始终站在价值分配的上游。
+    </p>
+    <p>
+      从紫金山到刚果河，从塔吉克到哥伦比亚——这条路，还远未走完。
+    </p>
+  </div>
+
+</div>
+
+<div class="end">
+  <h3>✨ 一句话总结</h3>
+  <p>紫金矿业是一家用矿产资源讲述中国全球化故事的企业——金、铜、锂三箭齐发，
+  在超级资源周期中持续兑现成长价值。</p>
+</div>
+
+<div class="footer">
+  <p>本文内容基于公开资料整理，不构成任何投资建议。</p>
+  <p>数据来源：紫金矿业公告、同花顺F10、索比等。</p>
+</div>
+
+</div>
+</body>
+</html>

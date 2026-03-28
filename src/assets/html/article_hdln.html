@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>华电辽能：算电协同的那把火，为什么烧了7连板？</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: #f5f5f5; color: #333; font-size: 15px; line-height: 1.8; }
+  .container { max-width: 680px; margin: 0 auto; background: #fff; }
+
+  /* 封面 */
+  .hero { position: relative; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #0f3460 70%, #e94560 100%); padding: 60px 30px 50px; text-align: center; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(ellipse, rgba(233,69,96,0.15) 0%, transparent 60%); }
+  .hero-badge { display: inline-block; background: rgba(233,69,96,0.3); border: 1px solid rgba(233,69,96,0.6); color: #ff7096; font-size: 12px; padding: 4px 14px; border-radius: 20px; margin-bottom: 18px; letter-spacing: 2px; }
+  .hero h1 { font-size: 26px; font-weight: 800; color: #fff; line-height: 1.4; position: relative; z-index: 1; }
+  .hero h1 em { font-style: normal; color: #ff7096; }
+  .hero-sub { margin-top: 14px; color: rgba(255,255,255,0.7); font-size: 13px; position: relative; z-index: 1; }
+  .hero-img { width: 100%; max-height: 280px; object-fit: cover; display: block; }
+
+  /* 正文区 */
+  .content { padding: 30px 24px; }
+  .lead { font-size: 16px; color: #555; line-height: 1.9; border-left: 4px solid #e94560; padding-left: 16px; background: #fff5f7; padding: 16px 16px 16px 20px; border-radius: 0 8px 8px 0; margin-bottom: 28px; }
+
+  /* 章节标题 */
+  .section-title { display: flex; align-items: center; gap: 10px; margin: 32px 0 16px; }
+  .section-title .num { background: linear-gradient(135deg, #e94560, #c0392b); color: #fff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex-shrink: 0; }
+  .section-title h2 { font-size: 18px; font-weight: 700; color: #1a1a2e; }
+
+  p { margin-bottom: 16px; color: #444; line-height: 1.9; }
+
+  /* 数据卡片 */
+  .data-row { display: flex; gap: 12px; margin: 20px 0; flex-wrap: wrap; }
+  .data-card { flex: 1; min-width: 140px; background: linear-gradient(135deg, #1a1a2e, #0f3460); color: #fff; border-radius: 12px; padding: 18px 14px; text-align: center; }
+  .data-card .val { font-size: 26px; font-weight: 800; color: #ff7096; display: block; }
+  .data-card .lab { font-size: 12px; color: rgba(255,255,255,0.7); margin-top: 4px; }
+
+  /* 关键词标签 */
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
+  .tag { background: #fff0f3; border: 1px solid #ffc2cc; color: #e94560; font-size: 12px; padding: 4px 12px; border-radius: 20px; }
+
+  /* 高亮框 */
+  .highlight { background: linear-gradient(135deg, #fff5f7, #ffe8ec); border-radius: 12px; padding: 20px; margin: 20px 0; border-left: 4px solid #e94560; }
+  .highlight .hl-title { font-weight: 700; color: #c0392b; margin-bottom: 8px; font-size: 15px; }
+
+  /* 时间线 */
+  .timeline { margin: 20px 0; }
+  .tl-item { display: flex; gap: 14px; margin-bottom: 14px; }
+  .tl-dot { width: 12px; height: 12px; border-radius: 50%; background: #e94560; flex-shrink: 0; margin-top: 6px; position: relative; }
+  .tl-dot::after { content: ''; position: absolute; left: 50%; top: 12px; width: 2px; height: calc(100% + 14px); background: #ffd0d8; transform: translateX(-50%); }
+  .tl-item:last-child .tl-dot::after { display: none; }
+  .tl-content { flex: 1; }
+  .tl-date { font-size: 12px; color: #e94560; font-weight: 600; }
+  .tl-text { font-size: 14px; color: #555; margin-top: 2px; }
+
+  /* 图片容器 */
+  .img-wrap { border-radius: 12px; overflow: hidden; margin: 20px 0; }
+  .img-wrap img { width: 100%; display: block; }
+  .img-cap { text-align: center; font-size: 12px; color: #999; margin-top: 6px; }
+
+  /* 结语 */
+  .ending { background: linear-gradient(135deg, #1a1a2e, #0f3460); color: #fff; border-radius: 16px; padding: 28px 24px; margin: 32px 0 20px; text-align: center; }
+  .ending h3 { font-size: 18px; font-weight: 700; color: #ff7096; margin-bottom: 12px; }
+  .ending p { color: rgba(255,255,255,0.85); font-size: 14px; }
+  .disclaimer { font-size: 11px; color: #bbb; text-align: center; padding: 16px 24px; border-top: 1px solid #f0f0f0; line-height: 1.7; }
+</style>
+</head>
+<body>
+<div class="container">
+  <!-- 封面区 -->
+  <div class="hero">
+    <div class="hero-badge">⚡ 算电协同主线</div>
+    <h1>华电辽能：<em>算电协同</em>的那把火<br>为什么烧出7连板？</h1>
+    <p class="hero-sub">💡 电力遇上AI，这次不一样 | 2026年3月</p>
+  </div>
+  <img class="hero-img" src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&q=80&auto=format&fit=crop" alt="电力科技">
+
+  <div class="content">
+    <div class="lead">
+      2026年3月，A股出现了一个令人瞩目的现象——一家以火电为主的辽宁电力公司，因为两个字被点燃：<strong>算电</strong>。华电辽能7连板，成为"算电协同"概念的市场总龙头。
+    </div>
+
+    <!-- 章节1 -->
+    <div class="section-title">
+      <div class="num">1</div>
+      <h2>🏭 华电辽能是谁？</h2>
+    </div>
+    <p>提到华电辽能（600396），很多人第一反应是"低调的东北老电厂"。确实如此——这家公司是集发电、供热、供汽为一体的区域基础能源公司，实际控制人为中央企业中国华电集团。</p>
+    <p>截至2025年中报，公司控股装机容量达到<strong>273.75万千瓦</strong>，其中火电226万千瓦，是辽宁重要的电力保供基础。此外，公司承担着<strong>4430万平方米</strong>的区域供热任务，让东北数百万居民在冬天拥有温暖。</p>
+
+    <div class="data-row">
+      <div class="data-card"><span class="val">273万</span><span class="lab">控股装机容量（千瓦）</span></div>
+      <div class="data-card"><span class="val">4430万</span><span class="lab">供热面积（平方米）</span></div>
+      <div class="data-card"><span class="val">47.75万</span><span class="lab">新能源装机（千瓦）</span></div>
+    </div>
+
+    <!-- 章节2 -->
+    <div class="section-title">
+      <div class="num">2</div>
+      <h2>🔥 政策点燃"算电协同"</h2>
+    </div>
+    <p>2026年3月5日，一个词第一次出现在《政府工作报告》中，震动了资本市场——<strong>算电协同</strong>。</p>
+    <p>报告明确提出：<em>"实施超大规模智算集群、算电协同等新基建工程"</em>。这意味着，电力基础设施与AI算力建设，被国家层面提升到同等战略高度。</p>
+    <div class="highlight">
+      <div class="hl-title">💡 为什么"算电协同"如此重要？</div>
+      <p style="margin:0;color:#444;">电力成本占数据中心运营成本的<strong>56.7%</strong>。一家大型AI算力中心，年用电量可高达数十亿度。谁能稳定供应廉价绿电，谁就掌握了AI时代的能源命脉。电力企业，从"基础设施提供者"悄悄变成了"AI算力的底层支撑"。</p>
+    </div>
+
+    <!-- 章节3 -->
+    <div class="section-title">
+      <div class="num">3</div>
+      <h2>⚡ 7连板背后：情绪与逻辑共振</h2>
+    </div>
+    <p>从政策落地到市场共鸣，华电辽能走出了一波令人印象深刻的行情。2026年以来，公司股价从2.85元一路攀升，区间涨幅超过81%。</p>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-date">2026年3月5日</div>
+          <div class="tl-text">《政府工作报告》首提"算电协同"，电力板块集体爆发</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-date">3月16-20日</div>
+          <div class="tl-text">华电辽能连续5个交易日涨停，封单超43万手</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-date">3月24日</div>
+          <div class="tl-text">7连板确认，成为算电协同主题的市场龙头标的</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="img-wrap">
+      <img src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&q=80&auto=format&fit=crop" alt="数据中心算力">
+      <p class="img-cap">▲ AI算力基础设施，正在成为最耗电的新基建</p>
+    </div>
+
+    <!-- 章节4 -->
+    <div class="section-title">
+      <div class="num">4</div>
+      <h2>🌏 电力板块为何成为AI时代焦点？</h2>
+    </div>
+    <p>电力，从来不是科技板块的主角。然而2026年的A股，电力板块（指数881145）累计涨幅已超26%，跑赢绝大多数行业。</p>
+    <p>背后的逻辑清晰而有力：<strong>AI的本质是算力，算力的本质是电力。</strong>GPT类大模型训练一次消耗的电量，相当于一个普通家庭几十年的用电量。智算中心、数据中心建设大潮中，每新增1个ExaFLOPS的算力，背后就需要数百兆瓦的电力保障。</p>
+    <p>绿电叠加算力需求，让电力企业的底层资产价值重估故事，有了真实的产业逻辑支撑。</p>
+
+    <div class="tags">
+      <span class="tag">⚡ 电力保供</span>
+      <span class="tag">🤖 AI算力</span>
+      <span class="tag">🌱 绿电转型</span>
+      <span class="tag">🏛️ 央企背景</span>
+      <span class="tag">🏭 热电联产</span>
+      <span class="tag">📡 新基建</span>
+    </div>
+
+    <!-- 章节5 -->
+    <div class="section-title">
+      <div class="num">5</div>
+      <h2>🔮 电力基础设施，再次站上时代风口</h2>
+    </div>
+    <p>华电辽能7连板，是一个行业重估的缩影。在"东数西算"、"算电协同"的政策框架下，稳定可靠的电力基础设施，正在被资本重新定价。</p>
+    <p>对于中国电力行业来说，这是一个历史性的转型机遇：从单纯的"能源供给者"，向"算力基础设施支撑者"跨越。每一条输电线路，每一台发电机组，都可能连接着一个AI数据中心，支撑着一场场改变世界的智能革命。</p>
+    <p>能源，在AI时代，正在重获新生。⚡🌏</p>
+
+    <!-- 结语 -->
+    <div class="ending">
+      <h3>写在最后 ✨</h3>
+      <p>算电协同，不只是一个概念，更是一场能源与智能文明的深度融合。华电辽能的7连板，或许只是这场变革的第一章——真正的故事，才刚刚开始。</p>
+    </div>
+  </div>
+
+  <div class="disclaimer">⚠️ 本文内容仅供行业信息分享，不构成任何投资建议。市场有风险，投资需谨慎。文中数据来源于公开资料，如有偏差以公司官方公告为准。</div>
+</div>
+</body>
+</html>

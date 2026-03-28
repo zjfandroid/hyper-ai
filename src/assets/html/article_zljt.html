@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>中利集团：从债务泥潭到双主业爆发，这匹光伏黑马正在蜕变</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: #f5f5f5; color: #333; font-size: 15px; line-height: 1.8; }
+  .container { max-width: 680px; margin: 0 auto; background: #fff; }
+
+  .hero { position: relative; background: linear-gradient(135deg, #0a2e0a 0%, #1a5c1a 50%, #2ecc71 100%); padding: 60px 30px 50px; text-align: center; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+  .hero-badge { display: inline-block; background: rgba(46,204,113,0.25); border: 1px solid rgba(46,204,113,0.6); color: #7effc0; font-size: 12px; padding: 4px 14px; border-radius: 20px; margin-bottom: 18px; letter-spacing: 2px; }
+  .hero h1 { font-size: 26px; font-weight: 800; color: #fff; line-height: 1.4; position: relative; z-index: 1; }
+  .hero h1 em { font-style: normal; color: #7effc0; }
+  .hero-sub { margin-top: 14px; color: rgba(255,255,255,0.7); font-size: 13px; position: relative; z-index: 1; }
+  .hero-img { width: 100%; max-height: 280px; object-fit: cover; display: block; }
+
+  .content { padding: 30px 24px; }
+  .lead { font-size: 16px; color: #555; line-height: 1.9; border-left: 4px solid #2ecc71; background: #f0fff4; padding: 16px 16px 16px 20px; border-radius: 0 8px 8px 0; margin-bottom: 28px; }
+
+  .section-title { display: flex; align-items: center; gap: 10px; margin: 32px 0 16px; }
+  .section-title .num { background: linear-gradient(135deg, #2ecc71, #27ae60); color: #fff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex-shrink: 0; }
+  .section-title h2 { font-size: 18px; font-weight: 700; color: #0a2e0a; }
+
+  p { margin-bottom: 16px; color: #444; line-height: 1.9; }
+
+  .data-row { display: flex; gap: 12px; margin: 20px 0; flex-wrap: wrap; }
+  .data-card { flex: 1; min-width: 130px; background: linear-gradient(135deg, #0a2e0a, #1a5c1a); color: #fff; border-radius: 12px; padding: 18px 14px; text-align: center; }
+  .data-card .val { font-size: 24px; font-weight: 800; color: #7effc0; display: block; }
+  .data-card .lab { font-size: 11px; color: rgba(255,255,255,0.7); margin-top: 4px; }
+
+  .biz-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 20px 0; }
+  .biz-item { background: #f8fff9; border: 1px solid #d5f5e3; border-radius: 12px; padding: 16px 14px; }
+  .biz-item .biz-icon { font-size: 24px; margin-bottom: 8px; }
+  .biz-item .biz-name { font-weight: 700; color: #1a5c1a; font-size: 14px; margin-bottom: 6px; }
+  .biz-item .biz-desc { font-size: 12px; color: #666; line-height: 1.6; }
+
+  .highlight { background: linear-gradient(135deg, #f0fff4, #e8f8f0); border-radius: 12px; padding: 20px; margin: 20px 0; border-left: 4px solid #2ecc71; }
+  .highlight .hl-title { font-weight: 700; color: #1a5c1a; margin-bottom: 8px; font-size: 15px; }
+
+  .progress-bar { margin: 16px 0; }
+  .pb-label { display: flex; justify-content: space-between; font-size: 13px; color: #555; margin-bottom: 6px; }
+  .pb-track { height: 8px; background: #e8f8f0; border-radius: 4px; overflow: hidden; }
+  .pb-fill { height: 100%; background: linear-gradient(90deg, #27ae60, #2ecc71); border-radius: 4px; }
+
+  .img-wrap { border-radius: 12px; overflow: hidden; margin: 20px 0; }
+  .img-wrap img { width: 100%; display: block; }
+  .img-cap { text-align: center; font-size: 12px; color: #999; margin-top: 6px; }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
+  .tag { background: #f0fff4; border: 1px solid #a9dfbf; color: #1a5c1a; font-size: 12px; padding: 4px 12px; border-radius: 20px; }
+
+  .ending { background: linear-gradient(135deg, #0a2e0a, #1a5c1a); color: #fff; border-radius: 16px; padding: 28px 24px; margin: 32px 0 20px; text-align: center; }
+  .ending h3 { font-size: 18px; font-weight: 700; color: #7effc0; margin-bottom: 12px; }
+  .ending p { color: rgba(255,255,255,0.85); font-size: 14px; }
+  .disclaimer { font-size: 11px; color: #bbb; text-align: center; padding: 16px 24px; border-top: 1px solid #f0f0f0; line-height: 1.7; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="hero">
+    <div class="hero-badge">☀️ 光伏双主业爆发</div>
+    <h1>中利集团：从债务泥潭到<em>双主业爆发</em><br>这匹光伏黑马正在蜕变</h1>
+    <p class="hero-sub">🔌 特种电缆 × 钙钛矿光伏 × 厦门国资 | 2026年3月</p>
+  </div>
+  <img class="hero-img" src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80&auto=format&fit=crop" alt="光伏发电">
+
+  <div class="content">
+    <div class="lead">
+      三年前，中利集团（002309）还深陷债务危机，"退市"的阴影笼罩。三年后，厦门国资接盘，特种电缆与光伏组件双轮并进，3连板背后，是一家老牌企业浴火重生的故事。
+    </div>
+
+    <!-- 章节1 -->
+    <div class="section-title">
+      <div class="num">1</div>
+      <h2>🏭 跨越36年的电缆老兵</h2>
+    </div>
+    <p>1988年，江苏常熟，一个年轻的创业者用一家小电缆厂起步，这就是中利集团的起点。30多年后，中利集团已成长为同时横跨<strong>特种电缆</strong>和<strong>光伏组件</strong>的多元化实业企业，产品覆盖通信电缆、轨道交通电缆、船用电缆、军工电缆，以及最前沿的N型光伏组件。</p>
+    <p>然而，快速扩张带来了沉重的财务压力。2022-2024年间，公司陷入债务困境，一度处于退市边缘。转折点出现在<strong>厦门建发集团</strong>入主之后——国资赋能、债务重整、管理优化，中利集团开启了真正的蜕变之旅。</p>
+
+    <!-- 章节2 -->
+    <div class="section-title">
+      <div class="num">2</div>
+      <h2>⚡ 特种电缆：新基建的"神经网络"</h2>
+    </div>
+    <p>中利集团的特种电缆业务，是公司最坚实的底层资产。区别于普通民用电缆，特种电缆专门服务于高端应用场景：</p>
+
+    <div class="biz-grid">
+      <div class="biz-item">
+        <div class="biz-icon">🚆</div>
+        <div class="biz-name">轨道交通电缆</div>
+        <div class="biz-desc">高铁、地铁专用，耐高温、阻燃、耐腐蚀</div>
+      </div>
+      <div class="biz-item">
+        <div class="biz-icon">⚓</div>
+        <div class="biz-name">船用电缆</div>
+        <div class="biz-desc">海洋工程、船舶装备，耐盐雾、防水</div>
+      </div>
+      <div class="biz-item">
+        <div class="biz-icon">🛡️</div>
+        <div class="biz-name">军工电缆</div>
+        <div class="biz-desc">国防装备配套，高可靠性、特殊性能</div>
+      </div>
+      <div class="biz-item">
+        <div class="biz-icon">🖥️</div>
+        <div class="biz-name">算力中心电缆</div>
+        <div class="biz-desc">数据中心配套，新基建重要增量</div>
+      </div>
+    </div>
+
+    <p>2026年，特种电缆业务预计实现营收约<strong>9.3亿元</strong>，同比增长超25%，毛利率约13.5%，成为公司最稳健的现金牛业务。</p>
+
+    <!-- 章节3 -->
+    <div class="section-title">
+      <div class="num">3</div>
+      <h2>☀️ 光伏组件：腾晖光伏的16GW雄心</h2>
+    </div>
+    <p>如果说特种电缆是中利集团的"老本行"，那么子公司<strong>腾晖光伏</strong>则代表了公司面向未来的最大押注。</p>
+    <div class="data-row">
+      <div class="data-card"><span class="val">16GW</span><span class="lab">组件年产能</span></div>
+      <div class="data-card"><span class="val">70%</span><span class="lab">N型TOPCon占比</span></div>
+      <div class="data-card"><span class="val">45亿</span><span class="lab">在手订单（元）</span></div>
+      <div class="data-card"><span class="val">26%</span><span class="lab">量产转换效率</span></div>
+    </div>
+
+    <div class="img-wrap">
+      <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=800&q=80&auto=format&fit=crop" alt="光伏组件生产">
+      <p class="img-cap">▲ 腾晖光伏16GW组件产能，海外订单持续增加</p>
+    </div>
+
+    <!-- 章节4 -->
+    <div class="section-title">
+      <div class="num">4</div>
+      <h2>🔬 钙钛矿布局：29项专利，押注下一代</h2>
+    </div>
+    <p>最让市场兴奋的，是中利集团在<strong>钙钛矿叠层电池</strong>领域的超前布局。公司已积累29项相关专利，并与BC、HJT领军企业达成战略合作。</p>
+    <div class="highlight">
+      <div class="hl-title">💡 为什么钙钛矿如此重要？</div>
+      <p style="margin:0;color:#444;">传统硅基太阳能电池理论效率上限约29%，而钙钛矿/硅叠层电池理论效率可突破40%。这意味着同样面积的光伏板，能发出更多的电。一旦量产成熟，将是光伏行业的一次技术革命。</p>
+    </div>
+    <p>此外，公司规划了<strong>10GWh储能产能</strong>，2026年储能业务预计贡献6-10亿元营收，形成"光伏组件+储能+系统集成"的完整绿色能源解决方案。</p>
+
+    <!-- 章节5 -->
+    <div class="section-title">
+      <div class="num">5</div>
+      <h2>🏛️ 厦门国资入主：信用与资源的双重赋能</h2>
+    </div>
+    <p>中利集团的蜕变，背后有一支关键力量——<strong>厦门建发集团</strong>。这家拥有强大产业资源和供应链能力的国企，为中利集团带来了：</p>
+    <div class="progress-bar">
+      <div class="pb-label"><span>经营现金流改善（2025年前三季度同比）</span><span>+3384%</span></div>
+      <div class="pb-track"><div class="pb-fill" style="width:90%;"></div></div>
+    </div>
+    <div class="progress-bar">
+      <div class="pb-label"><span>资产负债率优化</span><span>大幅下降</span></div>
+      <div class="pb-track"><div class="pb-fill" style="width:65%;"></div></div>
+    </div>
+    <p>公司已完成债务重整并成功"摘帽"，2026年全年有望实现扭亏为盈，迈向真正的双主业爆发元年。</p>
+
+    <div class="tags">
+      <span class="tag">☀️ 光伏组件</span>
+      <span class="tag">🔌 特种电缆</span>
+      <span class="tag">🔬 钙钛矿电池</span>
+      <span class="tag">🏛️ 厦门国资</span>
+      <span class="tag">🔋 储能业务</span>
+      <span class="tag">🌏 海外订单</span>
+    </div>
+
+    <div class="ending">
+      <h3>写在最后 🌱</h3>
+      <p>从一家差点退市的电缆老兵，到押注钙钛矿的新能源新秀，中利集团的故事告诉我们：真正的蜕变，往往在最艰难的时候才埋下种子。2026年，或许正是这颗种子破土的年份。</p>
+    </div>
+  </div>
+
+  <div class="disclaimer">⚠️ 本文内容仅供行业信息分享，不构成任何投资建议。市场有风险，投资需谨慎。文中数据来源于公开资料及分析文章，如有偏差以公司官方公告为准。</div>
+</div>
+</body>
+</html>

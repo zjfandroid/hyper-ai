@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>金开新能：绿电+算力，一家国资新能源公司的双轮进化论</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: #f5f5f5; color: #333; font-size: 15px; line-height: 1.8; }
+  .container { max-width: 680px; margin: 0 auto; background: #fff; }
+
+  .hero { background: linear-gradient(135deg, #0d1b2a 0%, #1b3a5c 50%, #3498db 100%); padding: 60px 30px 50px; text-align: center; position: relative; overflow: hidden; }
+  .hero::after { content: '⚡'; position: absolute; font-size: 180px; opacity: 0.05; right: -20px; bottom: -30px; }
+  .hero-badge { display: inline-block; background: rgba(52,152,219,0.3); border: 1px solid rgba(52,152,219,0.7); color: #80cfff; font-size: 12px; padding: 4px 14px; border-radius: 20px; margin-bottom: 18px; letter-spacing: 2px; }
+  .hero h1 { font-size: 26px; font-weight: 800; color: #fff; line-height: 1.4; position: relative; z-index: 1; }
+  .hero h1 em { font-style: normal; color: #80cfff; }
+  .hero-sub { margin-top: 14px; color: rgba(255,255,255,0.7); font-size: 13px; }
+  .hero-img { width: 100%; max-height: 280px; object-fit: cover; display: block; }
+
+  .content { padding: 30px 24px; }
+  .lead { font-size: 16px; color: #555; line-height: 1.9; border-left: 4px solid #3498db; background: #f0f8ff; padding: 16px 16px 16px 20px; border-radius: 0 8px 8px 0; margin-bottom: 28px; }
+
+  .section-title { display: flex; align-items: center; gap: 10px; margin: 32px 0 16px; }
+  .section-title .num { background: linear-gradient(135deg, #3498db, #2980b9); color: #fff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex-shrink: 0; }
+  .section-title h2 { font-size: 18px; font-weight: 700; color: #0d1b2a; }
+
+  p { margin-bottom: 16px; color: #444; line-height: 1.9; }
+
+  .data-row { display: flex; gap: 12px; margin: 20px 0; flex-wrap: wrap; }
+  .data-card { flex: 1; min-width: 130px; background: linear-gradient(135deg, #0d1b2a, #1b3a5c); color: #fff; border-radius: 12px; padding: 18px 14px; text-align: center; }
+  .data-card .val { font-size: 24px; font-weight: 800; color: #80cfff; display: block; }
+  .data-card .lab { font-size: 11px; color: rgba(255,255,255,0.7); margin-top: 4px; }
+
+  .dual-wheel { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
+  .wheel-item { border-radius: 16px; padding: 20px 16px; text-align: center; }
+  .wheel-item.green { background: linear-gradient(135deg, #0a2e0a, #1a5c1a); }
+  .wheel-item.blue { background: linear-gradient(135deg, #0d1b2a, #1b3a5c); }
+  .wheel-item .w-icon { font-size: 32px; margin-bottom: 10px; }
+  .wheel-item .w-title { font-weight: 700; color: #fff; font-size: 15px; margin-bottom: 8px; }
+  .wheel-item .w-desc { font-size: 12px; color: rgba(255,255,255,0.75); line-height: 1.6; }
+
+  .highlight { background: linear-gradient(135deg, #f0f8ff, #e8f4fc); border-radius: 12px; padding: 20px; margin: 20px 0; border-left: 4px solid #3498db; }
+  .highlight .hl-title { font-weight: 700; color: #1b3a5c; margin-bottom: 8px; font-size: 15px; }
+
+  .map-bar { margin: 16px 0; background: #f0f8ff; border-radius: 10px; overflow: hidden; }
+  .map-header { background: linear-gradient(135deg, #1b3a5c, #2c5f8a); color: #fff; padding: 10px 16px; font-size: 13px; font-weight: 600; }
+  .map-stats { display: flex; }
+  .map-stat { flex: 1; padding: 14px 12px; text-align: center; border-right: 1px solid #d5e8f7; }
+  .map-stat:last-child { border-right: none; }
+  .map-stat .ms-val { font-size: 20px; font-weight: 800; color: #1b3a5c; }
+  .map-stat .ms-lab { font-size: 11px; color: #888; margin-top: 2px; }
+
+  .img-wrap { border-radius: 12px; overflow: hidden; margin: 20px 0; }
+  .img-wrap img { width: 100%; display: block; }
+  .img-cap { text-align: center; font-size: 12px; color: #999; margin-top: 6px; }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
+  .tag { background: #f0f8ff; border: 1px solid #b8dcf5; color: #1b3a5c; font-size: 12px; padding: 4px 12px; border-radius: 20px; }
+
+  .ending { background: linear-gradient(135deg, #0d1b2a, #1b3a5c); color: #fff; border-radius: 16px; padding: 28px 24px; margin: 32px 0 20px; text-align: center; }
+  .ending h3 { font-size: 18px; font-weight: 700; color: #80cfff; margin-bottom: 12px; }
+  .ending p { color: rgba(255,255,255,0.85); font-size: 14px; }
+  .disclaimer { font-size: 11px; color: #bbb; text-align: center; padding: 16px 24px; border-top: 1px solid #f0f0f0; line-height: 1.7; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="hero">
+    <div class="hero-badge">🌱 绿电×算力双轮驱动</div>
+    <h1>金开新能：<em>绿电+算力</em><br>一家国资新能源公司的双轮进化论</h1>
+    <p class="hero-sub">💡 5.95GW绿电 × 无问芯穹算力合同 × 天津国资增持 | 2026年3月</p>
+  </div>
+  <img class="hero-img" src="https://images.unsplash.com/photo-1467533003447-e295ff1b0435?w=800&q=80&auto=format&fit=crop" alt="风力发电">
+
+  <div class="content">
+    <div class="lead">
+      从一家天津老牌百货集团，到拥有5.95GW绿电的新能源运营商，再到签约AI算力服务合同，金开新能（600821）的蜕变路径，堪称中国国资企业转型升级的一个缩影。
+    </div>
+
+    <!-- 章节1 -->
+    <div class="section-title">
+      <div class="num">1</div>
+      <h2>🔄 从天津百货到绿电龙头</h2>
+    </div>
+    <p>金开新能的前身是1993年上市的天津劝业场（集团），曾是天津最知名的老牌零售企业之一。2020年，公司完成重大资产重组，将国开新能源科技有限公司100%股权置入，彻底告别传统零售，正式转型为新能源电力运营商，并于2021年更名为"金开新能"。</p>
+    <p>这场蜕变，背后是天津市国资委的战略主导。控股股东天津金开企管近期更是将持股比例增持至<strong>总股本的20%</strong>，以真金白银展示长期信心。</p>
+
+    <!-- 章节2 -->
+    <div class="section-title">
+      <div class="num">2</div>
+      <h2>🌱 5.95GW绿电：覆盖23省的能源版图</h2>
+    </div>
+    <div class="map-bar">
+      <div class="map-header">📍 金开新能绿电运营规模（2025年三季度）</div>
+      <div class="map-stats">
+        <div class="map-stat"><div class="ms-val">5.95</div><div class="ms-lab">已并网装机(GW)</div></div>
+        <div class="map-stat"><div class="ms-val">7.81</div><div class="ms-lab">核准容量(GW)</div></div>
+        <div class="map-stat"><div class="ms-val">23</div><div class="ms-lab">覆盖省份</div></div>
+        <div class="map-stat"><div class="ms-val">130+</div><div class="ms-lab">发电项目数</div></div>
+      </div>
+    </div>
+
+    <p>5.95GW的并网装机，意味着金开新能在全国范围内布局了超过130个新能源发电项目，从天津、河北延伸到长江、珠三角，形成了覆盖全国23个省区市的绿色电力版图。</p>
+    <p>在行业排名中，公司位列全球风电光伏运营企业100强，在国内13家可比公司中，营收排名第5，净利润排名第3。</p>
+
+    <div class="img-wrap">
+      <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=800&q=80&auto=format&fit=crop" alt="光伏风电场">
+      <p class="img-cap">▲ 金开新能光伏与风电协同运营，覆盖全国23省</p>
+    </div>
+
+    <!-- 章节3 -->
+    <div class="section-title">
+      <div class="num">3</div>
+      <h2>🤖 绿电×算力：签约无问芯穹的战略想象</h2>
+    </div>
+    <p>2025年，金开新能做了一件令市场眼睛一亮的事情：与<strong>无问芯穹</strong>签署AI算力技术服务合同，含税金额<strong>6912万元</strong>，并完成一期算力集群交付。</p>
+    <div class="dual-wheel">
+      <div class="wheel-item green">
+        <div class="w-icon">🌱</div>
+        <div class="w-title">绿电运营</div>
+        <div class="w-desc">5.95GW稳定清洁电力，覆盖全国23省，是算力中心降本的关键支撑</div>
+      </div>
+      <div class="wheel-item blue">
+        <div class="w-icon">🖥️</div>
+        <div class="w-title">算力服务</div>
+        <div class="w-desc">与无问芯穹合作，布局AI算力服务，预计2027年贡献净利润1.5-2亿元</div>
+      </div>
+    </div>
+    <div class="highlight">
+      <div class="hl-title">💡 "绿电+算力"的协同逻辑</div>
+      <p style="margin:0;color:#444;">自有绿电降低算力中心用电成本→更低电价吸引AI企业合作→算力服务创造额外收入→收益反哺绿电基础设施扩建。金开新能试图打通的，是一条"清洁能源+AI服务"的正向循环。</p>
+    </div>
+
+    <!-- 章节4 -->
+    <div class="section-title">
+      <div class="num">4</div>
+      <h2>📈 3连板背后：股份回购+能源补贴预期</h2>
+    </div>
+    <p>2026年3月24日，金开新能涨停，成交额高达<strong>64.39亿元</strong>。市场给出的解读是：股份回购计划+能源补贴政策预期+外资持续净买入形成共振。</p>
+    <p>数据显示，2026年3月18-23日，金开新能多次入选龙虎榜，期间外资呈现净买入态势，反映出海外专业机构对公司"绿电+算力"双轮驱动故事的认可。</p>
+
+    <div class="data-row">
+      <div class="data-card"><span class="val">64亿</span><span class="lab">3月24日单日成交额</span></div>
+      <div class="data-card"><span class="val">6912万</span><span class="lab">算力服务合同（含税）</span></div>
+      <div class="data-card"><span class="val">20%</span><span class="lab">控股股东增持后持股</span></div>
+    </div>
+
+    <div class="tags">
+      <span class="tag">🌱 绿电运营</span>
+      <span class="tag">🤖 AI算力</span>
+      <span class="tag">🏛️ 天津国资</span>
+      <span class="tag">💨 风力发电</span>
+      <span class="tag">☀️ 光伏发电</span>
+      <span class="tag">🔋 储能概念</span>
+    </div>
+
+    <div class="ending">
+      <h3>写在最后 🌏</h3>
+      <p>从一家卖百货的国资企业，到拥有近6GW绿电的新能源运营商，再到携手AI算力入局未来，金开新能的进化轨迹折射出中国国有企业在能源转型中的大胆探索。绿电与算力的融合，或许才是这家公司真正的长期价值所在。</p>
+    </div>
+  </div>
+
+  <div class="disclaimer">⚠️ 本文内容仅供行业信息分享，不构成任何投资建议。市场有风险，投资需谨慎。文中数据来源于公开资料，如有偏差以公司官方公告为准。</div>
+</div>
+</body>
+</html>

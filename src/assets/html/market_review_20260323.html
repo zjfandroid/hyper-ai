@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>沪指惨遭"地毯式轰炸"，狂泻3.63%！这一次，究竟发生了什么？</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+      background: #f5f5f5;
+      color: #333;
+      line-height: 1.8;
+    }
+
+    .article-wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 0 0 40px;
+    }
+
+    /* ====== 封面区 ====== */
+    .cover {
+      position: relative;
+      background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 40%, #2d1b0e 100%);
+      padding: 48px 28px 36px;
+      overflow: hidden;
+    }
+    .cover::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 280px; height: 280px;
+      background: radial-gradient(circle, rgba(220,50,50,0.3) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .cover::after {
+      content: '';
+      position: absolute;
+      bottom: -60px; left: -60px;
+      width: 200px; height: 200px;
+      background: radial-gradient(circle, rgba(255,140,0,0.2) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .cover-date {
+      font-size: 12px;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      position: relative; z-index: 1;
+    }
+    .cover-tag {
+      display: inline-block;
+      background: #dc3232;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 3px;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+      position: relative; z-index: 1;
+    }
+    .cover-title {
+      font-size: 26px;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.4;
+      margin-bottom: 18px;
+      position: relative; z-index: 1;
+    }
+    .cover-title em {
+      color: #ff4d4d;
+      font-style: normal;
+    }
+    .cover-subtitle {
+      font-size: 14px;
+      color: rgba(255,255,255,0.65);
+      position: relative; z-index: 1;
+      line-height: 1.6;
+    }
+
+    /* ====== 数据大屏 ====== */
+    .data-screen {
+      background: #0d1117;
+      padding: 24px 20px;
+      margin-bottom: 0;
+    }
+    .data-screen-title {
+      font-size: 11px;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 2px;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .index-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .index-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+      padding: 14px 16px;
+      transition: all 0.2s;
+    }
+    .index-card.down {
+      border-color: rgba(0,200,100,0.3);
+      background: rgba(0,200,100,0.05);
+    }
+    .index-name {
+      font-size: 11px;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 8px;
+    }
+    .index-value {
+      font-size: 20px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    .index-change {
+      font-size: 13px;
+      font-weight: 600;
+      color: #00c864;
+    }
+    .index-change.red { color: #ff4040; }
+
+    /* ====== 内容区 ====== */
+    .content {
+      padding: 28px 24px;
+    }
+
+    /* ====== 章节标题 ====== */
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 32px 0 16px;
+    }
+    .section-icon {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .section-icon.fire { background: linear-gradient(135deg, #ff6b35, #f7c59f); }
+    .section-icon.chart { background: linear-gradient(135deg, #667eea, #764ba2); }
+    .section-icon.sword { background: linear-gradient(135deg, #dc3232, #ff6b6b); }
+    .section-icon.target { background: linear-gradient(135deg, #11998e, #38ef7d); }
+    .section-icon.warn { background: linear-gradient(135deg, #f7971e, #ffd200); }
+    .section-icon.rocket { background: linear-gradient(135deg, #4facfe, #00f2fe); }
+
+    .section-title-text h2 {
+      font-size: 18px;
+      font-weight: 800;
+      color: #1a1a1a;
+      line-height: 1.3;
+    }
+    .section-title-text span {
+      font-size: 12px;
+      color: #999;
+    }
+
+    p {
+      font-size: 15px;
+      color: #444;
+      line-height: 1.9;
+      margin-bottom: 14px;
+    }
+
+    strong { color: #1a1a1a; font-weight: 700; }
+
+    /* ====== 高亮引用块 ====== */
+    .highlight-box {
+      border-left: 4px solid #dc3232;
+      background: #fff8f8;
+      padding: 16px 18px;
+      border-radius: 0 8px 8px 0;
+      margin: 20px 0;
+      font-size: 15px;
+      color: #333;
+      line-height: 1.8;
+    }
+    .highlight-box.blue {
+      border-color: #4facfe;
+      background: #f0f8ff;
+    }
+    .highlight-box.green {
+      border-color: #11998e;
+      background: #f0fff8;
+    }
+    .highlight-box.orange {
+      border-color: #f7971e;
+      background: #fffbf0;
+    }
+
+    /* ====== 数据对比卡片 ====== */
+    .compare-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 20px 0;
+    }
+    .compare-card {
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+    }
+    .compare-card.bear {
+      background: linear-gradient(135deg, #fff0f0, #ffe8e8);
+      border: 1px solid #ffcaca;
+    }
+    .compare-card.bull {
+      background: linear-gradient(135deg, #f0fff4, #e8ffe8);
+      border: 1px solid #b8f5b8;
+    }
+    .compare-card-icon { font-size: 28px; margin-bottom: 8px; }
+    .compare-card-label {
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+    }
+    .compare-card.bear .compare-card-label { color: #dc3232; }
+    .compare-card.bull .compare-card-label { color: #22a356; }
+    .compare-card-items {
+      text-align: left;
+    }
+    .compare-item {
+      font-size: 13px;
+      color: #555;
+      padding: 4px 0;
+      border-bottom: 1px dashed rgba(0,0,0,0.06);
+      display: flex;
+      gap: 6px;
+    }
+    .compare-item:last-child { border-bottom: none; }
+    .compare-item::before { content: '→'; opacity: 0.4; flex-shrink: 0; }
+
+    /* ====== 今日复盘行情表 ====== */
+    .market-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 14px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+    .market-table th {
+      background: #1a1f3a;
+      color: rgba(255,255,255,0.8);
+      padding: 12px 14px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 13px;
+    }
+    .market-table td {
+      padding: 11px 14px;
+      text-align: center;
+      border-bottom: 1px solid #f0f0f0;
+      background: #fff;
+    }
+    .market-table tr:last-child td { border-bottom: none; }
+    .market-table tr:nth-child(even) td { background: #fafafa; }
+    .td-down { color: #00c864; font-weight: 700; }
+    .td-up { color: #ff4040; font-weight: 700; }
+    .td-name { font-weight: 600; color: #222; text-align: left; }
+
+    /* ====== 热点板块榜 ====== */
+    .sector-list {
+      margin: 16px 0;
+    }
+    .sector-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      border-radius: 8px;
+      margin-bottom: 8px;
+      border: 1px solid #f0f0f0;
+      background: #fff;
+    }
+    .sector-item.hot {
+      background: linear-gradient(135deg, #fff9f0, #fff5e6);
+      border-color: #ffd89b;
+    }
+    .sector-item.down-sector {
+      background: linear-gradient(135deg, #f8fffe, #f0fffb);
+      border-color: #c8f5e0;
+    }
+    .sector-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .sector-rank {
+      width: 24px; height: 24px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; font-weight: 800;
+      background: #eee;
+      color: #888;
+      flex-shrink: 0;
+    }
+    .sector-rank.top1 { background: #ffd700; color: #8b6914; }
+    .sector-rank.top2 { background: #c0c0c0; color: #666; }
+    .sector-rank.top3 { background: #cd7f32; color: #7a4a1e; }
+    .sector-name { font-size: 15px; font-weight: 600; color: #1a1a1a; }
+    .sector-desc { font-size: 12px; color: #999; }
+    .sector-change {
+      font-size: 16px;
+      font-weight: 800;
+    }
+    .sector-change.up { color: #ff4040; }
+    .sector-change.down { color: #00c864; }
+
+    /* ====== 辩论对决区 ====== */
+    .debate-section {
+      background: #f8f9ff;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+    .debate-title {
+      text-align: center;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+    .debate-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .debate-box {
+      border-radius: 10px;
+      padding: 14px;
+    }
+    .debate-box.bull {
+      background: #fff;
+      border: 2px solid #ff4040;
+    }
+    .debate-box.bear {
+      background: #fff;
+      border: 2px solid #00c864;
+    }
+    .debate-box-title {
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .debate-box.bull .debate-box-title { color: #dc3232; }
+    .debate-box.bear .debate-box-title { color: #00a050; }
+    .debate-box ul {
+      padding-left: 16px;
+    }
+    .debate-box li {
+      font-size: 13px;
+      color: #555;
+      margin-bottom: 6px;
+      line-height: 1.6;
+    }
+    .verdict-box {
+      background: linear-gradient(135deg, #1a1f3a, #2d2060);
+      border-radius: 10px;
+      padding: 16px 18px;
+      color: #fff;
+    }
+    .verdict-label {
+      font-size: 11px;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+    .verdict-text {
+      font-size: 14px;
+      color: rgba(255,255,255,0.9);
+      line-height: 1.7;
+    }
+    .verdict-text strong { color: #ffd700; }
+
+    /* ====== 明日操作指南 ====== */
+    .ops-guide {
+      margin: 20px 0;
+    }
+    .ops-item {
+      display: flex;
+      gap: 14px;
+      padding: 16px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #eee;
+      align-items: flex-start;
+    }
+    .ops-item.buy { border-color: #ffb3b3; background: #fff7f7; }
+    .ops-item.sell { border-color: #b3e6c8; background: #f7fff9; }
+    .ops-item.watch { border-color: #ffe0b3; background: #fffaf5; }
+    .ops-item.hold { border-color: #c8d8ff; background: #f5f8ff; }
+    .ops-icon {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+    .ops-item.buy .ops-icon { background: #ffefef; }
+    .ops-item.sell .ops-icon { background: #edfff4; }
+    .ops-item.watch .ops-icon { background: #fff6e6; }
+    .ops-item.hold .ops-icon { background: #eef2ff; }
+    .ops-content-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 4px;
+    }
+    .ops-content-desc {
+      font-size: 13px;
+      color: #666;
+      line-height: 1.6;
+    }
+    .ops-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 3px;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+    .tag-buy { background: #ffecec; color: #dc3232; }
+    .tag-watch { background: #fff0e0; color: #e07000; }
+    .tag-avoid { background: #f0f0f0; color: #888; }
+
+    /* ====== 风险警示栏 ====== */
+    .risk-bar {
+      background: linear-gradient(135deg, #1a1f3a, #0d1117);
+      border-radius: 10px;
+      padding: 20px;
+      margin: 24px 0;
+      color: #fff;
+    }
+    .risk-bar-title {
+      font-size: 13px;
+      font-weight: 800;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 2px;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .risk-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .risk-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #ff4040;
+      margin-top: 8px;
+      flex-shrink: 0;
+    }
+    .risk-text {
+      font-size: 13px;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.7;
+    }
+
+    /* ====== 关键数据 ====== */
+    .key-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin: 20px 0;
+    }
+    .key-stat-item {
+      background: #f8f9fa;
+      border-radius: 10px;
+      padding: 14px 10px;
+      text-align: center;
+      border: 1px solid #eee;
+    }
+    .key-stat-value {
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+    .key-stat-value.red { color: #ff4040; }
+    .key-stat-value.green { color: #00c864; }
+    .key-stat-value.orange { color: #e07000; }
+    .key-stat-label {
+      font-size: 11px;
+      color: #999;
+      line-height: 1.4;
+    }
+
+    /* ====== 结语 ====== */
+    .ending {
+      background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+      border-radius: 12px;
+      padding: 28px 24px;
+      margin: 24px 0;
+      color: #fff;
+      text-align: center;
+    }
+    .ending-quote {
+      font-size: 17px;
+      font-style: italic;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .ending-author {
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 1px;
+    }
+
+    /* ====== 免责声明 ====== */
+    .disclaimer {
+      font-size: 11px;
+      color: #bbb;
+      line-height: 1.7;
+      padding: 16px 24px;
+      border-top: 1px solid #f0f0f0;
+    }
+
+    /* ====== 分割线 ====== */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #eee, transparent);
+      margin: 24px 0;
+    }
+
+    /* ====== 滚动横幅 ====== */
+    .ticker-bar {
+      background: #dc3232;
+      padding: 8px 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .ticker-inner {
+      display: inline-block;
+      animation: marquee 25s linear infinite;
+      font-size: 12px;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+    @keyframes marquee {
+      from { transform: translateX(100vw); }
+      to { transform: translateX(-100%); }
+    }
+
+    @media (max-width: 480px) {
+      .compare-cards { grid-template-columns: 1fr; }
+      .debate-row { grid-template-columns: 1fr; }
+      .key-stats { grid-template-columns: repeat(2, 1fr); }
+      .cover-title { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+<div class="article-wrapper">
+
+  <!-- 滚动横幅 -->
+  <div class="ticker-bar">
+    <div class="ticker-inner">
+      🔴 沪指跌3.63% 失守3900点 &nbsp;&nbsp;|&nbsp;&nbsp; 🔴 深成指跌3.76%，创业板跌3.49% &nbsp;&nbsp;|&nbsp;&nbsp; 🛢️ 布油维持113美元 &nbsp;&nbsp;|&nbsp;&nbsp; 🌍 美伊冲突第四周持续发酵 &nbsp;&nbsp;|&nbsp;&nbsp; ⚡ 能源板块逆势涨停 &nbsp;&nbsp;|&nbsp;&nbsp; 💰 全市场净流出1254亿
+    </div>
+  </div>
+
+  <!-- 封面 -->
+  <div class="cover">
+    <div class="cover-date">2026 · 03 · 23 &nbsp;·&nbsp; 市场复盘</div>
+    <div class="cover-tag">⚡ 深度复盘</div>
+    <div class="cover-title">
+      沪指惨遭<em>"地毯式轰炸"</em><br>
+      狂泻3.63%，5000股倒下！<br>
+      明天，你该怎么办？
+    </div>
+    <div class="cover-subtitle">
+      美伊战火烧到A股 · 布油突破113美元 · 3800点攻防战打响<br>
+      多空激烈对决，操作策略在此
+    </div>
+  </div>
+
+  <!-- 实时指数数据屏 -->
+  <div class="data-screen">
+    <div class="data-screen-title">▸ 今日收盘数据 / 2026.03.23</div>
+    <div class="index-grid">
+      <div class="index-card down">
+        <div class="index-name">上证指数</div>
+        <div class="index-value">3813.28</div>
+        <div class="index-change">▼ 3.63%&nbsp;&nbsp;(-144.77)</div>
+      </div>
+      <div class="index-card down">
+        <div class="index-name">深成指数</div>
+        <div class="index-value">13345.51</div>
+        <div class="index-change">▼ 3.76%&nbsp;&nbsp;(-521.69)</div>
+      </div>
+      <div class="index-card down">
+        <div class="index-name">创业板指</div>
+        <div class="index-value">3235.22</div>
+        <div class="index-change">▼ 3.49%&nbsp;&nbsp;(-116.88)</div>
+      </div>
+      <div class="index-card down">
+        <div class="index-name">沪深300</div>
+        <div class="index-value">4417.99</div>
+        <div class="index-change">▼ 3.26%&nbsp;&nbsp;(-149.23)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 正文内容区 -->
+  <div class="content">
+
+    <!-- 开篇 -->
+    <p style="margin-top:4px;">
+      今天，A股用一场<strong>近乎暴力的下跌</strong>，给所有投资者上了一堂刻骨铭心的课。
+    </p>
+    <p>
+      沪指最大跌幅超4%，日内一度刺穿3800点；全市场近5000只个股下跌，跌停板超77只；资金净流出<strong>1254亿元</strong>……如果你今天还敢留在场内，你就亲历了2026年迄今最惨烈的一天。
+    </p>
+    <div class="highlight-box">
+      📌 <strong>一句话概括今天：</strong>这不是A股自己的问题，这是全球资本市场在同一个"黑天鹅"面前集体踩踏。
+    </div>
+
+    <!-- 第一章：为什么暴跌 -->
+    <div class="section-header">
+      <div class="section-icon fire">🔥</div>
+      <div class="section-title-text">
+        <h2>一、到底发生了什么？</h2>
+        <span>今日下跌的核心逻辑拆解</span>
+      </div>
+    </div>
+
+    <p>
+      事情要从<strong>上周末特朗普的一条推文</strong>说起。美国总统特朗普于3月21日向伊朗发出最后通牒：<strong>48小时内开放霍尔木兹海峡，否则摧毁其所有发电厂。</strong>
+    </p>
+    <p>
+      这条消息在周末扩散发酵，直接让亚洲股市周一低开。霍尔木兹海峡是全球约<strong>20%石油运输</strong>的必经之路，一旦封锁，全球能源供应将陷入严重危机。
+    </p>
+
+    <div class="highlight-box orange">
+      🛢️ <strong>布伦特原油今日维持113美元/桶</strong>高位运行，较冲突爆发前上涨逾60%。国际能源署已发出警告：若局势持续，全球通胀将出现系统性抬升压力。
+    </div>
+
+    <p>
+      在这个宏观背景下，A股的"跌"几乎是注定的——<strong>不是基本面出了问题，而是全球风险情绪的集体撤退。</strong>道指、纳指、标普均创年内新低，欧洲三大指数跌幅同步超2%，A股只是随波逐流。
+    </p>
+
+    <!-- 关键数据 -->
+    <div class="key-stats">
+      <div class="key-stat-item">
+        <div class="key-stat-value red">-3.63%</div>
+        <div class="key-stat-label">沪指跌幅<br>失守3900点</div>
+      </div>
+      <div class="key-stat-item">
+        <div class="key-stat-value red">77只</div>
+        <div class="key-stat-label">跌停股数量<br>（含多板股）</div>
+      </div>
+      <div class="key-stat-item">
+        <div class="key-stat-value orange">1254亿</div>
+        <div class="key-stat-label">全市场净流出<br>（超大单主导）</div>
+      </div>
+      <div class="key-stat-item">
+        <div class="key-stat-value red">5000+</div>
+        <div class="key-stat-label">下跌个股数量<br>全市场普跌</div>
+      </div>
+      <div class="key-stat-item">
+        <div class="key-stat-value green">25只</div>
+        <div class="key-stat-label">逆势涨停<br>能源煤炭领涨</div>
+      </div>
+      <div class="key-stat-item">
+        <div class="key-stat-value orange">113$</div>
+        <div class="key-stat-label">布伦特油价<br>冲突以来涨60%</div>
+      </div>
+    </div>
+
+    <!-- 第二章：板块分化 -->
+    <div class="section-header">
+      <div class="section-icon chart">📊</div>
+      <div class="section-title-text">
+        <h2>二、谁在杀跌？谁在逆行？</h2>
+        <span>今日板块分化深度解析</span>
+      </div>
+    </div>
+
+    <p>
+      今天的市场有一个鲜明特征：<strong>越是"战争受益板块"，越强势；越是依赖和平红利的消费类板块，越惨烈。</strong>
+    </p>
+
+    <p><strong>🔴 逆势领涨板块（今日英雄）</strong></p>
+    <div class="sector-list">
+      <div class="sector-item hot">
+        <div class="sector-left">
+          <div class="sector-rank top1">1</div>
+          <div>
+            <div class="sector-name">石油天然气</div>
+            <div class="sector-desc">洲际油气、中国石油、立新能源等涨停 | 受益油价飙升</div>
+          </div>
+        </div>
+        <div class="sector-change up">+4.8%</div>
+      </div>
+      <div class="sector-item hot">
+        <div class="sector-left">
+          <div class="sector-rank top2">2</div>
+          <div>
+            <div class="sector-name">煤炭开采</div>
+            <div class="sector-desc">山西焦煤、云煤能源、金煤科技封板 | 能源替代逻辑</div>
+          </div>
+        </div>
+        <div class="sector-change up">+3.2%</div>
+      </div>
+      <div class="sector-item hot">
+        <div class="sector-left">
+          <div class="sector-rank top3">3</div>
+          <div>
+            <div class="sector-name">电力板块</div>
+            <div class="sector-desc">华电辽能7连板、新宏泰、江苏新能 | 能源安全概念</div>
+          </div>
+        </div>
+        <div class="sector-change up">+2.1%</div>
+      </div>
+    </div>
+
+    <p><strong>🟢 重挫下跌板块（今日重灾区）</strong></p>
+    <div class="sector-list">
+      <div class="sector-item down-sector">
+        <div class="sector-left">
+          <div class="sector-rank">1</div>
+          <div>
+            <div class="sector-name">酒店旅游</div>
+            <div class="sector-desc">三峡旅游、桂林旅游跌停 | 出行需求受扰预期</div>
+          </div>
+        </div>
+        <div class="sector-change down">-5.4%</div>
+      </div>
+      <div class="sector-item down-sector">
+        <div class="sector-left">
+          <div class="sector-rank">2</div>
+          <div>
+            <div class="sector-name">科技成长</div>
+            <div class="sector-desc">三安光电、超颖电子等跌停 | 高估值杀跌</div>
+          </div>
+        </div>
+        <div class="sector-change down">-4.9%</div>
+      </div>
+      <div class="sector-item down-sector">
+        <div class="sector-left">
+          <div class="sector-rank">3</div>
+          <div>
+            <div class="sector-name">消费制造</div>
+            <div class="sector-desc">爱玛科技逆势涨停、多数消费股重挫</div>
+          </div>
+        </div>
+        <div class="sector-change down">-4.1%</div>
+      </div>
+    </div>
+
+    <div class="highlight-box blue">
+      💡 <strong>核心结论：</strong>今天的市场不是无差别杀跌，而是资金在"战争模式"下主动切换。能源资源是真正的避风港，科技消费是重灾区。这个逻辑短期内不会快速反转。
+    </div>
+
+    <!-- 第三章：多空辩论 -->
+    <div class="section-header">
+      <div class="section-icon sword">⚔️</div>
+      <div class="section-title-text">
+        <h2>三、多空辩论：明天往哪走？</h2>
+        <span>基于数据的理性判断</span>
+      </div>
+    </div>
+
+    <p>眼下最大的问题是：<strong>今天的暴跌是恐慌超调，还是趋势加速下行的开始？</strong>我们来做一个严肃的多空对决。</p>
+
+    <div class="debate-section">
+      <div class="debate-title">⚔️ 多空研究员 · 激辩实录</div>
+      <div class="debate-row">
+        <div class="debate-box bull">
+          <div class="debate-box-title">🐂 多头论证</div>
+          <ul>
+            <li>连续4天累跌6.1%，RSI技术上超卖，存在修复需求</li>
+            <li>3800点是历史政策底支撑区，国家队有入场意愿</li>
+            <li>能源板块独立行情，说明资金未全线撤退</li>
+            <li>成交量放量至8047亿，情绪宣泄后或迎反弹</li>
+            <li>高股息防御资产走强，价值底线逐渐浮现</li>
+          </ul>
+        </div>
+        <div class="debate-box bear">
+          <div class="debate-box-title">🐻 空头论证</div>
+          <ul>
+            <li>美伊冲突无明确终止时间表，利空持续发酵</li>
+            <li>大单净流出700亿，机构主动离场信号明确</li>
+            <li>封板率仅74%，人气冰点，情绪难快速修复</li>
+            <li>布油113美元通胀预期上行，压制流动性宽松</li>
+            <li>技术形态破位，3700甚至3650都可能成为考验</li>
+          </ul>
+        </div>
+      </div>
+      <div class="verdict-box">
+        <div class="verdict-label">📋 研究主管 · 最终裁决</div>
+        <div class="verdict-text">
+          今日下跌的性质是<strong>外部冲击引发的情绪性超跌</strong>，非基本面崩塌。3800点附近国家队历史上均有护盘动作，叠加技术严重超卖，<strong>短线具备反弹条件</strong>。但在地缘局势未明确降温前，反弹高度有限（预计3900-3950点）。操作建议：<strong>不盲目割肉，不激进抄底，结构性布局能源资源</strong>。
+        </div>
+      </div>
+    </div>
+
+    <!-- 第四章：明日操作指南 -->
+    <div class="section-header">
+      <div class="section-icon target">🎯</div>
+      <div class="section-title-text">
+        <h2>四、明日操作指南</h2>
+        <span>具体到板块和策略的行动方案</span>
+      </div>
+    </div>
+
+    <p>不废话，直接给干货。以下建议基于当前宏观逻辑和技术面综合研判：</p>
+
+    <div class="ops-guide">
+      <div class="ops-item buy">
+        <div class="ops-icon">🔋</div>
+        <div>
+          <div class="ops-content-title">
+            能源资源板块 <span class="ops-tag tag-buy">重点关注</span>
+          </div>
+          <div class="ops-content-desc">
+            石油天然气、煤炭、电力是本轮地缘危机的核心受益链。布油维持高位叠加国内能源安全政策强化，逻辑清晰且持续。关注<strong>华电辽能（7连板）</strong>的高位风险，以及<strong>中国石油、中国海油</strong>等低位标的的补涨机会。操作策略：逢回调轻仓布局，严格设置5%止损。
+          </div>
+        </div>
+      </div>
+
+      <div class="ops-item buy">
+        <div class="ops-icon">🏠</div>
+        <div>
+          <div class="ops-content-title">
+            高股息防御资产 <span class="ops-tag tag-buy">中线配置</span>
+          </div>
+          <div class="ops-content-desc">
+            在全球避险情绪高涨的背景下，高股息低估值的公用事业、银行、大型央企具备明显的防御价值。这类资产不会大涨，但能有效控制回撤风险，适合保守型投资者在当前阶段进行防御性配置。
+          </div>
+        </div>
+      </div>
+
+      <div class="ops-item watch">
+        <div class="ops-icon">👀</div>
+        <div>
+          <div class="ops-content-title">
+            黄金/贵金属板块 <span class="ops-tag tag-watch">持续跟踪</span>
+          </div>
+          <div class="ops-content-desc">
+            中东局势每次升级，黄金都是最直接受益者。A股黄金板块若随大盘超跌，可作为短线博弈标的，但注意追高风险。<strong>赤峰黄金今日跌停可能是错杀</strong>，值得关注次日修复行情。
+          </div>
+        </div>
+      </div>
+
+      <div class="ops-item sell">
+        <div class="ops-icon">⚠️</div>
+        <div>
+          <div class="ops-content-title">
+            科技成长板块 <span class="ops-tag tag-avoid">暂时回避</span>
+          </div>
+          <div class="ops-content-desc">
+            高估值科技股在当前利率预期上行+避险情绪主导的环境下，缺乏反弹的核心驱动力。半导体、消费电子、互联网等板块短期仍有调整压力。建议已有持仓者控制仓位，等待局势明朗化后再重新布局。
+          </div>
+        </div>
+      </div>
+
+      <div class="ops-item hold">
+        <div class="ops-icon">📋</div>
+        <div>
+          <div class="ops-content-title">
+            整体仓位建议 <span class="ops-tag" style="background:#e8f4ff;color:#4080ff;">核心策略</span>
+          </div>
+          <div class="ops-content-desc">
+            当前环境不适合重仓博弈。建议<strong>整体仓位控制在30-40%以内</strong>，以观察为主，操作为辅。等待以下两个信号再加仓：①美伊局势出现明显降温；②沪指在3800点附近出现明确的放量止跌信号。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 第五章：关键支撑位 -->
+    <div class="section-header">
+      <div class="section-icon warn">📐</div>
+      <div class="section-title-text">
+        <h2>五、关键价位：守住这条线</h2>
+        <span>技术面的生死关键位</span>
+      </div>
+    </div>
+
+    <table class="market-table">
+      <thead>
+        <tr>
+          <th>指数</th>
+          <th>今日收盘</th>
+          <th>强支撑位</th>
+          <th>短线阻力</th>
+          <th>趋势判断</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="td-name">上证指数</td>
+          <td class="td-down">3813</td>
+          <td>3750 / 3700</td>
+          <td>3900 / 3950</td>
+          <td>⚠️ 弱势</td>
+        </tr>
+        <tr>
+          <td class="td-name">深成指</td>
+          <td class="td-down">13345</td>
+          <td>13000 / 12800</td>
+          <td>13800 / 14000</td>
+          <td>⚠️ 弱势</td>
+        </tr>
+        <tr>
+          <td class="td-name">创业板指</td>
+          <td class="td-down">3235</td>
+          <td>3150 / 3100</td>
+          <td>3350 / 3450</td>
+          <td>⚠️ 弱势</td>
+        </tr>
+        <tr>
+          <td class="td-name">沪深300</td>
+          <td class="td-down">4417</td>
+          <td>4350 / 4280</td>
+          <td>4550 / 4600</td>
+          <td>⚠️ 弱势</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="highlight-box">
+      ⚡ <strong>最关键的一条线：上证3800点。</strong>
+      这里是2025年4月以来多次获得支撑的重要区域。若明日开盘后大盘能稳住3800以上，则存在技术性反弹的基础；若破位3800并有效下行，则下一支撑看3750-3700区间。止损点一旦破位需严格执行。
+    </div>
+
+    <!-- 第六章：风险提示 -->
+    <div class="risk-bar">
+      <div class="risk-bar-title">⚠️ 风险警示 · 以下情况需高度警惕</div>
+      <div class="risk-item">
+        <div class="risk-dot"></div>
+        <div class="risk-text"><strong>美伊冲突升级</strong>：若特朗普兑现威胁或发动军事行动，油价可能突破130美元，全球股市将迎来更大规模抛售</div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-dot"></div>
+        <div class="risk-text"><strong>北向资金加速外流</strong>：外资持续净卖出将加剧A股下行压力，需密切关注沪深港通资金动向</div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-dot"></div>
+        <div class="risk-text"><strong>通胀数据超预期</strong>：高油价传导至CPI将压制美联储降息预期，进一步收紧全球流动性</div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-dot"></div>
+        <div class="risk-text"><strong>技术面破位风险</strong>：若3800点不守，恐慌情绪可能引发多米诺骨牌式抛售，需提前准备应对预案</div>
+      </div>
+    </div>
+
+    <!-- 总结与展望 -->
+    <div class="section-header">
+      <div class="section-icon rocket">🚀</div>
+      <div class="section-title-text">
+        <h2>六、最后说几句真心话</h2>
+        <span>写给在市场中煎熬的你</span>
+      </div>
+    </div>
+
+    <p>
+      每一次大跌，都是一场"留下者"与"离场者"的分野。历史告诉我们，在恐慌中割肉的人，往往是最终踏空反弹的人。
+    </p>
+    <p>
+      但我们也要清醒认识到：<strong>这一轮调整的核心矛盾是地缘政治，而地缘政治是不可预测的。</strong>没有人能准确预判美伊何时停火，没有人能判断油价何时见顶。
+    </p>
+    <p>
+      所以，比"猜底部"更重要的，是<strong>控制好仓位，不让任何一次大跌伤到筋骨。</strong>市场不会因为你割肉就止跌，也不会因为你不割就反弹。真正的交易智慧，是在不确定性中寻找确定性。
+    </p>
+
+    <div class="divider"></div>
+
+    <div class="compare-cards">
+      <div class="compare-card bull">
+        <div class="compare-card-icon">📌</div>
+        <div class="compare-card-label">明日看多的理由</div>
+        <div class="compare-card-items">
+          <div class="compare-item">RSI严重超卖，技术反弹需求强</div>
+          <div class="compare-item">3800点政策底历史支撑</div>
+          <div class="compare-item">能源板块资金仍在活跃</div>
+          <div class="compare-item">成交量放大=情绪宣泄</div>
+        </div>
+      </div>
+      <div class="compare-card bear">
+        <div class="compare-card-icon">⚠️</div>
+        <div class="compare-card-label">明日看空的理由</div>
+        <div class="compare-card-items">
+          <div class="compare-item">地缘风险持续发酵</div>
+          <div class="compare-item">机构主动离场信号</div>
+          <div class="compare-item">封板率低，人气冰点</div>
+          <div class="compare-item">技术形态严重破位</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ending">
+      <div class="ending-quote">
+        "市场先生是个躁郁症患者，<br>
+        他今天恐惧，并不代表明天没有贪婪。<br>
+        真正的风险，来自不知道自己在做什么。"
+      </div>
+      <div class="ending-author">— 致每一位在市场中坚守的你</div>
+    </div>
+
+    <p style="text-align:center; color:#999; font-size:13px; margin-top:8px;">
+      🔔 以上为今日大盘复盘与明日操作参考<br>
+      欢迎转发给同样需要的朋友
+    </p>
+
+  </div><!-- end content -->
+
+  <!-- 免责声明 -->
+  <div class="disclaimer">
+    【免责声明】本文由AI基于公开市场数据及多角色分析方法论自动生成，仅供参考学习，不构成任何投资建议。股市有风险，入市须谨慎。过去的表现不代表未来收益，投资者请根据自身情况独立决策。
+  </div>
+
+</div><!-- end article-wrapper -->
+</body>
+</html>

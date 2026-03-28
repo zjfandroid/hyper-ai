@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>长城军工：从三线兵工厂，到智能弹药第一股</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+    background: #f8f8f8;
+    color: #333;
+    line-height: 1.9;
+  }
+  .article-wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 0 0 40px;
+  }
+  /* 封面 */
+  .cover-img {
+    width: 100%;
+    display: block;
+  }
+  /* 正文容器 */
+  .content {
+    padding: 32px 28px 0;
+  }
+  h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1a1a1a;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  .meta {
+    font-size: 13px;
+    color: #999;
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #eee;
+  }
+  /* 开篇引言 */
+  .lead {
+    font-size: 18px;
+    color: #333;
+    line-height: 2;
+    margin-bottom: 28px;
+    font-weight: 400;
+  }
+  .lead strong {
+    color: #1a1a1a;
+    font-weight: bold;
+  }
+  /* 章节标题 */
+  h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #1a1a1a;
+    margin: 36px 0 16px;
+    padding-left: 14px;
+    border-left: 4px solid #4a7c2f;
+    line-height: 1.4;
+  }
+  /* 正文段落 */
+  p {
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 18px;
+    line-height: 2;
+  }
+  /* 高亮引用框 */
+  .quote-box {
+    background: #f0f6ea;
+    border-left: 4px solid #5a9c38;
+    padding: 18px 20px;
+    margin: 24px 0;
+    border-radius: 0 8px 8px 0;
+  }
+  .quote-box p {
+    color: #2d5a10;
+    font-size: 16px;
+    margin: 0;
+    line-height: 1.9;
+  }
+  /* 数据卡片组 */
+  .card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .data-card {
+    background: #f5faf0;
+    border: 1px solid #d0e8b8;
+    border-radius: 10px;
+    padding: 18px 16px;
+    text-align: center;
+  }
+  .data-card .num {
+    font-size: 28px;
+    font-weight: bold;
+    color: #3a7a1a;
+    line-height: 1.2;
+  }
+  .data-card .unit {
+    font-size: 14px;
+    color: #5a9a30;
+    margin-bottom: 6px;
+  }
+  .data-card .label {
+    font-size: 13px;
+    color: #888;
+    margin-top: 4px;
+  }
+  /* 产品体系表格 */
+  .product-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 15px;
+  }
+  .product-table th {
+    background: #3d6b1e;
+    color: #fff;
+    padding: 12px 14px;
+    text-align: left;
+    font-weight: 600;
+  }
+  .product-table td {
+    padding: 11px 14px;
+    border-bottom: 1px solid #eee;
+    color: #444;
+    vertical-align: top;
+  }
+  .product-table tr:nth-child(even) td {
+    background: #f7faf4;
+  }
+  .product-table tr:hover td {
+    background: #eef5e6;
+  }
+  /* 时间线 */
+  .timeline {
+    position: relative;
+    padding-left: 28px;
+    margin: 20px 0;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, #4a7c2f, #8ab856);
+  }
+  .timeline-item {
+    position: relative;
+    margin-bottom: 20px;
+    padding-left: 10px;
+  }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -24px;
+    top: 7px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #5a9c38;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 2px #5a9c38;
+  }
+  .timeline-item .year {
+    font-size: 14px;
+    font-weight: bold;
+    color: #4a7c2f;
+    margin-bottom: 2px;
+  }
+  .timeline-item .event {
+    font-size: 15px;
+    color: #444;
+    line-height: 1.7;
+  }
+  /* 进度条 */
+  .bar-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 14px;
+  }
+  .bar-label {
+    width: 140px;
+    font-size: 14px;
+    color: #555;
+    flex-shrink: 0;
+  }
+  .bar-track {
+    flex: 1;
+    height: 18px;
+    background: #eee;
+    border-radius: 9px;
+    overflow: hidden;
+    margin: 0 12px;
+  }
+  .bar-fill {
+    height: 100%;
+    border-radius: 9px;
+    background: linear-gradient(to right, #4a7c2f, #85c740);
+  }
+  .bar-value {
+    width: 60px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #3a7a1a;
+    text-align: right;
+    flex-shrink: 0;
+  }
+  /* 高亮文字 */
+  .highlight {
+    color: #3a8c1a;
+    font-weight: bold;
+  }
+  .highlight-red {
+    color: #c0392b;
+    font-weight: bold;
+  }
+  /* 风险提示框 */
+  .risk-box {
+    background: #fff8f0;
+    border: 1px solid #f0c080;
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin: 24px 0;
+  }
+  .risk-box .risk-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #c07000;
+    margin-bottom: 10px;
+  }
+  .risk-box p {
+    font-size: 15px;
+    color: #885500;
+    margin-bottom: 8px;
+    line-height: 1.8;
+  }
+  /* 结语框 */
+  .ending-box {
+    background: linear-gradient(135deg, #0f2006 0%, #1e4010 100%);
+    border-radius: 14px;
+    padding: 28px 24px;
+    margin: 32px 0 0;
+    text-align: center;
+  }
+  .ending-box p {
+    color: #b8e890;
+    font-size: 17px;
+    line-height: 2;
+    margin: 0;
+  }
+  .ending-box .big-quote {
+    font-size: 22px;
+    font-weight: bold;
+    color: #d0f0a0;
+    margin-bottom: 12px;
+  }
+  /* 分割线 */
+  .divider {
+    text-align: center;
+    color: #ccc;
+    font-size: 20px;
+    margin: 28px 0;
+    letter-spacing: 6px;
+  }
+  /* 注释 */
+  .disclaimer {
+    font-size: 12px;
+    color: #bbb;
+    text-align: center;
+    padding: 20px 20px 0;
+    line-height: 1.8;
+    border-top: 1px solid #eee;
+    margin-top: 32px;
+  }
+</style>
+</head>
+<body>
+<div class="article-wrap">
+
+  <!-- 封面 -->
+  <img class="cover-img" src="./ccjg_cover.jpg" alt="长城军工封面图">
+
+  <div class="content">
+    <h1>长城军工：从三线兵工厂，到智能弹药第一股</h1>
+    <div class="meta">原创 · 2026年3月24日</div>
+
+    <!-- 开篇 -->
+    <p class="lead">
+      1965年，三线建设浪潮席卷中国内陆。<br>
+      一批军工人带着技术和使命，扎进皖南的山沟里，建起了秘密工厂。<br><br>
+      <strong>他们没想到，60年后，这里走出了A股唯一一家弹药上市公司。</strong>
+    </p>
+
+    <p>这家公司就是<span class="highlight">安徽长城军工</span>（601606）。</p>
+
+    <p>2025年1月底，它发出了一份让市场振奋的公告——</p>
+
+    <div class="quote-box">
+      <p>📢 预计2025年度归母净利润为<strong>710万元至1010万元</strong>，与上年同期亏损3.63亿元相比，<strong>实现扭亏为盈</strong>。</p>
+    </div>
+
+    <p>从深亏3.63亿，到净利润转正。<br>这中间，发生了什么？</p>
+
+    <div class="divider">· · ·</div>
+
+    <!-- 第一章 -->
+    <h2>🏭 三线建设里走出的兵工基因</h2>
+
+    <p>很多人不知道，长城军工的根，扎在中国最特殊的那段历史里。</p>
+
+    <p>1965年，为应对国际形势，国家在西部和内陆省份秘密布局"三线"军工企业。安徽，是其中重要的一环。</p>
+
+    <p>就这样，<span class="highlight">皖南山区</span>里建起了工厂，一代代军工人在此安家落户，积累起几十年的技术底蕴。</p>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="year">1965年</div>
+        <div class="event">三线建设启动，安徽军工基地奠基</div>
+      </div>
+      <div class="timeline-item">
+        <div class="year">2000年</div>
+        <div class="event">安徽长城军工股份有限公司正式成立</div>
+      </div>
+      <div class="timeline-item">
+        <div class="year">2012年</div>
+        <div class="event">安徽省国资委批准，军工资源整合提速</div>
+      </div>
+      <div class="timeline-item">
+        <div class="year">2018年</div>
+        <div class="event">在上海证券交易所上市（601606），成为A股稀缺弹药标的</div>
+      </div>
+      <div class="timeline-item">
+        <div class="year">2023年</div>
+        <div class="event">实际控制人变更为<strong>中国兵器装备集团</strong>，战略地位显著提升</div>
+      </div>
+      <div class="timeline-item">
+        <div class="year">2025年</div>
+        <div class="event">全年实现扭亏为盈，智能化转型加速落地</div>
+      </div>
+    </div>
+
+    <p>从三线工厂到A股上市，长城军工走了整整55年。<br>但真正的转变，才刚开始。</p>
+
+    <div class="divider">· · ·</div>
+
+    <!-- 第二章 -->
+    <h2>💣 它到底做什么？</h2>
+
+    <p>很多人对军工公司的印象停留在"导弹、飞机、军舰"。</p>
+
+    <p>但长城军工不一样——它专注的，是<span class="highlight">弹药与配套装备</span>，听起来低调，实则不可或缺。</p>
+
+    <p>任何武器系统，最终都需要弹药配套。弹药，是战场上消耗最大的战略物资。</p>
+
+    <table class="product-table">
+      <tr>
+        <th>产品体系</th>
+        <th>代表产品</th>
+        <th>特点</th>
+      </tr>
+      <tr>
+        <td>🎯 迫击炮弹系列</td>
+        <td>多口径、多场景</td>
+        <td>地面作战核心耗材，需求稳定</td>
+      </tr>
+      <tr>
+        <td>🚀 单兵火箭系列</td>
+        <td>便携反装甲装备</td>
+        <td>步兵单元标配，高强度需求</td>
+      </tr>
+      <tr>
+        <td>⚡ 光电对抗系列</td>
+        <td>电子战干扰装备</td>
+        <td>信息化作战核心装备</td>
+      </tr>
+      <tr>
+        <td>🔧 引信及火工品</td>
+        <td>高可靠引爆装置</td>
+        <td>保障弹药安全精准起爆</td>
+      </tr>
+      <tr>
+        <td>🤖 智能弹药系统</td>
+        <td>智能巡飞弹、精确制导弹</td>
+        <td>AI+弹药，自主目标识别</td>
+      </tr>
+    </table>
+
+    <p>这其中，最值得关注的是最后一项——<span class="highlight">智能弹药</span>。</p>
+
+    <p>传统弹药打出去，命中靠精度；<br>智能弹药打出去，<strong>自己找目标</strong>。</p>
+
+    <p>这不是概念，是长城军工正在落地的现实。</p>
+
+    <div class="divider">· · ·</div>
+
+    <!-- 第三章 -->
+    <h2>🤖 智能化：这家公司最大的赌注</h2>
+
+    <p>2024年，长城军工研发费用达到<span class="highlight">1.54亿元</span>，同比增长<span class="highlight">19%</span>。</p>
+
+    <p>钱都花在哪里了？</p>
+
+    <div class="card-grid">
+      <div class="data-card">
+        <div class="num">AI</div>
+        <div class="unit">决策系统</div>
+        <div class="label">弹药自主决策与目标识别</div>
+      </div>
+      <div class="data-card">
+        <div class="num">🐝</div>
+        <div class="unit">蜂群协同</div>
+        <div class="label">多无人机协同作战技术</div>
+      </div>
+      <div class="data-card">
+        <div class="num">无人机</div>
+        <div class="unit">载弹系统</div>
+        <div class="label">与航天科工联合研发，已进实测</div>
+      </div>
+      <div class="data-card">
+        <div class="num">数字孪生</div>
+        <div class="unit">智能工厂</div>
+        <div class="label">产能利用率95%，柔性制造</div>
+      </div>
+    </div>
+
+    <p>用一句话总结它的转型路径：</p>
+
+    <div class="quote-box">
+      <p>🎯 从"造弹药"到"造智能弹药系统"<br>
+      从"卖产品"到"提供作战解决方案"</p>
+    </div>
+
+    <p>这条路走对了，长城军工就是"弹药领域的华为"；<br>走偏了，就只是一家烧钱的传统军工厂。</p>
+
+    <p>目前来看，方向是对的。</p>
+
+    <div class="divider">· · ·</div>
+
+    <!-- 第四章 -->
+    <h2>📊 扭亏背后：三张底牌</h2>
+
+    <p>2024年，长城军工亏损了3.63亿元。<br>2025年，变成了盈利710万至1010万元。</p>
+
+    <p>这不是运气，是三张底牌叠加的结果。</p>
+
+    <p><strong>第一张牌：订单爆发</strong></p>
+    <p>2025年三季度，公司<span class="highlight">待交付订单总量同比激增180%</span>。新型陆军装备项目和海军弹药增补订单进入量产，营收水涨船高。</p>
+    <p>2025年上半年营业收入6.99亿元，同比增长<span class="highlight">29.55%</span>，毛利率提升2.71个百分点至<span class="highlight">21.08%</span>。</p>
+
+    <p><strong>第二张牌：降本增效</strong></p>
+    <p>公司加强产品生产过程管控，优化成本结构。应收账款周转率从0.35升至0.49，回款明显提速；存货周转率从0.75升至1.25，库存管理大幅改善。</p>
+
+    <p><strong>第三张牌：央企加持</strong></p>
+    <p>2023年，实际控制人变更为<span class="highlight">中国兵器装备集团有限公司</span>。</p>
+    <p>2025年6月，兵器装备集团启动分立重组，聚焦军工主业。长城军工作为<strong>集团内唯一弹药上市公司</strong>，资源整合预期显著增强。</p>
+
+    <div class="bar-row">
+      <div class="bar-label">营收增速（H1）</div>
+      <div class="bar-track"><div class="bar-fill" style="width:70%"></div></div>
+      <div class="bar-value">+29.6%</div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label">订单增速（Q3）</div>
+      <div class="bar-track"><div class="bar-fill" style="width:100%"></div></div>
+      <div class="bar-value">+180%</div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label">研发增速</div>
+      <div class="bar-track"><div class="bar-fill" style="width:40%"></div></div>
+      <div class="bar-value">+19%</div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label">毛利率</div>
+      <div class="bar-track"><div class="bar-fill" style="width:42%"></div></div>
+      <div class="bar-value">21.08%</div>
+    </div>
+
+    <div class="divider">· · ·</div>
+
+    <!-- 第五章 -->
+    <h2>🌍 行业大势：国防现代化的逻辑</h2>
+
+    <p>理解长城军工，不能只看公司，更要看行业。</p>
+
+    <p>2025年，中国国防预算增幅约7.2%，其中<span class="highlight">精确制导武器采购量预计增幅达40%</span>。</p>
+
+    <p>这背后是一个清晰的逻辑：</p>
+
+    <div class="quote-box">
+      <p>🧠 现代战争=信息化+智能化+精确打击<br>
+      弹药≠消耗品，而是系统的一部分<br>
+      智能弹药，是"新质战斗力"的最小作战单元</p>
+    </div>
+
+    <p>实战化演练强度持续提升，弹药作为"消耗品"的刚性需求稳定；而精确制导、智能巡飞等高附加值产品，正在重塑行业格局。</p>
+
+    <p>长城军工的产品，既覆盖传统弹药的<strong>稳定需求</strong>，又布局智能弹药的<strong>增量市场</strong>。</p>
+
+    <div class="divider">· · ·</div>
+
+    <!-- 第六章 -->
+    <h2>⚠️ 三个真实的问号</h2>
+
+    <div class="risk-box">
+      <div class="risk-title">❓ 问号一：扭亏靠主业还是靠补贴？</div>
+      <p>2025年归母净利润扭亏，但<strong>扣非净利润仍为亏损</strong>（预计-1200万至-1600万）。这意味着非经常性损益（政府补助等）贡献了约两千万，主营业务自身尚未完全扭转。</p>
+    </div>
+
+    <div class="risk-box">
+      <div class="risk-title">❓ 问号二：智能弹药能落地吗？</div>
+      <p>无人机载弹、智能巡飞弹等方向技术研发投入持续，但从实验室到量产，从国内到出口，每一步都有不确定性。</p>
+    </div>
+
+    <div class="risk-box">
+      <div class="risk-title">❓ 问号三：资产注入预期何时兑现？</div>
+      <p>兵器装备集团分立重组，市场期待长城军工承接优质未上市资产，但重组进度、注入时间、估值方案均有待官方披露。</p>
+    </div>
+
+    <div class="divider">· · ·</div>
+
+    <!-- 结语 -->
+    <h2>💬 最后说一句</h2>
+
+    <p>中国军工企业的故事，常常被"神秘"和"概念"包裹。</p>
+
+    <p>但长城军工的故事，其实很具体：</p>
+
+    <p>一群从三线工厂走出来的人，60年磨一剑，把迫击炮弹做到了行业头部；又花了7年，把弹药装上了"大脑"，让它学会自己找目标。</p>
+
+    <p>从消耗品到智能系统，从三线工厂到资本平台，这条路走得很慢，但走得很实。</p>
+
+    <div class="ending-box">
+      <p class="big-quote">炮弹的底子 × 智能化的想象</p>
+      <p>长城军工的下半场，<br>刚刚打响。</p>
+    </div>
+
+    <div class="disclaimer">
+      本文仅作信息分享，不含股价信息及任何投资建议。<br>
+      数据来源：公司公告、东方财富、新浪财经等公开资料。
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

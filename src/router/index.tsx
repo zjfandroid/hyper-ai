@@ -16,6 +16,7 @@ import TraderDetails from '@/views/TraderDetails'
 import Trade from '@/views/Trade'
 import HypeVaults from '@/views/HypeVaults';
 import NewsPage from '@/views/News';
+import ReportPage from '@/views/Report';
 import FundingFee from '@/views/FundingFee';
 import UserPrivacy from '@/views/UserPrivacy';
 
@@ -46,6 +47,11 @@ const router = createBrowserRouter([
         path: 'news',
         index: true,
         element: <NewsPage />
+      },
+      {
+        path: 'report',
+        index: true,
+        element: <ReportPage />
       },
       {
         path: 'vaults',

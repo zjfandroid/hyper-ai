@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>长飞光纤：空芯光纤破壁，AI时代的光速传输革命</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: #f5f5f5; color: #333; font-size: 15px; line-height: 1.8; }
+  .container { max-width: 680px; margin: 0 auto; background: #fff; }
+
+  .hero { background: linear-gradient(135deg, #0d0d1a 0%, #1a0a2e 50%, #6c3483 100%); padding: 60px 30px 50px; text-align: center; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at 50% 30%, rgba(142,68,173,0.3) 0%, transparent 60%); }
+  .hero-badge { display: inline-block; background: rgba(142,68,173,0.3); border: 1px solid rgba(142,68,173,0.7); color: #d7bde2; font-size: 12px; padding: 4px 14px; border-radius: 20px; margin-bottom: 18px; letter-spacing: 2px; position: relative; z-index: 1; }
+  .hero h1 { font-size: 26px; font-weight: 800; color: #fff; line-height: 1.4; position: relative; z-index: 1; }
+  .hero h1 em { font-style: normal; color: #d7bde2; }
+  .hero-sub { margin-top: 14px; color: rgba(255,255,255,0.7); font-size: 13px; position: relative; z-index: 1; }
+  .hero-img { width: 100%; max-height: 280px; object-fit: cover; display: block; }
+
+  .content { padding: 30px 24px; }
+  .lead { font-size: 16px; color: #555; line-height: 1.9; border-left: 4px solid #8e44ad; background: #fdf2f8; padding: 16px 16px 16px 20px; border-radius: 0 8px 8px 0; margin-bottom: 28px; }
+
+  .section-title { display: flex; align-items: center; gap: 10px; margin: 32px 0 16px; }
+  .section-title .num { background: linear-gradient(135deg, #8e44ad, #7d3c98); color: #fff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex-shrink: 0; }
+  .section-title h2 { font-size: 18px; font-weight: 700; color: #0d0d1a; }
+
+  p { margin-bottom: 16px; color: #444; line-height: 1.9; }
+
+  .data-row { display: flex; gap: 12px; margin: 20px 0; flex-wrap: wrap; }
+  .data-card { flex: 1; min-width: 130px; background: linear-gradient(135deg, #0d0d1a, #1a0a2e); color: #fff; border-radius: 12px; padding: 18px 14px; text-align: center; }
+  .data-card .val { font-size: 24px; font-weight: 800; color: #d7bde2; display: block; }
+  .data-card .lab { font-size: 11px; color: rgba(255,255,255,0.7); margin-top: 4px; }
+
+  .chain { background: #fdf2f8; border-radius: 12px; padding: 20px; margin: 20px 0; }
+  .chain-title { font-weight: 700; color: #6c3483; font-size: 14px; margin-bottom: 14px; }
+  .chain-items { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+  .chain-node { background: linear-gradient(135deg, #6c3483, #8e44ad); color: #fff; font-size: 12px; padding: 6px 14px; border-radius: 20px; white-space: nowrap; }
+  .chain-arrow { color: #8e44ad; font-size: 16px; font-weight: 700; }
+
+  .tech-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 20px 0; }
+  .tech-item { background: #fdf2f8; border: 1px solid #e8d5f0; border-radius: 12px; padding: 16px 14px; }
+  .tech-item .t-icon { font-size: 24px; margin-bottom: 8px; }
+  .tech-item .t-name { font-weight: 700; color: #6c3483; font-size: 14px; margin-bottom: 6px; }
+  .tech-item .t-desc { font-size: 12px; color: #666; line-height: 1.6; }
+
+  .highlight { background: linear-gradient(135deg, #fdf2f8, #f5eef8); border-radius: 12px; padding: 20px; margin: 20px 0; border-left: 4px solid #8e44ad; }
+  .highlight .hl-title { font-weight: 700; color: #6c3483; margin-bottom: 8px; font-size: 15px; }
+
+  .img-wrap { border-radius: 12px; overflow: hidden; margin: 20px 0; }
+  .img-wrap img { width: 100%; display: block; }
+  .img-cap { text-align: center; font-size: 12px; color: #999; margin-top: 6px; }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
+  .tag { background: #fdf2f8; border: 1px solid #d7bde2; color: #6c3483; font-size: 12px; padding: 4px 12px; border-radius: 20px; }
+
+  .ending { background: linear-gradient(135deg, #0d0d1a, #1a0a2e); color: #fff; border-radius: 16px; padding: 28px 24px; margin: 32px 0 20px; text-align: center; }
+  .ending h3 { font-size: 18px; font-weight: 700; color: #d7bde2; margin-bottom: 12px; }
+  .ending p { color: rgba(255,255,255,0.85); font-size: 14px; }
+  .disclaimer { font-size: 11px; color: #bbb; text-align: center; padding: 16px 24px; border-top: 1px solid #f0f0f0; line-height: 1.7; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="hero">
+    <div class="hero-badge">🔬 空芯光纤突破</div>
+    <h1>长飞光纤：<em>空芯光纤</em>破壁<br>AI时代的光速传输革命</h1>
+    <p class="hero-sub">🌐 全球市占率第一 × G.654.E超低损耗 × AI算力驱动 | 2026年3月</p>
+  </div>
+  <img class="hero-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80&auto=format&fit=crop" alt="光纤通信">
+
+  <div class="content">
+    <div class="lead">
+      当AI大模型在数据中心里飞速运转，你有没有想过——那些海量数据究竟是通过什么传输的？答案，是光纤。而全球最大的光纤生产商，正是长飞光纤（601869），一家扎根武汉、布局全球的通信材料龙头。
+    </div>
+
+    <!-- 章节1 -->
+    <div class="section-title">
+      <div class="num">1</div>
+      <h2>🌐 全球第一：从武汉到世界</h2>
+    </div>
+    <p>1988年，长飞光纤在武汉诞生，初期是一家中荷合资的光纤预制棒企业。经过30余年深耕，公司已发展成为<strong>全球领先的光纤预制棒、光纤、光缆及综合解决方案供应商</strong>，全球市场占有率约16%-18%，连续多年蝉联全球前列。</p>
+
+    <div class="chain">
+      <div class="chain-title">🔗 长飞光纤全产业链布局</div>
+      <div class="chain-items">
+        <div class="chain-node">光纤预制棒</div>
+        <div class="chain-arrow">→</div>
+        <div class="chain-node">光纤拉制</div>
+        <div class="chain-arrow">→</div>
+        <div class="chain-node">光缆成缆</div>
+        <div class="chain-arrow">→</div>
+        <div class="chain-node">光器件</div>
+        <div class="chain-arrow">→</div>
+        <div class="chain-node">综合方案</div>
+      </div>
+    </div>
+    <p>从原材料预制棒到终端光缆、光器件，长飞打通了光纤行业的完整价值链，这种"垂直整合"模式赋予公司强大的成本控制力和技术积累优势。</p>
+
+    <!-- 章节2 -->
+    <div class="section-title">
+      <div class="num">2</div>
+      <h2>🤖 AI算力：光纤需求的最强催化剂</h2>
+    </div>
+    <p>AI大模型浪潮的兴起，在通信底层催生了一场光纤需求的爆发。原因很简单：<strong>算力越强，传输需求越大</strong>。</p>
+    <div class="highlight">
+      <div class="hl-title">📊 AI驱动光纤需求的核心逻辑</div>
+      <p style="margin:0;color:#444;">每建设一个大型AI算力中心，其内部服务器之间的互联就需要消耗大量高速光纤。随着400G/800G传输速率成为主流，对低损耗、大容量光纤的需求急剧攀升。国泰海通2026年3月研报给予长飞光纤"增持"评级，明确受益于"AI算力竞争驱动下光纤需求爆发"。</p>
+    </div>
+    <p>长飞光纤的G.654.E超低损耗光纤（品牌名：远贝®），已成为"东数西算"长距离干线网络升级的首选，并批量进入中国电信、中国联通的核心骨干网络。</p>
+
+    <!-- 章节3 -->
+    <div class="section-title">
+      <div class="num">3</div>
+      <h2>🔬 空芯光纤：下一代光通信的"黑科技"</h2>
+    </div>
+    <p>如果说G.654.E是当下的王牌产品，那么<strong>空芯光纤</strong>（Hollow-Core Fiber）就是长飞押注的未来。</p>
+
+    <div class="tech-grid">
+      <div class="tech-item">
+        <div class="t-icon">💨</div>
+        <div class="t-name">以空气为传导介质</div>
+        <div class="t-desc">光信号在空芯中传播，速度比实心光纤快约30%</div>
+      </div>
+      <div class="tech-item">
+        <div class="t-icon">📡</div>
+        <div class="t-name">超低延迟</div>
+        <div class="t-desc">延迟可降至传统光纤的70%，适合金融交易、算力互联</div>
+      </div>
+      <div class="tech-item">
+        <div class="t-icon">🔒</div>
+        <div class="t-name">量子通信潜力</div>
+        <div class="t-desc">低干扰特性，适合量子密钥分发、高安全通信</div>
+      </div>
+      <div class="tech-item">
+        <div class="t-icon">🎯</div>
+        <div class="t-name">关键技术验证完成</div>
+        <div class="t-desc">长飞已完成实验室阶段关键技术，产业化进程加速</div>
+      </div>
+    </div>
+
+    <div class="img-wrap">
+      <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80&auto=format&fit=crop" alt="光通信未来">
+      <p class="img-cap">▲ 数字基础设施的高速公路——光纤连接着AI时代的一切</p>
+    </div>
+
+    <!-- 章节4 -->
+    <div class="section-title">
+      <div class="num">4</div>
+      <h2>🌏 全球化布局：海外订单超速增长</h2>
+    </div>
+    <p>长飞光纤不仅立足国内，更在全球范围内积极扩张。通过在巴西收购Poliron建立本土化制造，在东南亚、欧洲设立销售中心，海外订单同比增速超过20%。</p>
+
+    <div class="data-row">
+      <div class="data-card"><span class="val">16-18%</span><span class="lab">全球市场占有率</span></div>
+      <div class="data-card"><span class="val">800G</span><span class="lab">支持传输速率</span></div>
+      <div class="data-card"><span class="val">20%+</span><span class="lab">海外订单增速</span></div>
+      <div class="data-card"><span class="val">43亿</span><span class="lab">3月24日成交额</span></div>
+    </div>
+
+    <div class="tags">
+      <span class="tag">🔬 空芯光纤</span>
+      <span class="tag">🤖 AI算力</span>
+      <span class="tag">🌐 全球龙头</span>
+      <span class="tag">📡 5G建设</span>
+      <span class="tag">🌊 海底电缆</span>
+      <span class="tag">🇧🇷 海外布局</span>
+    </div>
+
+    <div class="ending">
+      <h3>写在最后 ✨</h3>
+      <p>每一次AI浪潮的兴起，都离不开光纤网络的默默支撑。长飞光纤的43亿成交额，是市场对这个逻辑的集中投票。当算力成为第一生产力，连接算力的光纤，就是数字时代最重要的"血管"。</p>
+    </div>
+  </div>
+
+  <div class="disclaimer">⚠️ 本文内容仅供行业信息分享，不构成任何投资建议。市场有风险，投资需谨慎。文中数据来源于公开资料及研究报告，如有偏差以公司官方公告为准。</div>
+</div>
+</body>
+</html>

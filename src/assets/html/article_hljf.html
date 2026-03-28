@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>汉缆股份：四十年铸造高压电缆龙头，柔性直流开启星辰之旅</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: #f4f8f4;
+  color: #2c2c2c;
+  line-height: 1.8;
+}
+.wrap { max-width: 680px; margin: 0 auto; background: #fff; padding-bottom: 40px; }
+
+/* 封面 */
+.hero {
+  background: linear-gradient(155deg, #0a1f0a 0%, #1a4020 50%, #2d6040 100%);
+  padding: 56px 30px 48px;
+  text-align: center;
+  position: relative; overflow: hidden;
+}
+.hero::after {
+  content: "";
+  position: absolute; top: -60px; right: -50px;
+  width: 280px; height: 280px;
+  background: radial-gradient(circle, rgba(80,200,100,0.15) 0%, transparent 65%);
+  border-radius: 50%;
+}
+.hero-badge {
+  display: inline-block; padding: 3px 14px;
+  border: 1px solid rgba(100,220,120,0.6); color: #80e890;
+  font-size: 11px; letter-spacing: 3px; border-radius: 20px;
+  margin-bottom: 16px;
+}
+.hero h1 {
+  font-size: 24px; font-weight: 800; color: #fff;
+  line-height: 1.45; margin-bottom: 12px;
+  position: relative; z-index: 1;
+}
+.hero-sub { font-size: 13px; color: rgba(255,255,255,0.6); position: relative; z-index: 1; }
+
+/* 引言 */
+.lead { margin: 30px 26px 0; padding: 18px 20px; background: #f0f9f0; border-left: 4px solid #2e7d32; border-radius: 0 8px 8px 0; font-size: 15px; color: #444; line-height: 1.9; }
+
+/* 正文 */
+.body { padding: 0 26px; }
+.sec { margin-top: 34px; }
+.sec-title {
+  font-size: 18px; font-weight: 700; color: #0a1f0a;
+  padding-bottom: 10px; margin-bottom: 14px;
+  border-bottom: 2px solid #d0ecd0;
+  display: flex; align-items: center; gap: 8px;
+}
+.dot { width: 10px; height: 10px; border-radius: 50%; background: #2e7d32; flex-shrink: 0; }
+p { font-size: 15px; color: #444; line-height: 1.9; margin-bottom: 14px; }
+
+/* 数据格 */
+.stat-row { display: flex; gap: 10px; margin: 20px 0; flex-wrap: wrap; }
+.stat { flex: 1; min-width: 120px; background: linear-gradient(135deg, #f0f9f0, #e0f2e0); border: 1px solid #a5d6a7; border-radius: 10px; padding: 14px 12px; text-align: center; }
+.stat .v { font-size: 20px; font-weight: 700; color: #2e7d32; display: block; }
+.stat .l { font-size: 11px; color: #888; margin-top: 4px; }
+
+/* 时间线 */
+.tl { border-left: 3px solid #a5d6a7; padding-left: 20px; margin: 20px 0; }
+.tl-item { position: relative; margin-bottom: 18px; }
+.tl-item::before {
+  content: ""; position: absolute; left: -27px; top: 6px;
+  width: 10px; height: 10px; border-radius: 50%;
+  background: #2e7d32; border: 2px solid #fff; box-shadow: 0 0 0 2px #2e7d32;
+}
+.tl-item .t { font-size: 11px; color: #2e7d32; font-weight: 600; margin-bottom: 3px; }
+.tl-item .d { font-size: 13px; color: #444; line-height: 1.6; }
+
+/* 技术卡片 */
+.tech-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 20px 0; }
+.tech-card { background: #f5faf5; border: 1px solid #a5d6a7; border-radius: 8px; padding: 14px; }
+.tech-card .t { font-size: 12px; color: #2e7d32; font-weight: 600; margin-bottom: 6px; }
+.tech-card .d { font-size: 13px; color: #444; line-height: 1.6; }
+
+/* 场景列表 */
+.scene-list { margin: 20px 0; }
+.scene-item { display: flex; align-items: flex-start; padding: 12px 14px; border-radius: 8px; margin-bottom: 8px; background: #f5faf5; border: 1px solid #a5d6a7; }
+.scene-icon { font-size: 20px; margin-right: 12px; flex-shrink: 0; }
+.scene-body .title { font-size: 14px; font-weight: 600; color: #1b5e20; margin-bottom: 3px; }
+.scene-body .desc { font-size: 12px; color: #666; line-height: 1.6; }
+
+/* 高亮框 */
+.box { margin: 20px 0; padding: 16px 18px; background: linear-gradient(135deg, #f0f9f0, #e8f5e8); border: 1px solid #81c784; border-radius: 10px; }
+.box-title { font-size: 13px; font-weight: 700; color: #1b5e20; margin-bottom: 8px; }
+.box p { font-size: 14px; color: #555; margin: 0; }
+
+/* 图片 */
+.imgwrap { margin: 24px 0; }
+.imgwrap img { width: 100%; border-radius: 10px; display: block; }
+.imgcap { font-size: 12px; color: #aaa; text-align: center; margin-top: 8px; }
+
+/* 分割 */
+.hr { height: 1px; background: linear-gradient(to right, transparent, #ddd, transparent); margin: 26px 0; }
+
+/* 结语 */
+.end { margin: 32px 26px 0; padding: 22px 20px; background: linear-gradient(135deg, #0a1f0a, #1a4020); border-radius: 12px; }
+.end h3 { font-size: 16px; font-weight: 700; color: #80e890; margin-bottom: 10px; }
+.end p { color: rgba(255,255,255,0.82); font-size: 14px; margin: 0; line-height: 1.9; }
+
+.footer { margin-top: 28px; text-align: center; font-size: 12px; color: #ccc; padding: 0 26px; line-height: 1.8; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="hero">
+  <div class="hero-badge">能源电网</div>
+  <h1>汉缆股份：四十年铸一缆<br>柔性直流开启星辰之路</h1>
+  <div class="hero-sub">⚡ 高压电缆 × 海上风电 × 柔性直流，电力传输的国家级匠人</div>
+</div>
+
+<div class="lead">
+  一根电缆，可以有多重要？它可以让风电场的绿色能源跨越深海送达城市，
+  可以让火箭发射基地在极端条件下不间断供电，
+  也可以让抽水蓄能电站在瞬息间完成调峰响应。
+  汉缆股份，用40年时间，把"一根电缆"做到了国际领先。
+</div>
+
+<div class="body">
+
+  <div class="sec">
+    <div class="sec-title"><span class="dot"></span>从3000元起家，到国家级核心供应商</div>
+    <p>
+      1982年，汉缆股份的前身在四间牛棚里以3000元启动资金创业。
+      如今，它已成为国家电网、南方电网超高压电缆的核心供应商，
+      参与制定超过<strong>90项行业标准</strong>，持有<strong>350余项专利</strong>，
+      是国内唯一拥有4条立式超高压交联生产线的企业。
+    </p>
+    <p>
+      这条路走了40年。期间，公司产品见证了北京奥运、上海世博，
+      进驻三峡、白鹤滩等国家级水电工程，并逐渐向海上风电、特高压、柔性直流等新兴赛道延伸。
+    </p>
+  </div>
+
+  <div class="tl">
+    <div class="tl-item">
+      <div class="t">1982年</div>
+      <div class="d">4间牛棚、3000元起步，汉缆历史的起点</div>
+    </div>
+    <div class="tl-item">
+      <div class="t">2010年代</div>
+      <div class="d">产品覆盖北京奥运、上海世博等国家级重大工程</div>
+    </div>
+    <div class="tl-item">
+      <div class="t">2025年</div>
+      <div class="d">跻身国家电网中标金额前20，南方电网稳居前列；进军国际项目（菲律宾、沙特等）</div>
+    </div>
+    <div class="tl-item">
+      <div class="t">2025年12月</div>
+      <div class="d">±535kV柔性直流海底电缆通过国家鉴定，达"国际领先水平"——里程碑时刻</div>
+    </div>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat"><span class="v">71.76亿</span><div class="l">2025前三季度营收</div></div>
+    <div class="stat"><span class="v">8250亿</span><div class="l">国家电网2025年投资额</div></div>
+    <div class="stat"><span class="v">±535kV</span><div class="l">国际领先柔性直流技术</div></div>
+  </div>
+
+  <div class="imgwrap">
+    <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=800&q=80&auto=format&fit=crop" alt="海上风电输电" />
+    <div class="imgcap">海上风电的绿色能量，正通过海底电缆流向千家万户 🌊</div>
+  </div>
+
+  <div class="hr"></div>
+
+  <div class="sec">
+    <div class="sec-title"><span class="dot"></span>技术突破：柔性直流，一个划时代的技术节点</div>
+    <p>
+      2025年12月，汉缆股份迎来了公司史上最重要的技术里程碑：
+      四项新产品通过中国机械工业联合会鉴定，其中两项达到<strong>国际领先水平</strong>——
+      包括<strong>±535kV交联聚乙烯绝缘光电复合柔性直流海底电缆</strong>。
+    </p>
+    <p>
+      柔性直流输电，是解决海上风电"远距离、大容量"输送难题的关键技术。
+      与传统交流输电相比，它能显著降低远海输电损耗，是未来深远海风电开发的标配。
+      率先突破这一技术，意味着汉缆在这个全新市场已经提前卡位。
+    </p>
+
+    <div class="tech-cards">
+      <div class="tech-card">
+        <div class="t">±535kV 柔性直流海缆</div>
+        <div class="d">通过国家鉴定，达国际领先水平，适用于深远海风电输电</div>
+      </div>
+      <div class="tech-card">
+        <div class="t">±320kV 直流海陆电缆</div>
+        <div class="d">国际领先级别，覆盖跨区域电网互联场景</div>
+      </div>
+      <div class="tech-card">
+        <div class="t">500kV 交流超高压电缆</div>
+        <div class="d">核心主业，国内最高电压等级之一，广泛应用于城市输电网</div>
+      </div>
+      <div class="tech-card">
+        <div class="t">特高压附件系统</div>
+        <div class="d">核心配套，完整解决方案供应商，差异化竞争优势</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title"><span class="dot"></span>四大场景，全面受益能源转型</div>
+    <p>
+      汉缆股份的市场版图，随着能源转型深化而持续扩展：
+    </p>
+
+    <div class="scene-list">
+      <div class="scene-item">
+        <div class="scene-icon">🌊</div>
+        <div class="scene-body">
+          <div class="title">海上风电</div>
+          <div class="desc">柔性直流技术突破，深远海风电输电核心供应商，国内外均有项目落地</div>
+        </div>
+      </div>
+      <div class="scene-item">
+        <div class="scene-icon">⚡</div>
+        <div class="scene-body">
+          <div class="title">特高压电网</div>
+          <div class="desc">国家电网特高压工程核心配套，2025年国网投资8250亿元持续放量</div>
+        </div>
+      </div>
+      <div class="scene-item">
+        <div class="scene-icon">💧</div>
+        <div class="scene-body">
+          <div class="title">抽水蓄能</div>
+          <div class="desc">多次中标三峡等国家重大水电工程，调峰储能电站配套电缆</div>
+        </div>
+      </div>
+      <div class="scene-item">
+        <div class="scene-icon">🌍</div>
+        <div class="scene-body">
+          <div class="title">国际新能源</div>
+          <div class="desc">切入菲律宾1.05GW光伏、沙特2GW光伏、海外特高压互联等项目</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="box">
+    <div class="box-title">🔑 为什么汉缆的技术壁垒难以被复制？</div>
+    <p>
+      超高压电缆的核心壁垒在于"立式交联"技术和工艺积累——
+      垂直高度超百米的生产塔，是行业进入的物理门槛。
+      汉缆是国内唯一同时拥有4条此类生产线的企业，
+      再加上40年沉淀的350余项专利和90余项标准话语权，后来者很难短时间追上。
+    </p>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title"><span class="dot"></span>写在最后</div>
+    <p>
+      在能源转型的大叙事里，电缆看起来平淡无奇，却是不可或缺的"血管"。
+      没有高压电缆，风电和太阳能无法远距离输送；没有柔性直流技术，
+      深远海风电就无法真正商业化。
+    </p>
+    <p>
+      汉缆股份走过的40年，是中国电力基础设施从追赶到并跑、再到部分超越的缩影。
+      从牛棚到国际领先，这根电缆，还在向更远处延伸。
+    </p>
+  </div>
+
+</div>
+
+<div class="end">
+  <h3>✨ 一句话总结</h3>
+  <p>汉缆股份是一家用40年技术积累构筑壁垒的高压电缆龙头——
+  柔性直流技术突破，正让它从"传统电网供应商"蜕变为能源转型新基建的核心伙伴。</p>
+</div>
+
+<div class="footer">
+  <p>本文内容基于公开资料整理，不构成任何投资建议。</p>
+  <p>数据来源：汉缆股份公告、同花顺、搜狐财经等。</p>
+</div>
+
+</div>
+</body>
+</html>
