@@ -17,7 +17,7 @@ import Trade from '@/views/Trade'
 import HypeVaults from '@/views/HypeVaults';
 import NewsPage from '@/views/News';
 import ReportPage from '@/views/Report';
-import FundingFee from '@/views/FundingFee';
+import LLMRanking from '@/views/LLMRanking';
 import UserPrivacy from '@/views/UserPrivacy';
 
 const router = createBrowserRouter([
@@ -54,14 +54,14 @@ const router = createBrowserRouter([
         element: <ReportPage />
       },
       {
+        path: 'ai-models',
+        index: true,
+        element: <LLMRanking />
+      },
+      {
         path: 'vaults',
         index: true,
         element: <HypeVaults />
-      },
-      {
-        path: 'funding-fee',
-        index: true,
-        element: <FundingFee />
       },
       {
         path: 'rewards',

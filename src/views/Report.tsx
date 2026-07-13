@@ -2,31 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { List, Typography, Button, Card, FloatButton } from 'antd';
 import { ArrowLeftOutlined, VerticalAlignTopOutlined } from '@ant-design/icons';
 
-import article0323Viral from '@/assets/html/article_0323_viral.html?raw';
-import ccjgArticle from '@/assets/html/ccjg_article.html?raw';
-import ccjgCover from '@/assets/html/ccjg_cover.jpg';
-import dmlArticle from '@/assets/html/dml_article.html?raw';
-import goldSilverCrashArticle from '@/assets/html/gold_silver_crash_article.html?raw';
-import hcgArticle from '@/assets/html/hcg_article.html?raw';
-import hywArticle from '@/assets/html/hyw_article.html?raw';
-import jkxnArticle from '@/assets/html/jkxn_article.html?raw';
-import marketOutlookArticle from '@/assets/html/market_outlook_article.html?raw';
-import marketReviewArticle from '@/assets/html/market_review_20260323.html?raw';
-import realEstateArticle from '@/assets/html/real_estate_article.html?raw';
-import rjjkArticle from '@/assets/html/rjjk_article.html?raw';
-import unitreeIpoArticle from '@/assets/html/unitree_ipo_article.html?raw';
-import wdkArticle from '@/assets/html/wdk_article.html?raw';
-import znwhArticle from '@/assets/html/znwh_article.html?raw';
-import cfgxArticle from '@/assets/html/article_cfgx.html?raw';
-import articleDml from '@/assets/html/article_dml.html?raw';
-import articleHdln from '@/assets/html/article_hdln.html?raw';
-import articleHljf from '@/assets/html/article_hljf.html?raw';
-import articleJkxn from '@/assets/html/article_jkxn.html?raw';
-import articleZjky from '@/assets/html/article_zjky.html?raw';
-import articleZljt from '@/assets/html/article_zljt.html?raw';
-import articleZyhn from '@/assets/html/article_zyhn.html?raw';
-
-const { Title, Text } = Typography;
+const { Text } = Typography;
 
 interface Article {
   id: string;
@@ -34,9 +10,43 @@ interface Article {
   content: string;
 }
 
-const extractTitleFromHtml = (html: string): string => {
-  const titleMatch = html.match(/<title>([^<]+)<\/title>/);
-  return titleMatch ? titleMatch[1].trim() : '未命名文章';
+const sanitizeTitle = (value: string): string => value.replace(/\s+/g, ' ').trim();
+
+const formatTitleFromId = (articleId: string): string => {
+  return articleId
+    .replace(/[_-]+/g, ' ')
+    .replace(/\b\w/g, (char) => char.toUpperCase());
+};
+
+const extractTitleFromHtml = (html: string, articleId: string): string => {
+  if (typeof DOMParser !== 'undefined') {
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+    const candidates = [
+      doc.querySelector('title')?.textContent,
+      doc.querySelector('h1')?.textContent,
+      doc.querySelector('h2')?.textContent,
+      doc.querySelector('article h3')?.textContent,
+      doc.querySelector('section h3')?.textContent,
+      doc.querySelector('article p')?.textContent,
+      doc.querySelector('section p')?.textContent,
+      doc.querySelector('p')?.textContent
+    ];
+
+    const matchedTitle = candidates
+      .map((candidate) => sanitizeTitle(candidate || ''))
+      .find(Boolean);
+
+    if (matchedTitle) {
+      return matchedTitle;
+    }
+  }
+
+  const titleMatch = html.match(/<title>([^<]+)<\/title>/i);
+  if (titleMatch?.[1]) {
+    return sanitizeTitle(titleMatch[1]);
+  }
+
+  return formatTitleFromId(articleId);
 };
 
 const ReportPage = () => {
@@ -44,52 +54,38 @@ const ReportPage = () => {
   const [selectedArticle, setSelectedArticle] = useState<string | null>(null);
   const [articleContent, setArticleContent] = useState<string>('');
 
-  const processHtmlContent = (html: string, articleId: string): string => {
+  const processHtmlContent = async (html: string, articleId: string): Promise<string> => {
     let processed = html;
     if (articleId === 'ccjg_article') {
-      processed = processed.replace('./ccjg_cover.jpg', ccjgCover);
+      const coverModule = await import('@/assets/html/ccjg_cover.jpg');
+      processed = processed.replace('./ccjg_cover.jpg', coverModule.default);
     }
     return processed;
   };
 
   useEffect(() => {
-    const articleData = [
-      { id: 'article_0323_viral', content: article0323Viral },
-      { id: 'ccjg_article', content: ccjgArticle },
-      { id: 'dml_article', content: dmlArticle },
-      { id: 'gold_silver_crash', content: goldSilverCrashArticle },
-      { id: 'hcg_article', content: hcgArticle },
-      { id: 'hyw_article', content: hywArticle },
-      { id: 'jkxn_article', content: jkxnArticle },
-      { id: 'market_outlook', content: marketOutlookArticle },
-      { id: 'market_review', content: marketReviewArticle },
-      { id: 'real_estate', content: realEstateArticle },
-      { id: 'rjjk_article', content: rjjkArticle },
-      { id: 'unitree_ipo', content: unitreeIpoArticle },
-      { id: 'wdk_article', content: wdkArticle },
-      { id: 'znwh_article', content: znwhArticle },
-      { id: 'cfgx_article', content: cfgxArticle },
-      { id: 'article_dml', content: articleDml },
-      { id: 'article_hdln', content: articleHdln },
-      { id: 'article_hljf', content: articleHljf },
-      { id: 'article_jkxn', content: articleJkxn },
-      { id: 'article_zjky', content: articleZjky },
-      { id: 'article_zljt', content: articleZljt },
-      { id: 'article_zyhn', content: articleZyhn },
-    ];
+    const articleModules = import.meta.glob('@/assets/html/*.html', { query: '?raw', import: 'default' });
 
-    const availableArticles: Article[] = articleData.map(article => ({
-      id: article.id,
-      title: extractTitleFromHtml(article.content),
-      content: article.content
-    }));
-
-    setArticles(availableArticles);
+    Promise.all(
+      Object.entries(articleModules).map(async ([path, loader]) => {
+        const content = await loader();
+        const id = path.split('/').pop()?.replace('.html', '') || '';
+        return {
+          id,
+          title: extractTitleFromHtml(content, id),
+          content
+        };
+      })
+    ).then(availableArticles => {
+      availableArticles.sort((a, b) => a.id.localeCompare(b.id));
+      setArticles(availableArticles);
+    });
   }, []);
 
-  const handleArticleSelect = (article: Article) => {
+  const handleArticleSelect = async (article: Article) => {
     setSelectedArticle(article.id);
-    setArticleContent(processHtmlContent(article.content, article.id));
+    const processedContent = await processHtmlContent(article.content, article.id);
+    setArticleContent(processedContent);
   };
 
   const handleBackToList = () => {
