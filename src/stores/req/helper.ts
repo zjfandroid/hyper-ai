@@ -51,11 +51,20 @@ const hyperApi = axios.create({
   },
 })
 
+// VergeX 行情数据 API（公开接口，无需鉴权）
+const vergexApi = axios.create({
+  baseURL: 'https://vergex.trade',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+})
+
 export {
   baseCheck,
   baseURL,
   baseApi,
-  hyperApi
+  hyperApi,
+  vergexApi
 }
 
 

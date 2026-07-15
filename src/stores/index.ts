@@ -11,6 +11,7 @@ export * from './Tracking'
 export * from './Discover'
 export * from './TraderDetails'
 export * from './Trade'
+export * from './Trending'
 
 export * from './Hyper'
 export * from './req'

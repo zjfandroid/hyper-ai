@@ -10,6 +10,7 @@ import Home from '@/views/Home/index'
 import CopyTrading from '@/views/CopyTrading'
 import Rewards from '@/views/Rewards'
 import Leaderboard from '@/views/Leaderboard/index'
+import Trending from '@/views/Trending/index'
 import TrackMonitor from '@/views/TrackMonitor'
 import Discover from '@/views/Discover/index'
 import TraderDetails from '@/views/TraderDetails'
@@ -72,6 +73,11 @@ const router = createBrowserRouter([
         path: 'leaderboard',
         index: true,
         element: <Leaderboard />
+      },
+      {
+        path: 'trending',
+        index: true,
+        element: <Trending />
       },
       {
         path: 'track-monitor',

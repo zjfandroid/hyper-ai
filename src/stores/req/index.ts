@@ -45,6 +45,8 @@ import { discoverKolList, TDiscoverKolList } from './discover/kol-list'
 import { discoverKolTagging, TDiscoverKolTagging } from './discover/kol-tagging'
 import { discoverKolVote, TDiscoverKolVote } from './discover/kol-vote'
 
+import { trendingCrypto, TTrendingCrypto } from './trending/crypto'
+
 import { hyperClearinghouseState, THyperClearinghouseState } from './hyper/clearinghouse-state'
 import { hyperUserFills, THyperUserFills } from './hyper/user-fills'
 import { hyperUserTWAP, THyperUserTWAP } from './hyper/user-twap'
@@ -67,7 +69,7 @@ export type TReqStore =
   TNewsLatest &
   TTrackingAddressPosition & TTrackingRemove & TTrackingCreate &
   TDiscoverList & TDiscoverTradingStatistics & TDiscoverKolList & TDiscoverKolTagging & TDiscoverKolVote &
-  THyperClearinghouseState & THyperUserFills & THyperUserTWAP & THyperUserNonFunding & THyperUserOpenOrdersAdditional & THyperUserSpotClearinghouseState & THyperSpotMetaAndAssetCtxs & THyperUserPortfolio & TDiscoverRecommend & THyperPerpMetaAndAssetCtxs & THyperUserHistoricalOrders
+  THyperClearinghouseState & THyperUserFills & THyperUserTWAP & THyperUserNonFunding & THyperUserOpenOrdersAdditional & THyperUserSpotClearinghouseState & THyperSpotMetaAndAssetCtxs & THyperUserPortfolio & THyperPerpMetaAndAssetCtxs & THyperUserHistoricalOrders & TTrendingCrypto
 
 const reqStore = {
   // Use
@@ -94,7 +96,10 @@ const reqStore = {
   // Hyper
   ...hyperClearinghouseState, ...hyperUserFills, ...hyperUserTWAP,
   ...hyperUserNonFunding, ...hyperUserOpenOrdersAdditional, ...hyperUserSpotClearinghouseState,
-  ...hyperSpotMetaAndAssetCtxs, ...hyperUserPortfolio, ...hyperPerpMetaAndAssetCtxs, ...hyperUserHistoricalOrders
+  ...hyperSpotMetaAndAssetCtxs, ...hyperUserPortfolio, ...hyperPerpMetaAndAssetCtxs, ...hyperUserHistoricalOrders,
+
+  // Trending
+  ...trendingCrypto
 }
 
 export const useReqStore = createStore<TReqStore>(reqStore)
