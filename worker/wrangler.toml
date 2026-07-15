@@ -1,0 +1,11 @@
+name = "vergex-proxy"
+main = "proxy.js"
+compatibility_date = "2024-09-01"
+
+# 部署后访问地址形如：
+# https://vergex-proxy.<your-subdomain>.workers.dev
+
+# 可选：自定义路由（需绑定自有域名到 Cloudflare）
+# [routes]
+# route = "api.yourdomain.com/vergex/*"
+# zone_name = "yourdomain.com"

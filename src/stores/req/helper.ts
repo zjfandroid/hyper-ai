@@ -59,12 +59,21 @@ const vergexApi = axios.create({
   },
 })
 
+// VergeX 代理 API（通过 Cloudflare Worker 转发，解决跨域 403）
+// 未配置代理时为 null，调用方需回退到客户端计算模式
+const vergexProxyBase = import.meta.env.VITE_VERGEX_PROXY
+const vergexProxyApi = vergexProxyBase ? axios.create({
+  baseURL: vergexProxyBase,
+  headers: { 'Content-Type': 'application/json' },
+}) : null
+
 export {
   baseCheck,
   baseURL,
   baseApi,
   hyperApi,
-  vergexApi
+  vergexApi,
+  vergexProxyApi
 }
 
 

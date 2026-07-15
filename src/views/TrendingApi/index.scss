@@ -1,0 +1,136 @@
+.trending-api-page {
+  .container-xl {
+    width: 100%;
+  }
+}
+
+.trending-api-sidebar {
+  flex-shrink: 0;
+
+  @media (min-width: 768px) {
+    width: 220px;
+    position: sticky;
+    top: 80px;
+    align-self: flex-start;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+  }
+}
+
+.trending-api-mobile-select {
+  width: 100%;
+
+  .ant-select-selector {
+    border-radius: 8px;
+  }
+}
+
+.trending-api-nav {
+  .trending-api-nav-item {
+    background: transparent;
+    border: 1px solid transparent;
+    transition: all 0.2s;
+    min-width: 0;
+
+    &:hover {
+      background: var(--bg-gray-alpha-4);
+    }
+
+    &.active {
+      background: var(--bg-gray-alpha-6);
+      border-color: var(--color-primary);
+
+      span {
+        color: var(--color-primary);
+        font-weight: bold;
+      }
+    }
+
+    span {
+      font-size: 13px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: var(--color-gray);
+    border-radius: 2px;
+  }
+}
+
+.trending-api-baseurl {
+  font-size: 14px;
+  color: var(--color-primary);
+  word-break: break-all;
+}
+
+.trending-api-path-lg {
+  font-size: 15px;
+  font-weight: bold;
+  color: var(--color-primary);
+  word-break: break-all;
+}
+
+.trending-api-url {
+  background: var(--bg-gray-5);
+  font-size: 13px;
+  color: var(--color-primary);
+  word-break: break-all;
+  white-space: pre-wrap;
+  overflow-x: auto;
+}
+
+.trending-api-json {
+  background: var(--bg-gray-5);
+  font-size: 12px;
+  line-height: 1.6;
+  max-height: 500px;
+  overflow: auto;
+  word-break: break-all;
+  white-space: pre-wrap;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: var(--color-gray);
+    border-radius: 3px;
+  }
+}
+
+.trending-api-placeholder {
+  min-height: 120px;
+  background: var(--bg-gray-5);
+}
+
+.trending-api-fields-table {
+  .border-bottom {
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  code {
+    font-size: 13px;
+    color: var(--color-primary);
+  }
+}
+
+@media (max-width: 767px) {
+  .trending-api-fields-table {
+    .d-flex {
+      flex-direction: column;
+      gap: 4px;
+
+      .col-3, .col-2, .col-7 {
+        width: 100%;
+        max-width: 100%;
+        flex: 0 0 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,58 @@
+// 趋势页面内容容器：桌面端根据内容自适应宽度，不强制全宽
+.trending-content-wrap {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .trending-content-wrap {
+    width: fit-content;
+    min-width: 60%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+// bias 标签（牛/熊/中性）
+.trending-radar-bias-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 18px;
+
+  &.color-success {
+    background-color: rgba(46, 196, 124, 0.12);
+  }
+
+  &.color-error {
+    background-color: rgba(235, 66, 74, 0.12);
+  }
+
+  &.color-secondary {
+    background-color: rgba(128, 128, 128, 0.12);
+  }
+}
+
+// 因子方向颜色方块（无文字，仅用颜色表示涨跌）
+.trending-radar-factor-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  flex-shrink: 0;
+
+  &.color-success {
+    background-color: #2ec47c;
+  }
+
+  &.color-error {
+    background-color: #eb424a;
+  }
+
+  &.color-secondary {
+    background-color: rgba(128, 128, 128, 0.4);
+  }
+}
