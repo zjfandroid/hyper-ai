@@ -4,9 +4,16 @@ import { CopyToClipboard } from 'react-copy-to-clipboard'
 import { useTranslation } from 'react-i18next'
 
 import { IOutlineCopy } from '@/components/icon'
-import { vergexApi, hyperApi } from '@/stores/req/helper'
+import { vergexApi, hyperApi, vergexProxyApi } from '@/stores/req/helper'
 import Loading from '@/components/Loading'
-import { API_BASE_URL, HYPERLIQUID_API_URL, API_DOCS, ApiDoc } from './data'
+import { API_BASE_URL, HYPERLIQUID_API_URL, VERGEX_PROXY_URL, API_DOCS, ApiDoc } from './data'
+
+// 接口分组配置
+const API_GROUPS: { id: string; labelI18n: string }[] = [
+  { id: 'radar', labelI18n: 'trendingApi.groupRadar' },
+  { id: 'crypto', labelI18n: 'trendingApi.groupCrypto' },
+  { id: 'stock', labelI18n: 'trendingApi.groupStock' },
+]
 
 import './index.scss'
 
@@ -77,7 +84,13 @@ const TrendingApi = () => {
         const apiInstance = selectedDoc.baseUrl === HYPERLIQUID_API_URL ? hyperApi : vergexApi
         res = await apiInstance.post(selectedDoc.path, buildBody())
       } else {
-        const apiInstance = selectedDoc.baseUrl === HYPERLIQUID_API_URL ? hyperApi : vergexApi
+        // 判断使用哪个 axios 实例：HyperLiquid / vergex 代理 / vergex 直连
+        let apiInstance = vergexApi
+        if (selectedDoc.baseUrl === HYPERLIQUID_API_URL) {
+          apiInstance = hyperApi
+        } else if (VERGEX_PROXY_URL && selectedDoc.baseUrl === VERGEX_PROXY_URL) {
+          apiInstance = vergexProxyApi
+        }
         const queryParams: Record<string, string> = {}
         selectedDoc.params.forEach(p => {
           if (p.inBody) return
@@ -116,23 +129,35 @@ const TrendingApi = () => {
             className="trending-api-mobile-select d-md-none"
             value={selectedId}
             onChange={setSelectedId}
-            options={API_DOCS.map(doc => ({
-              label: `${doc.method}  ${t(doc.titleI18n)}`,
-              value: doc.id
+            options={API_GROUPS.map(g => ({
+              label: t(g.labelI18n),
+              options: API_DOCS.filter(doc => doc.group === g.id).map(doc => ({
+                label: `${doc.method}  ${t(doc.titleI18n)}`,
+                value: doc.id
+              }))
             }))}
           />
-          {/* 桌面端列表 */}
+          {/* 桌面端列表（按分组展示） */}
           <div className="trending-api-nav d-none d-md-flex flex-column gap-1">
-            {API_DOCS.map(doc => (
-              <div
-                key={doc.id}
-                className={`trending-api-nav-item d-flex align-items-center gap-2 p-2 br-2 pointer ${selectedId === doc.id ? 'active' : ''}`}
-                onClick={() => setSelectedId(doc.id)}
-              >
-                <Tag color={methodColor(doc.method)} className="m-0">{doc.method}</Tag>
-                <span className="text-truncate">{t(doc.titleI18n)}</span>
-              </div>
-            ))}
+            {API_GROUPS.map(group => {
+              const docs = API_DOCS.filter(doc => doc.group === group.id)
+              if (!docs.length) return null
+              return (
+                <div key={group.id} className="d-flex flex-column gap-1">
+                  <div className="trending-api-group-label fw-bold color-unimportant px-2 pt-2 pb-1">{t(group.labelI18n)}</div>
+                  {docs.map(doc => (
+                    <div
+                      key={doc.id}
+                      className={`trending-api-nav-item d-flex align-items-center gap-2 p-2 br-2 pointer ${selectedId === doc.id ? 'active' : ''}`}
+                      onClick={() => setSelectedId(doc.id)}
+                    >
+                      <Tag color={methodColor(doc.method)} className="m-0">{doc.method}</Tag>
+                      <span className="text-truncate">{t(doc.titleI18n)}</span>
+                    </div>
+                  ))}
+                </div>
+              )
+            })}
           </div>
         </aside>
 
@@ -145,6 +170,9 @@ const TrendingApi = () => {
               <code className="trending-api-path-lg">{selectedDoc.baseUrl}{selectedDoc.path}</code>
               {selectedDoc.baseUrl === HYPERLIQUID_API_URL && (
                 <Tag color="purple" className="m-0">HyperLiquid</Tag>
+              )}
+              {VERGEX_PROXY_URL && selectedDoc.baseUrl === VERGEX_PROXY_URL && (
+                <Tag color="cyan" className="m-0">CF Proxy</Tag>
               )}
             </div>
             <h4 className="fw-bold mb-0">{t(selectedDoc.titleI18n)}</h4>

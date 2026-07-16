@@ -25,12 +25,43 @@ export interface ApiDoc {
   params: ApiParam[]
   responseFields: ApiResponseField[]
   responseStructure: 'topLow' | 'futureSpot' | 'rows' | 'object' | 'array'
+  group: 'crypto' | 'stock' | 'radar'
 }
 
 export const API_BASE_URL = 'https://vergex.trade'
 export const HYPERLIQUID_API_URL = 'https://api.hyperliquid.xyz'
+// 牛熊雷达专用代理（Cloudflare Worker），避免直连 vergex 触发 403
+export const VERGEX_PROXY_URL = import.meta.env.VITE_VERGEX_PROXY || ''
 
 export const API_DOCS: ApiDoc[] = [
+  {
+    id: 'bias_radar',
+    method: 'GET',
+    baseUrl: VERGEX_PROXY_URL || API_BASE_URL,
+    path: '/api/v1/data-intelligence/markets/cross-section/directional',
+    titleI18n: 'trendingApi.biasRadarTitle',
+    descI18n: 'trendingApi.biasRadarDesc',
+    responseStructure: 'object',
+    group: 'radar',
+    params: [
+      { name: 'chain', type: 'string', required: true, fixed: 'mainnet', descI18n: 'trendingApi.paramChain' },
+      { name: 'liqBand', type: 'number', required: true, defaultValue: '15', descI18n: 'trendingApi.paramLiqBand' },
+    ],
+    responseFields: [
+      { field: 'items', type: 'array', descI18n: 'trendingApi.fieldItems' },
+      { field: 'symbol', type: 'string', descI18n: 'trendingApi.fieldSymbol' },
+      { field: 'market.marketType', type: 'string', descI18n: 'trendingApi.fieldMarketType' },
+      { field: 'market.marketId', type: 'number', descI18n: 'trendingApi.fieldMarketId' },
+      { field: 'bias', type: 'string', descI18n: 'trendingApi.fieldBias' },
+      { field: 'directionScore', type: 'number', descI18n: 'trendingApi.fieldDirectionScore' },
+      { field: 'bullishCount', type: 'number', descI18n: 'trendingApi.fieldBullishCount' },
+      { field: 'bearishCount', type: 'number', descI18n: 'trendingApi.fieldBearishCount' },
+      { field: 'neutralCount', type: 'number', descI18n: 'trendingApi.fieldNeutralCount' },
+      { field: 'rank', type: 'number', descI18n: 'trendingApi.fieldRank' },
+      { field: 'markPrice', type: 'number', descI18n: 'trendingApi.fieldMarkPriceNum' },
+      { field: 'factorDirections', type: 'object', descI18n: 'trendingApi.fieldFactorDirections' },
+    ],
+  },
   {
     id: 'net_flow',
     method: 'GET',
@@ -39,6 +70,7 @@ export const API_DOCS: ApiDoc[] = [
     titleI18n: 'trendingApi.netFlowTitle',
     descI18n: 'trendingApi.netFlowDesc',
     responseStructure: 'topLow',
+    group: 'crypto',
     params: [
       { name: 'tab', type: 'string', required: true, fixed: 'net_flow', descI18n: 'trendingApi.paramTab' },
       { name: 'duration', type: 'string', required: true, defaultValue: '24h', options: ['1h', '4h', '12h', '24h'], descI18n: 'trendingApi.paramDuration' },
@@ -62,6 +94,7 @@ export const API_DOCS: ApiDoc[] = [
     titleI18n: 'trendingApi.oiTitle',
     descI18n: 'trendingApi.oiDesc',
     responseStructure: 'topLow',
+    group: 'crypto',
     params: [
       { name: 'tab', type: 'string', required: true, fixed: 'oi', descI18n: 'trendingApi.paramTab' },
       { name: 'duration', type: 'string', required: true, defaultValue: '24h', options: ['1h', '4h', '12h', '24h'], descI18n: 'trendingApi.paramDuration' },
@@ -90,6 +123,7 @@ export const API_DOCS: ApiDoc[] = [
     titleI18n: 'trendingApi.depthTitle',
     descI18n: 'trendingApi.depthDesc',
     responseStructure: 'futureSpot',
+    group: 'crypto',
     params: [
       { name: 'tab', type: 'string', required: true, fixed: 'depth', descI18n: 'trendingApi.paramTab' },
       { name: 'limit', type: 'number', required: true, defaultValue: '50', descI18n: 'trendingApi.paramLimit' },
@@ -114,6 +148,7 @@ export const API_DOCS: ApiDoc[] = [
     titleI18n: 'trendingApi.ratesTitle',
     descI18n: 'trendingApi.ratesDesc',
     responseStructure: 'topLow',
+    group: 'crypto',
     params: [
       { name: 'tab', type: 'string', required: true, fixed: 'rates', descI18n: 'trendingApi.paramTab' },
       { name: 'limit', type: 'number', required: true, defaultValue: '50', descI18n: 'trendingApi.paramLimit' },
@@ -138,6 +173,7 @@ export const API_DOCS: ApiDoc[] = [
     titleI18n: 'trendingApi.priceTitle',
     descI18n: 'trendingApi.priceDesc',
     responseStructure: 'topLow',
+    group: 'crypto',
     params: [
       { name: 'tab', type: 'string', required: true, fixed: 'price', descI18n: 'trendingApi.paramTab' },
       { name: 'duration', type: 'string', required: true, defaultValue: '24h', options: ['1h', '4h', '12h', '24h'], descI18n: 'trendingApi.paramDuration' },
@@ -165,6 +201,7 @@ export const API_DOCS: ApiDoc[] = [
     titleI18n: 'trendingApi.hlTitle',
     descI18n: 'trendingApi.hlDesc',
     responseStructure: 'rows',
+    group: 'crypto',
     params: [
       { name: 'category', type: 'string', required: true, fixed: 'other', descI18n: 'trendingApi.paramCategory' },
       { name: 'sub', type: 'string', required: true, fixed: 'preipo', descI18n: 'trendingApi.paramSub' },
@@ -193,6 +230,7 @@ export const API_DOCS: ApiDoc[] = [
     titleI18n: 'trendingApi.ai500Title',
     descI18n: 'trendingApi.ai500Desc',
     responseStructure: 'object',
+    group: 'stock',
     params: [
       { name: 'lang', type: 'string', required: true, defaultValue: 'en', options: ['en', 'zh'], descI18n: 'trendingApi.paramLang' },
       { name: 'key', type: 'string', required: true, fixed: 'ai500', descI18n: 'trendingApi.paramCategoryKey' },
@@ -221,6 +259,7 @@ export const API_DOCS: ApiDoc[] = [
     titleI18n: 'trendingApi.predictionTitle',
     descI18n: 'trendingApi.predictionDesc',
     responseStructure: 'object',
+    group: 'stock',
     params: [
       { name: 'lang', type: 'string', required: true, defaultValue: 'en', options: ['en', 'zh'], descI18n: 'trendingApi.paramLang' },
       { name: 'key', type: 'string', required: true, fixed: 'prediction', descI18n: 'trendingApi.paramCategoryKey' },
@@ -250,6 +289,7 @@ export const API_DOCS: ApiDoc[] = [
     titleI18n: 'trendingApi.hlPerpMetaTitle',
     descI18n: 'trendingApi.hlPerpMetaDesc',
     responseStructure: 'array',
+    group: 'crypto',
     params: [
       { name: 'type', type: 'string', required: true, fixed: 'metaAndAssetCtxs', inBody: true, descI18n: 'trendingApi.paramType' },
     ],
@@ -275,6 +315,7 @@ export const API_DOCS: ApiDoc[] = [
     titleI18n: 'trendingApi.hlAllMidsTitle',
     descI18n: 'trendingApi.hlAllMidsDesc',
     responseStructure: 'object',
+    group: 'crypto',
     params: [
       { name: 'type', type: 'string', required: true, fixed: 'allMids', inBody: true, descI18n: 'trendingApi.paramType' },
     ],
@@ -291,6 +332,7 @@ export const API_DOCS: ApiDoc[] = [
     titleI18n: 'trendingApi.hlSpotMetaTitle',
     descI18n: 'trendingApi.hlSpotMetaDesc',
     responseStructure: 'array',
+    group: 'crypto',
     params: [
       { name: 'type', type: 'string', required: true, fixed: 'spotMetaAndAssetCtxs', inBody: true, descI18n: 'trendingApi.paramType' },
     ],

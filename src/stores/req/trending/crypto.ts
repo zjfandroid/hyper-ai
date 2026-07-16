@@ -1,7 +1,8 @@
 import BN from 'bignumber.js'
 
 import { merge } from '@/utils'
-import { vergexApi, hyperApi, vergexProxyApi } from '@/stores/req/helper'
+import { translateOutcomes } from '@/utils/predictionTranslate'
+import { vergexApi, vergexProxyApi, hyperApi } from '@/stores/req/helper'
 import { constants, TTrendingStore } from '@/stores'
 
 import { formatUPnlStatus, formatStatusClassName } from '../utils'
@@ -259,25 +260,35 @@ export const trendingCrypto: TTrendingCrypto = {
 
     try {
       // 优先使用 Cloudflare Worker 代理调用 vergex 真实 biasRadar API
-      // 未配置代理时回退到基于 HyperLiquid API 的客户端计算模式
+      // 代理失败或未配置时回退到基于 HyperLiquid API 的客户端计算模式
+      let radarList: any[] = []
+      let usedProxy = false
+
       if (vergexProxyApi) {
-        const res = await vergexProxyApi.get('/api/v1/data-intelligence/markets/cross-section/directional', {
-          params: { chain: 'mainnet', liqBand: 15 }
-        })
-        result.error = false
-
-        const rawItems = res.data?.data?.items || res.data?.items || []
-        result.data = { radarList: formatRadar(rawItems) }
-      } else {
-        // 回退方案：基于 HyperLiquid 公开 API 数据客户端计算
-        const res = await hyperApi.post('/info', { type: 'metaAndAssetCtxs' })
-        result.error = false
-
-        const universe = res.data?.[0]?.universe || []
-        const ctxs = res.data?.[1] || []
-        result.data = { radarList: formatRadar(universe, ctxs) }
+        try {
+          const res = await vergexProxyApi.get('/api/v1/data-intelligence/markets/cross-section/directional', {
+            params: { chain: 'mainnet', liqBand: 15 },
+            timeout: 10000, // 代理 10 秒超时，避免长时间等待
+          })
+          const rawItems = res.data?.data?.items || res.data?.items || []
+          radarList = formatRadar(rawItems)
+          usedProxy = true
+        } catch (proxyErr) {
+          // 代理失败，静默回退到 HyperLiquid 客户端计算
+          usedProxy = false
+        }
       }
 
+      if (!usedProxy) {
+        // 回退方案：基于 HyperLiquid 公开 API 数据客户端计算
+        const res = await hyperApi.post('/info', { type: 'metaAndAssetCtxs' })
+        const universe = res.data?.[0]?.universe || []
+        const ctxs = res.data?.[1] || []
+        radarList = formatRadar(universe, ctxs)
+      }
+
+      result.error = false
+      result.data = { radarList }
       merge(trendingStore, result.data)
     } catch (e) {
       result.error = true
@@ -309,13 +320,33 @@ const formatAi500 = (raw: any[]) => (raw || []).map((item, idx) => {
   }
 })
 
-// 格式化预测市场资产
+// 格式化预测市场资产（含所有选项概率）
 const formatPrediction = (raw: any[]) => (raw || []).map((item, idx) => {
   const bnYesPrice = new BN(item.yesPriceValue || 0)
+  // 解析所有 outcomes 并翻译为中文双语
+  const outcomesRaw = item.outcomes || []
+  const outcomes = translateOutcomes(outcomesRaw)
+    // 隐藏概率为 0 的选项
+    .filter(o => new BN(o.price || 0).gt(0))
+    .map((o, oidx) => {
+      const bnPrice = new BN(o.price || 0)
+      const pct = bnPrice.times(100).toFixed(__PCT__)
+      const status = formatUPnlStatus(bnPrice.minus(0.5))
+      return {
+        idx: oidx,
+        labelEn: o.label,
+        labelZh: o.labelZh,
+        price: bnPrice.toFixed(__PCT__),
+        pricePercent: pct,
+        priceStatus: status,
+        priceClassName: formatStatusClassName(status),
+      }
+    })
   return {
     idx,
     rank: idx + 1,
     symbol: item.title || item.symbol,
+    title: item.title,
     price: item.price,
     change: item.change,
     volume: item.volume,
@@ -325,6 +356,8 @@ const formatPrediction = (raw: any[]) => (raw || []).map((item, idx) => {
     volume24hrValue: new BN(item.volume24hrValue || 0).toFixed(__COMMON__),
     totalVolumeValue: new BN(item.totalVolumeValue || 0).toFixed(__COMMON__),
     icon: item.icon,
+    outcomes,
+    outcomesCount: outcomes.length,
   }
 })
 

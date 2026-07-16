@@ -13,6 +13,39 @@
   }
 }
 
+// AI500 数据来源说明
+.trending-ai500-hint {
+  border-left: 2px solid rgba(255, 193, 7, 0.5);
+  background-color: rgba(255, 193, 7, 0.05);
+}
+
+// 预测市场卡片
+.trending-prediction-card {
+  gap: 0.5rem;
+}
+
+.trending-prediction-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.trending-prediction-outcome {
+  border-bottom: 1px solid rgba(128, 128, 128, 0.08);
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.trending-prediction-pct {
+  min-width: 56px;
+  text-align: right;
+  font-size: 13px;
+}
+
 // bias 标签（牛/熊/中性）
 .trending-radar-bias-tag {
   display: inline-flex;
@@ -34,6 +67,13 @@
   &.color-secondary {
     background-color: rgba(128, 128, 128, 0.12);
   }
+}
+
+// 市场类型小标签（symbol 下方）
+.trending-radar-market-type {
+  font-size: 11px;
+  line-height: 14px;
+  max-width: 100%;
 }
 
 // 因子方向颜色方块（无文字，仅用颜色表示涨跌）

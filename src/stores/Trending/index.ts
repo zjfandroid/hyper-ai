@@ -7,6 +7,7 @@ interface TTabItem {
   i18n?: string
   label?: string
   durationRequired?: boolean
+  group?: 'radar' | 'crypto' | 'stock'
 }
 
 interface TDurationItem {
@@ -18,6 +19,7 @@ interface TDurationItem {
 export type TTrendingStore = {
   tabId: string
   tabs: Array<TTabItem>
+  group: 'radar' | 'crypto' | 'stock'
 
   duration: string
   durations: Array<TDurationItem>
@@ -42,17 +44,18 @@ export type TTrendingStore = {
 const DEFAULT = {
   // bias_radar 作为优先重点展示，放在第一位
   tabId: 'bias_radar',
+  group: 'radar' as 'radar' | 'crypto' | 'stock',
   tabs: [
-    { id: 'bias_radar', i18n: 'trending.biasRadar' },
-    { id: 'net_flow', i18n: 'trending.netFlow' },
-    { id: 'oi', i18n: 'trending.openInterest' },
-    { id: 'depth', i18n: 'trending.depth' },
-    { id: 'rates', i18n: 'trending.fundingRates' },
-    { id: 'price', i18n: 'trending.priceMovers' },
-    { id: 'ai500', i18n: 'trending.ai500' },
-    { id: 'prediction', i18n: 'trending.prediction' },
-    { id: 'hl_perp', i18n: 'trending.hlPerp' },
-    { id: 'hl_spot', i18n: 'trending.hlSpot' },
+    { id: 'bias_radar', i18n: 'trending.biasRadar', group: 'radar' as const },
+    { id: 'net_flow', i18n: 'trending.netFlow', group: 'crypto' as const },
+    { id: 'oi', i18n: 'trending.openInterest', group: 'crypto' as const },
+    { id: 'depth', i18n: 'trending.depth', group: 'crypto' as const },
+    { id: 'rates', i18n: 'trending.fundingRates', group: 'crypto' as const },
+    { id: 'price', i18n: 'trending.priceMovers', group: 'crypto' as const },
+    { id: 'ai500', i18n: 'trending.ai500', group: 'stock' as const },
+    { id: 'prediction', i18n: 'trending.prediction', group: 'stock' as const },
+    { id: 'hl_perp', i18n: 'trending.hlPerp', group: 'crypto' as const },
+    { id: 'hl_spot', i18n: 'trending.hlSpot', group: 'crypto' as const },
   ],
 
   duration: '24h',

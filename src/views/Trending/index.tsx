@@ -1,10 +1,12 @@
-import { useEffect } from 'react'
+import { useEffect, useMemo } from 'react'
 import BN from 'bignumber.js'
 import { useTranslation } from 'react-i18next'
+import { Segmented } from 'antd'
 
 import { formatNumber } from '@/utils'
 import { useReqStore, useTrendingStore } from '@/stores'
 import ColumnList from '@/components/Column/List'
+import Loading from '@/components/Loading'
 import TabSwitch from '@/components/Tab/Switch'
 import DropdownMenu from '@/components/Dropdown/Menu'
 import { ICyclical } from '@/components/icon'
@@ -13,14 +15,23 @@ import './index.scss'
 
 // 需要 duration 参数的 tab
 const DURATION_REQUIRED = ['net_flow', 'oi', 'price']
-// 牛熊雷达 tab（双榜卡片式展示）
-const RADAR_TABS = ['bias_radar']
+// 牛熊雷达 tab（统一列表展示）
+  const RADAR_TABS = ['bias_radar']
+  // 预测市场 tab（自定义展开视图，展示所有 outcomes）
+  const PREDICTION_TAB = ['prediction']
 // 需要展示 top/low 双榜的 tab
 const TOP_LOW_TABS = ['net_flow', 'oi', 'depth', 'rates', 'price']
-// trending-category 类型的 tab（单列表）
-const CATEGORY_TABS = ['ai500', 'prediction']
+// trending-category 类型的 tab（AI500 单列表；prediction 走自定义展开视图）
+const CATEGORY_TABS = ['ai500']
 // HyperLiquid 类型的 tab（单列表）
 const HL_TABS = ['hl_perp', 'hl_spot']
+
+// 分组配置
+const TRENDING_GROUPS = [
+  { id: 'radar', i18n: 'trendingApi.groupRadar' },
+  { id: 'crypto', i18n: 'trendingApi.groupCrypto' },
+  { id: 'stock', i18n: 'trendingApi.groupStock' },
+] as const
 
 const formatTime = (ts: number) => {
   if (!ts) return '-'
@@ -38,11 +49,25 @@ const Trending = () => {
   const { t } = useTranslation()
 
   const tabId = trendingStore.tabId
+  const currentGroup = trendingStore.group
+  // 根据当前分组过滤 tabs
+  const visibleTabs = useMemo(() => {
+    return trendingStore.tabs.filter(tab => tab.group === currentGroup)
+  }, [currentGroup, trendingStore.tabs])
   const durationRequired = DURATION_REQUIRED.includes(tabId)
   const isRadarTab = RADAR_TABS.includes(tabId)
   const isTopLowTab = TOP_LOW_TABS.includes(tabId)
   const isCategoryTab = CATEGORY_TABS.includes(tabId)
   const isHlTab = HL_TABS.includes(tabId)
+  const isPredictionTab = PREDICTION_TAB.includes(tabId)
+
+  // 切换分组时自动选中该分组第一个 tab
+  const handleGroupChange = (g: string) => {
+    if (g === currentGroup) return
+    trendingStore.group = g as any
+    const firstTab = trendingStore.tabs.find(tab => tab.group === g)
+    if (firstTab) trendingStore.tabId = firstTab.id
+  }
 
   // init / tab 切换 / duration 切换时重新请求
   useEffect(() => {
@@ -50,7 +75,7 @@ const Trending = () => {
       reqStore.trendingRadar(trendingStore)
     } else if (isTopLowTab) {
       reqStore.trendingCrypto(trendingStore)
-    } else if (isCategoryTab) {
+    } else if (isCategoryTab || isPredictionTab) {
       reqStore.trendingCategory(trendingStore, tabId)
     } else if (isHlTab) {
       reqStore.trendingHl(trendingStore, tabId === 'hl_perp' ? 'perp' : 'spot')
@@ -177,7 +202,16 @@ const Trending = () => {
       case 'rank':
         return <span className="color-unimportant">{item.rank}</span>
       case 'symbol':
-        return <span className="fw-bold text-truncate">{item.symbol}</span>
+        return (
+          <span className="d-flex flex-column">
+            <span className="fw-bold text-truncate">{item.symbol}</span>
+            {item.marketType && (
+              <small className="color-unimportant text-truncate trending-radar-market-type">
+                {item.marketType === 'perp' ? t('common.perpetual') : item.marketType === 'spot' ? t('common.spot') : item.marketType}
+              </small>
+            )}
+          </span>
+        )
       case 'bias':
         return (
           <span className={`trending-radar-bias-tag ${item.biasClassName}`}>
@@ -428,7 +462,7 @@ const Trending = () => {
   // 当前 tab 的 loading 状态
   const busy = isRadarTab ? reqStore.trendingRadarBusy
     : isTopLowTab ? reqStore.trendingCryptoBusy
-    : isCategoryTab ? reqStore.trendingCategoryBusy
+    : (isCategoryTab || isPredictionTab) ? reqStore.trendingCategoryBusy
     : isHlTab ? reqStore.trendingHlBusy
     : false
 
@@ -447,10 +481,19 @@ const Trending = () => {
 
         {/* Tab + Duration */}
         <div className="d-flex flex-column br-3 overflow-hidden">
+          {/* 分组切换器（股票 / 加密货币 / 牛熊雷达） */}
+          <div className="d-flex align-items-center justify-content-between px-2 py-2 border-bottom">
+            <Segmented
+              size="small"
+              value={currentGroup}
+              onChange={(v) => handleGroupChange(v as string)}
+              options={TRENDING_GROUPS.map(g => ({ label: t(g.i18n), value: g.id }))}
+            />
+          </div>
           <div className="d-flex align-items-center justify-content-between gap-2">
             <TabSwitch
               className="flex-grow-1"
-              data={trendingStore.tabs}
+              data={visibleTabs}
               currId={trendingStore.tabId}
               onClick={(item) => { trendingStore.tabId = item.id }}
             />
@@ -502,7 +545,7 @@ const Trending = () => {
             </>
           )}
 
-          {/* 单列表（AI500 / 预测市场） */}
+          {/* 单列表（AI500） */}
           {isCategoryTab && (
             <div className="d-flex flex-column gap-2 mt-3">
               <ColumnList
@@ -511,6 +554,62 @@ const Trending = () => {
                 data={trendingStore.categoryList}
                 renderItem={renderRow}
               />
+              {/* AI500 数据来源说明 */}
+              {tabId === 'ai500' && !busy && (trendingStore.categoryList || []).length <= 5 && (
+                <div className="trending-ai500-hint p-3 br-2 color-secondary small">
+                  {t('trending.ai500DataHint')}
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* 预测市场（自定义展开视图：列举所有选项概率，中英双语） */}
+          {isPredictionTab && (
+            <div className="d-flex flex-column gap-3 mt-3">
+              <Loading loading={busy} />
+              {!busy && (trendingStore.categoryList || []).length === 0 && (
+                <div className="p-4 br-2 color-unimportant text-center">{t('common.noMoreResults')}</div>
+              )}
+              {(trendingStore.categoryList || []).map((market: any, mIdx: number) => (
+                <div key={mIdx} className="trending-prediction-card d-flex flex-column p-3 br-3 bg-gray-alpha-4">
+                  {/* 市场标题 + 概要 */}
+                  <div className="d-flex align-items-center justify-content-between gap-2 flex-wrap pb-2 border-bottom">
+                    <div className="d-flex align-items-center gap-2 col-12 col-md-7">
+                      {market.icon && <img src={market.icon} alt="" className="trending-prediction-icon" />}
+                      <div className="d-flex flex-column">
+                        <span className="fw-bold">{market.title}</span>
+                        <small className="color-unimportant">{market.outcomesCount} {t('trending.predictionOutcomes')}</small>
+                      </div>
+                    </div>
+                    <div className="d-flex align-items-center gap-3 col-12 col-md-5 justify-content-md-end">
+                      <div className="d-flex flex-column">
+                        <small className="color-unimportant">{t('trending.predictionYesPrice')}</small>
+                        <span className={market.yesPriceValueClassName}>{market.price}</span>
+                      </div>
+                      <div className="d-flex flex-column">
+                        <small className="color-unimportant">{t('trending.predictionVolume24h')}</small>
+                        <span>$ {formatNumber(market.volume24hrValue)}</span>
+                      </div>
+                      <div className="d-flex flex-column">
+                        <small className="color-unimportant">{t('trending.predictionTotalVolume')}</small>
+                        <span>$ {formatNumber(market.totalVolumeValue)}</span>
+                      </div>
+                    </div>
+                  </div>
+                  {/* 选项列表（所有 outcomes 概率） */}
+                  <div className="d-flex flex-column gap-1 mt-2">
+                    {(market.outcomes || []).map((o: any) => (
+                      <div key={o.idx} className="trending-prediction-outcome d-flex align-items-center gap-2 py-1">
+                        <span className={`trending-prediction-pct ${o.priceClassName} fw-bold`}>{o.pricePercent}%</span>
+                        <div className="d-flex flex-column col">
+                          <span className="small">{o.labelZh}</span>
+                          <small className="color-unimportant">{o.labelEn}</small>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </div>
           )}
 
