@@ -52,20 +52,45 @@ const hyperApi = axios.create({
 })
 
 // VergeX 行情数据 API（公开接口，无需鉴权）
-const vergexApi = axios.create({
-  baseURL: 'https://vergex.trade',
-  headers: {
-    'Content-Type': 'application/json'
-  },
+// 配置了 Cloudflare Worker 代理时统一走代理，规避跨域 403；代理失败自动回退直连
+const vergexProxyBase = import.meta.env.VITE_VERGEX_PROXY
+const VERGEX_DIRECT_BASE = 'https://vergex.trade'
+
+// 直连实例（代理失败时回退使用）
+const vergexDirectApi = axios.create({
+  baseURL: VERGEX_DIRECT_BASE,
+  headers: { 'Content-Type': 'application/json' },
 })
 
-// VergeX 代理 API（通过 Cloudflare Worker 转发，解决跨域 403）
-// 未配置代理时为 null，调用方需回退到客户端计算模式
-const vergexProxyBase = import.meta.env.VITE_VERGEX_PROXY
-const vergexProxyApi = vergexProxyBase ? axios.create({
-  baseURL: vergexProxyBase,
+const vergexApi = axios.create({
+  baseURL: vergexProxyBase || VERGEX_DIRECT_BASE,
   headers: { 'Content-Type': 'application/json' },
-}) : null
+})
+
+// 代理失败时（网络错误/超时/5xx/403）自动回退直连，避免 worker 不可用导致全部接口失效
+if (vergexProxyBase) {
+  vergexApi.interceptors.response.use(
+    (response) => response,
+    async (error) => {
+      const config = error.config
+      // 避免重复重试
+      if (config && !config.__vergexRetried) {
+        config.__vergexRetried = true
+        try {
+          return await vergexDirectApi.request({
+            method: config.method,
+            url: config.url,
+            params: config.params,
+            data: config.data,
+          })
+        } catch (retryErr) {
+          return Promise.reject(retryErr)
+        }
+      }
+      return Promise.reject(error)
+    }
+  )
+}
 
 export {
   baseCheck,
@@ -73,7 +98,6 @@ export {
   baseApi,
   hyperApi,
   vergexApi,
-  vergexProxyApi
 }
 
 

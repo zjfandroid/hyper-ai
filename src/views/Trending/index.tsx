@@ -473,12 +473,6 @@ const Trending = () => {
     <div className="container-fluid px-0 d-flex flex-column my-5 pt-5">
       <div className="container-xl d-flex flex-column align-items-center px-3 px-md-4 gap-3 gap-md-4 mb-3 mb-md-5 py-0">
         <div className="d-flex flex-column w-100 trending-content-wrap">
-        {/* 标题 */}
-        <div className="d-flex flex-column text-center text-md-start gap-3 my-4 my-md-5">
-          <h2 className="fw-bold">{t('trending.headline')}</h2>
-          <span className="h5 color-secondary col-12 col-md-8">{t('trending.subheadline')}</span>
-        </div>
-
         {/* Tab + Duration */}
         <div className="d-flex flex-column br-3 overflow-hidden">
           {/* 分组切换器（股票 / 加密货币 / 牛熊雷达） */}

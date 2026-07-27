@@ -2,7 +2,7 @@ import BN from 'bignumber.js'
 
 import { merge } from '@/utils'
 import { translateOutcomes } from '@/utils/predictionTranslate'
-import { vergexApi, vergexProxyApi, hyperApi } from '@/stores/req/helper'
+import { vergexApi, hyperApi } from '@/stores/req/helper'
 import { constants, TTrendingStore } from '@/stores'
 
 import { formatUPnlStatus, formatStatusClassName } from '../utils'
@@ -259,27 +259,25 @@ export const trendingCrypto: TTrendingCrypto = {
     this.trendingRadarBusy = true
 
     try {
-      // 优先使用 Cloudflare Worker 代理调用 vergex 真实 biasRadar API
-      // 代理失败或未配置时回退到基于 HyperLiquid API 的客户端计算模式
+      // vergexApi 已统一走 Cloudflare Worker 代理（配置时）
+      // 代理失败时回退到基于 HyperLiquid API 的客户端计算模式
       let radarList: any[] = []
-      let usedProxy = false
+      let usedVergex = false
 
-      if (vergexProxyApi) {
-        try {
-          const res = await vergexProxyApi.get('/api/v1/data-intelligence/markets/cross-section/directional', {
-            params: { chain: 'mainnet', liqBand: 15 },
-            timeout: 10000, // 代理 10 秒超时，避免长时间等待
-          })
-          const rawItems = res.data?.data?.items || res.data?.items || []
-          radarList = formatRadar(rawItems)
-          usedProxy = true
-        } catch (proxyErr) {
-          // 代理失败，静默回退到 HyperLiquid 客户端计算
-          usedProxy = false
-        }
+      try {
+        const res = await vergexApi.get('/api/v1/data-intelligence/markets/cross-section/directional', {
+          params: { chain: 'mainnet', liqBand: 15 },
+          timeout: 10000, // 10 秒超时，避免长时间等待
+        })
+        const rawItems = res.data?.data?.items || res.data?.items || []
+        radarList = formatRadar(rawItems)
+        usedVergex = true
+      } catch (vergexErr) {
+        // vergex 代理失败，静默回退到 HyperLiquid 客户端计算
+        usedVergex = false
       }
 
-      if (!usedProxy) {
+      if (!usedVergex) {
         // 回退方案：基于 HyperLiquid 公开 API 数据客户端计算
         const res = await hyperApi.post('/info', { type: 'metaAndAssetCtxs' })
         const universe = res.data?.[0]?.universe || []

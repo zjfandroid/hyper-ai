@@ -4,7 +4,7 @@ import { CopyToClipboard } from 'react-copy-to-clipboard'
 import { useTranslation } from 'react-i18next'
 
 import { IOutlineCopy } from '@/components/icon'
-import { vergexApi, hyperApi, vergexProxyApi } from '@/stores/req/helper'
+import { vergexApi, hyperApi } from '@/stores/req/helper'
 import Loading from '@/components/Loading'
 import { API_BASE_URL, HYPERLIQUID_API_URL, VERGEX_PROXY_URL, API_DOCS, ApiDoc } from './data'
 
@@ -84,13 +84,8 @@ const TrendingApi = () => {
         const apiInstance = selectedDoc.baseUrl === HYPERLIQUID_API_URL ? hyperApi : vergexApi
         res = await apiInstance.post(selectedDoc.path, buildBody())
       } else {
-        // 判断使用哪个 axios 实例：HyperLiquid / vergex 代理 / vergex 直连
-        let apiInstance = vergexApi
-        if (selectedDoc.baseUrl === HYPERLIQUID_API_URL) {
-          apiInstance = hyperApi
-        } else if (VERGEX_PROXY_URL && selectedDoc.baseUrl === VERGEX_PROXY_URL) {
-          apiInstance = vergexProxyApi
-        }
+        // 判断使用哪个 axios 实例：HyperLiquid / vergex（已统一走代理）
+        const apiInstance = selectedDoc.baseUrl === HYPERLIQUID_API_URL ? hyperApi : vergexApi
         const queryParams: Record<string, string> = {}
         selectedDoc.params.forEach(p => {
           if (p.inBody) return

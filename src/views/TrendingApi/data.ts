@@ -65,7 +65,7 @@ export const API_DOCS: ApiDoc[] = [
   {
     id: 'net_flow',
     method: 'GET',
-    baseUrl: API_BASE_URL,
+    baseUrl: VERGEX_PROXY_URL || API_BASE_URL,
     path: '/trending-crypto',
     titleI18n: 'trendingApi.netFlowTitle',
     descI18n: 'trendingApi.netFlowDesc',
@@ -89,7 +89,7 @@ export const API_DOCS: ApiDoc[] = [
   {
     id: 'oi',
     method: 'GET',
-    baseUrl: API_BASE_URL,
+    baseUrl: VERGEX_PROXY_URL || API_BASE_URL,
     path: '/trending-crypto',
     titleI18n: 'trendingApi.oiTitle',
     descI18n: 'trendingApi.oiDesc',
@@ -118,7 +118,7 @@ export const API_DOCS: ApiDoc[] = [
   {
     id: 'depth',
     method: 'GET',
-    baseUrl: API_BASE_URL,
+    baseUrl: VERGEX_PROXY_URL || API_BASE_URL,
     path: '/trending-crypto',
     titleI18n: 'trendingApi.depthTitle',
     descI18n: 'trendingApi.depthDesc',
@@ -143,7 +143,7 @@ export const API_DOCS: ApiDoc[] = [
   {
     id: 'rates',
     method: 'GET',
-    baseUrl: API_BASE_URL,
+    baseUrl: VERGEX_PROXY_URL || API_BASE_URL,
     path: '/trending-crypto',
     titleI18n: 'trendingApi.ratesTitle',
     descI18n: 'trendingApi.ratesDesc',
@@ -168,7 +168,7 @@ export const API_DOCS: ApiDoc[] = [
   {
     id: 'price',
     method: 'GET',
-    baseUrl: API_BASE_URL,
+    baseUrl: VERGEX_PROXY_URL || API_BASE_URL,
     path: '/trending-crypto',
     titleI18n: 'trendingApi.priceTitle',
     descI18n: 'trendingApi.priceDesc',
@@ -196,7 +196,7 @@ export const API_DOCS: ApiDoc[] = [
   {
     id: 'hl_preipo',
     method: 'GET',
-    baseUrl: API_BASE_URL,
+    baseUrl: VERGEX_PROXY_URL || API_BASE_URL,
     path: '/trending-hl',
     titleI18n: 'trendingApi.hlTitle',
     descI18n: 'trendingApi.hlDesc',
@@ -225,7 +225,7 @@ export const API_DOCS: ApiDoc[] = [
   {
     id: 'category_ai500',
     method: 'GET',
-    baseUrl: API_BASE_URL,
+    baseUrl: VERGEX_PROXY_URL || API_BASE_URL,
     path: '/trending-category',
     titleI18n: 'trendingApi.ai500Title',
     descI18n: 'trendingApi.ai500Desc',
@@ -254,7 +254,7 @@ export const API_DOCS: ApiDoc[] = [
   {
     id: 'category_prediction',
     method: 'GET',
-    baseUrl: API_BASE_URL,
+    baseUrl: VERGEX_PROXY_URL || API_BASE_URL,
     path: '/trending-category',
     titleI18n: 'trendingApi.predictionTitle',
     descI18n: 'trendingApi.predictionDesc',
