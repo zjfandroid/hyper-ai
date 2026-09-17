@@ -1,0 +1,164 @@
+.news-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--bg-gray-alpha-4, rgba(128, 128, 128, 0.15));
+}
+
+.news-title {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.news-subtitle {
+  margin-top: 4px;
+  font-size: 13px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  opacity: 0.45;
+}
+
+// 纯文字帖子列表
+.news-text-list {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+}
+
+.news-text-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px 4px;
+  border-bottom: 1px solid var(--bg-gray-alpha-4, rgba(128, 128, 128, 0.15));
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.news-text-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.news-text-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.news-text-content {
+  font-size: 15px;
+  line-height: 1.65;
+  opacity: 0.9;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.news-text-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  white-space: normal;
+}
+
+.news-text-toggle {
+  margin-left: 6px;
+  color: inherit;
+  opacity: 0.6;
+  white-space: nowrap;
+}
+
+.news-text-stats {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+  font-size: 12px;
+  opacity: 0.5;
+}
+
+// 卡片瀑布
+.news-card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+
+  @media (max-width: 1000px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (max-width: 720px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 460px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.news-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--bg-gray-alpha-4, rgba(128, 128, 128, 0.06));
+  border: 1px solid var(--bg-gray-alpha-4, rgba(128, 128, 128, 0.12));
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28);
+  }
+}
+
+.news-card-cover {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--bg-gray-alpha-4, rgba(128, 128, 128, 0.15));
+}
+
+.news-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px 14px 14px;
+  flex: 1;
+}
+
+.news-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.news-card-content {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 14px;
+  line-height: 1.5;
+  opacity: 0.9;
+  flex: 1;
+}
+
+.news-card-stats {
+  font-size: 12px;
+  opacity: 0.5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .news-card {
+    transition: none;
+  }
+}
